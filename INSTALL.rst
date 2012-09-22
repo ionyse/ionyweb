@@ -35,4 +35,9 @@ or::
 
     $ workon ionyweb
     (ionyweb)$ ionyweb-quickstart <NewProject>
+    # Configure your MySQL database autoconfigure in your settings.py
+    (ionyweb)$ cd <NewProject>
+    (ionyweb)$ make syncdb
+    (ionyweb)$ make runserver
 
+After that, you will have to set-up a themes for your website.
