@@ -1,0 +1,42 @@
+{% load i18n %}
+
+
+{% block header_layout %}{% endblock %}
+
+{% if is_admin %}
+
+{% if page.draft %}
+<div id="wa_placeholder_draft_notification">
+  <p class="link">
+    <a onClick="admin.pages.toggle_draft({{ page.id }}); return false;" href="">{% trans "Bring online" %}</a>
+  </p>
+  <p>{% trans "Draft" %}</p>
+</div>
+{% endif %}
+
+
+<div class="wa_placeholder_structure">
+  <p>{{ layout_slug }}&nbsp;:&nbsp;</p>
+  <ul>
+  	<!--
+    <li>
+      <a onClick="admin.edit.edit_content(); return false;" href="">
+	<img src="{{ STATIC_URL }}admin/css/icons/pencil32_white.png" alt="{% trans "Edit" %}" class="wa_button" style="height: 16px;" />
+      </a>
+    </li>
+   -->
+    <li>
+      <a onClick="admin.layouts.list('{{ layout_slug }}'); return false;" href="">
+	<img src="{{ STATIC_URL }}admin/css/icons/layout32_white.png" class="wa_button" style="height: 16px;" rel="tooltip" data-title="{% trans 'Change layout' %}" data-placement="bottom"/>
+      </a>
+    </li>
+  </ul>
+  <div style="clear: both;"></div>
+</div>
+
+{% endif %}
+
+
+{% block layout %}{% endblock layout %}
+
+{% block footer_layout %}{% endblock %}

@@ -1,0 +1,70 @@
+# Traduction française du plugin Titre du Site
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 14:24+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5
+msgid "Website title"
+msgstr "Titre du Site Internet"
+
+#: __init__.py:7
+msgid "Display the website title"
+msgstr "Affiche le titre du site selon le thème choisit"
+
+#: __init__.py:8
+msgid ""
+"This plugin is mostly used in header part of a page. Display your website "
+"menu with a specific design based on your current theme."
+msgstr ""
+"Ce plugin est surtout utiliser dans l'entête de page. Il affiche le titre du site et ce en fonction du thème choisit."
+
+#: models.py:9
+msgid "baseline"
+msgstr "sous-titre"
+
+#: models.py:12
+msgid "Define a baseline for your website."
+msgstr "Saisissez un sous-titre pour votre site internet."
+
+#: models.py:14
+msgid "enable link title"
+msgstr "Activer le titre cliquable"
+
+#: models.py:17
+msgid "link"
+msgstr "lien"
+
+#: models.py:20
+msgid "margin top"
+msgstr "Espacement supérieur"
+
+#: models.py:22
+msgid "margin bottom"
+msgstr "Espacement inférieur"
+
+#: models.py:34
+msgid "Website Title"
+msgstr "Titre de Site Internet"
+
+#~ msgid "title"
+#~ msgstr "titre"
+
+#~ msgid "Type a new title if you want overide the default title website."
+#~ msgstr ""
+#~ "Saisissez un nouveau titre pour le site internet si vous ne souhaitez pas "
+#~ "utiliser le titre par défaut."

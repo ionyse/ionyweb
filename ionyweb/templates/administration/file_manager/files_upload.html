@@ -1,0 +1,51 @@
+{% load i18n %}
+
+
+<h3>{% trans "Add a file" %}</h3>
+<div class="upload">
+	<div style="margin: 8px 0px;">
+		<div id="file-uploader">       
+		  <noscript>          
+			<p>Please enable JavaScript to use file uploader.</p>
+			<!-- or put a simple form for upload here -->
+		  </noscript>         
+		</div>
+	</div>
+</div>
+
+
+
+    <script>
+        function createUploader(){            
+            var uploader = new qq.FileUploader({
+                element: document.getElementById('file-uploader'),
+                action: '/wa/file_manager/upload/',
+                debug: true,
+                onComplete: function(id, fileName, responseJSON){
+                	if (responseJSON.error){
+			            $($("#file-uploader .qq-upload-list li").get(id)).find('.progress').hide();
+			            $($("#file-uploader .qq-upload-list li").get(id)).find('.qq-upload-close-error').bind('click', function(){
+			            	$(this).parents('li').hide();
+			            }).show();
+			            $($("#file-uploader .qq-upload-list li").get(id)).find('.qq-upload-failed-text').html(responseJSON.error).show();
+			        }else{
+			        	
+	                	$($("#file-uploader .qq-upload-list li").get(id)).delay('700').hide('fade');
+	                	$('#wa_file_manager .quota').html(responseJSON.quota);
+			        	if((id%5 == 0)||((id+1) == $("#file-uploader .qq-upload-list li").length)){
+		                	admin.file_manager.directory.get();
+			        	}
+			        }
+                },
+                onProgress: function(id, fileName, loaded, total){
+                	// admin.messages.alert(id + "/" + fileName + "/" + loaded + "/" + total + " / " + loaded*100/total + "%");
+                	$($("#file-uploader .qq-upload-list li").get(id)).find('.bar').css('width', loaded*100/total+'%');
+                },
+            });
+        }
+        
+        
+        // in your app create uploader as soon as the DOM is ready
+        // don't wait for the window to load  
+        createUploader();     
+    </script>  

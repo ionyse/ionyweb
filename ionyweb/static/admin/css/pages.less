@@ -1,0 +1,150 @@
+
+/* CSS for draft pages in navigation menu */
+#nav{
+	.draft{
+		border-bottom: dashed 2px orange !important;
+	}
+}
+
+#wa_placeholder_draft_notification{
+	background: url('images/draft_background_box.png') repeat-x;
+	height: 65px;
+	position: relative;
+	width: 100%;
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #777;
+	.border-radius-top(15px);
+	p{
+		padding: 12px 20px 0 40px;
+		&.link{
+			float: right;
+			font-size: 0.6em;
+			padding: 16px 20px 0 40px;
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+/* CSS for page manager */
+#page_list{
+	position: absolute;
+	right: 340px;
+	left: 0px;		
+	#page_list_header{
+		margin: 0px 0 20px 30px;
+		color: @text_color - #444;
+	}
+	ol{
+		margin-left: 30px;
+		ol{
+				
+			margin-left: 30px;
+		}
+	}
+	
+	.move_liste_pages{
+		background: url("images/background_ul.png") repeat-y;
+		ol{
+			background: url("images/background_ul.png") repeat-y;
+		}
+		.sortable_placeholder{
+			background: url("images/background_ul.png") repeat-y;
+		}
+		.sortable_placeholder_error{
+			background: red;
+		}
+		li {  
+			background: url("images/background_li.png") no-repeat;
+			list-style-type: none;
+			&:hover .ligne{
+   				background: @background_focus - #111;
+			}
+			.ligne{
+			    font-size: 1em;
+			    border: #888 solid 1px;
+			    background: @background_focus;
+			    .gradient-background( @background_focus, @background_focus - #111);
+			    margin-left: 18px;
+			    height: 35px;
+			    p{
+			    	margin: 0;
+			    	padding: 8px 20px 8px 20px;
+			    }
+			    .title{
+			    	float :left;
+			    }
+				.move_grip{
+					float: left;
+					background: url('images/move_grip.png') no-repeat #888;
+					width: 15px;
+					height: 100%;
+   					cursor: move;
+				}
+				.move_grip_disable{
+					float: left;
+					width: 15px;
+					height: 100%;
+				}
+			}
+			.draft{
+				background: url('images/draft_background.png') repeat-y !important;
+			}
+			.baseline{
+				font-size: 11px;
+			    background: @background_focus;
+			    .gradient-background( @background_focus - #111, @background_focus - #222);
+				margin-left: 25px;	
+				padding: 0 20px;
+				color: @text_color - #444;
+				border-left: #444 solid 1px;
+				border-right: #444 solid 1px;
+				p{
+					margin: 0;
+					padding: 4px 0;
+				}
+			    .title{
+			    	float :left;
+			    }
+				a{
+				 	color: @text_color - #444;
+				}
+			}
+			.details{
+				float: right;
+			}
+		}
+		li:last-child .baseline{
+			border-bottom: #444 solid 1px;
+		}
+	}
+}
+
+#page_list_helptext{
+	position: absolute;
+	right: 0px;
+	width: 260px;
+	padding: 4px 30px 4px 0;
+	text-align: justify;
+	font-size: 0.9em;
+	h3{
+		margin: 30px 0 10px 0;
+		padding: 0;
+		text-transform: uppercase;
+		&:first-letter{
+			font-size: 1.1em;
+		}
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	img{
+		max-width: 95%;
+		margin: auto;
+		padding: 2px;
+		margin: 4px 0;
+		border: solid 1px #555;
+	}
+}

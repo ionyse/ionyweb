@@ -1,0 +1,3 @@
+div.iw-plugin-image{ overflow: hidden;}
+div.iw-plugin-image img{ display: block;}
+div.iw-plugin-image img.center{ margin: auto;}

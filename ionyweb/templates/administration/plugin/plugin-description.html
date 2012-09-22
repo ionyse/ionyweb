@@ -1,0 +1,52 @@
+{% load mptt_tags i18n %}
+<h6>Description du plugin</h6>
+
+<div class="description">
+	<h2>{{ info.NAME }}</h2>
+	
+	<div class="row-fluid">
+		<div class="span8">
+			{% if info.SCREENSHOT %}
+			<div class="slideshow">
+				{% for img in info.SCREENSHOW %}
+					<img src="{{ img }}" alt="{{ img }}" />
+				{% endfor %}
+			</div>
+			{% endif %}
+			<p>{{ info.DESCRIPTION }}</p>
+		</div>
+		
+		<div class="span4">
+			<div style="margin: 15px 0 20px 0;">
+				<div class="btn btn-primary" onClick="admin.plugins.add({{ id }})">{% trans "Add this plugin" %}</div>
+			</div>
+			
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th colspan="2">{% trans "Details" %}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{% trans "Version" %}</td>
+						<td>{{ info.VERSION }}</td>
+					</tr>
+					<tr>
+						<td>{% trans "Author" %}</td>
+						<td>{{ info.AUTHOR }}</td>
+					</tr>
+					{% if info.WEBSITE %}
+					<tr>
+						<td>{% trans "Website" %}</td>
+						<td><a href="{{ info.WEBSITE }}">{{ info.WEBSITE }}</a></td>
+					</tr>
+					{% endif %}
+				</tbody>
+			</table>
+			{% if info.REQUIREMENTS %}
+			<p class="alert alert-info"><strong>{% trans "Requirements" %}</strong> : <br/>{% blocktrans with info.REQUIREMENTS.0 as requirements %}This plugin needs a "{{ requirements }}" page app to refer.{% endblocktrans %}</p>
+			{% endif %}
+		</div>
+	</div>
+</div>

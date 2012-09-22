@@ -1,0 +1,17 @@
+<div class="iw-plugin-links-list">
+
+  {% include 'themes/plugin_app_title.html' %}
+
+  {% with object.links_list as links %}
+  
+  {% if links %}
+  <ul{% if not object.styled %} class="unstyled"{% endif %}>
+	{% for link in links %}
+	<li><a href="{{ link.target }}">{{ link.text }}</a></li>
+	{% endfor %}
+  </ul>
+  {% endif %}
+  
+  {% endwith %}
+
+</div>

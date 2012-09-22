@@ -1,0 +1,25 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Maintenance" %}{% endblock %}
+{% block action_close %}admin.settings.cancel_form();{% endblock %}
+
+{% block content %}
+
+<div style="float: left; width: 70%; display: inline-block; vertical-align: middle;">
+	<form style="padding-left: 30px;" id="page_maintenance_form">
+	  {% if request.website.in_maintenance %}
+	  <p>{% trans "You are in maintenance mode" %}</p>
+	  {% else %}
+	  <p>{% trans "You are not in maintenance mode" %}</p>
+	  {% endif %}
+		<p><input class="btn btn-primary" type="submit" value="{% trans "Switch mode" %}" onClick="admin.settings.maintenance.post(); return false;" /> <input class="btn" type="button" value="Annuler" onClick="admin.settings.cancel_form();" /></p>
+	</form>
+</div>
+
+<div style="float: left; width: 30%; display: inline-block; vertical-align: middle;">
+	<p>{% trans "The maintenance mode let you change your website content, layout or theme without letting people see what your are doing." %}</p>	
+</div>
+
+<div style="clear: both;"></div>
+{% endblock %}

@@ -1,0 +1,48 @@
+# Traduction française du plugin de texte.
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 14:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5
+msgid "WYSIWYG Text block"
+msgstr "Texte avec editeur WYSIWYG"
+
+#: __init__.py:8
+msgid "Write texte in a WYSIWYG editor"
+msgstr ""
+"Saisir du texte dans un éditeur WYSIWYG"
+
+
+#: __init__.py:9
+msgid ""
+"Allow you to write some text in a WYSIWYG editor (What you see is what you "
+"get). You can display text, pictures from files manager, table, lists, html, "
+"etc..."
+msgstr ""
+"Permet la saisie d'un texte à l'aide d'un editeur WYSIWYG (What You See Is "
+"What You Get). Vous avez la possibilité d'afficher du texte, des images "
+"issuent gestionnaire de fichier, des tableaux, des listes à puçes, du code "
+"HTML, etc..."
+
+#: models.py:10
+msgid "text"
+msgstr "texte"
+
+#: models.py:17
+msgid "Text"
+msgstr "Texte"

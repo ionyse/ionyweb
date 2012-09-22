@@ -1,0 +1,42 @@
+{% load i18n %}
+
+
+<div class="placeholder-container"
+     id="{{ item.html_id }}"
+     {% if is_admin %}data-placeholder-slug="{{ item.placeholder_slug }}"{% endif %}>
+
+
+  {# DISPLAY IONYWEB ADMIN #}
+  {% if is_admin %}
+  <div class="wa_plugin_widget">
+    <p>{{ item.verbose_name }}&nbsp;:&nbsp;
+      <a href="" onClick="admin.plugins.edit('{{ item.html_id }}'); return false;">
+		<i class="icon-edit icon-white" rel="tooltip" data-title="{% trans 'Edit' %}" data-placement="bottom"></i>
+      </a>&nbsp;
+      <span class="sortable_click">
+		<a href="" onClick="return false;">
+		  <i class="icon-move icon-white" rel="tooltip" data-title="{% trans 'Move' %}" data-placement="bottom"></i>
+		</a>
+      </span>&nbsp;
+      <a href="" onClick="admin.plugins.remove('{{ item.html_id }}'); return false;">
+		<i class="icon-trash icon-white" rel="tooltip" data-title="{% trans 'Delete' %}" data-placement="bottom"></i>
+      </a>
+    </p>
+    {% if item.actions_list %}
+    <ul>{% for action in item.actions_list %}<li>{{ action|safe }}</li>{% endfor %}</ul>
+    {% endif %}
+  </div>
+  <div style="clear: both;"></div>
+  <div class="wa_plugin_confirm_panel">
+    <div class="confirm_panel"></div>
+  </div>
+  {% endif %}
+  {# END DISPLAY IONYWEB ADMIN #}
+
+
+  {# DISPLAY APP #}
+  <div class="plugin-content">{{ item.html|safe }}</div>
+  {# END DISPLAY APP #}
+
+
+</div>

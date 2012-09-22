@@ -1,0 +1,85 @@
+{% extends 'administration/base_admin.html' %}
+{% load mptt_tags i18n %}
+
+{% block title %}{% trans "Page manager" %}{% endblock %}
+{% block action_close %}admin.pages.cancel_form();{% endblock %}
+
+{% block content %}
+<div id="page_list" class="wa_arborescence">
+	<div id="page_list_header">
+		<div class="btn" onClick="admin.pages.create_form();" style="margin: 2px 8px 2px 0; padding-top: 0px;">{% trans "Add a new page" %}</div>&nbsp;{% blocktrans count pages|length as nb_pages %}You currently have {{ nb_pages }} page on your website.{% plural %}You currently have {{ nb_pages }} pages on your website.{% endblocktrans %}</p>
+	</div>
+	
+	<ol class="move_liste_pages">
+		{% recursetree pages %}
+		<li id="{{ node.id }}" class="{% if node.slug == "" %}no-nest{% endif %}">
+			
+			<div class='ligne {% if node.draft %}draft{% endif %}'>
+				{% if node.slug == "" %}
+				<div class='move_grip_disable'></div>
+				{% else %}
+				<div class='move_grip'></div>
+				{% endif %}
+				<p class="title">
+					<strong><a href="{{node.get_absolute_url }}">{{ node.title }}</a></strong>{% if node.draft %} - {% trans "Draft" %} : <a onClick="admin.pages.toggle_draft({{ node.id }}); return false;">{% trans "Bring online" %}</a>{% endif %}
+				</p>
+				<div class="details">
+					<p>		
+						
+						{% if node.slug != "" %}
+						<a onClick="admin.pages.create_form({{ node.id }}); return false;"><img src="{{ STATIC_URL }}admin/css/icons/download32_white.png" alt="{% trans "Add a page as child" %}" class="wa_button" style="height: 16px;" rel="tooltip" data-title="{% trans "Add a page as child" %}" data-placement="bottom" /></a> - 
+						{% else %}
+							
+								<img src="{{ STATIC_URL }}admin/css/icons/download32_white.png" alt="{% trans "Cannot add a page as child to a page with no slug" %}" class="wa_button" style="height: 16px; opacity: 0.2;" rel="tooltip" data-title="{% trans "Cannot add a page as child to a page with no slug" %}" data-placement="bottom"/> -
+							
+						{% endif %}
+
+						<a href="#" onClick="admin.pages.edit_form({{ node.id }}); return false;"><i class="icon-cog icon-white" rel="tooltip" data-title="{% trans "Settings of this page" %}" data-placement="bottom"></i></a>
+						<a href="#" onClick="admin.pages.remove({{ node.id }}); return false;"><i class="icon-trash icon-white" rel="tooltip" data-title="{% trans "Delete" %}" data-placement="bottom"></i></a>
+					</p>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="baseline">
+				<p class="title">
+					<span style="margin-right: 20px;">URL : <em style="color: #AAA;"><a href="{{node.get_absolute_url }}">{% if node.slug %}{% if node.level != 0 %}..{% endif %}/{{ node.slug }}/{% else %}/{% endif %}</a></em></span>
+					{% trans "Page type" %} : {{ node.verbose_name_app }}
+					{% if node.app_page_object.details %}
+						- {{ node.app_page_object.details }}
+					{% endif %}
+				</p>
+				<div class="details">
+					<p>
+						<a onClick="admin.apps.edit({{ node.id }});">{% trans "Configuration of content" %}</a>
+					</p>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div style="clear: both;"></div>
+			{% if not node.is_leaf_node %}
+			<ol>
+				{{ children }}
+			</ol>
+			{% endif %}
+		</li>
+		{% endrecursetree %}
+	</ul>
+</div>
+<div id="page_list_helptext">
+	<h3>{% trans "Manage pages of your website" %}</h3>
+	<img src="{{ STATIC_URL}}admin/images/pages_list.jpg" alt="Liste de page" />
+	<p>
+		{% trans "You website can have an unlimited number of page. This screen allow you to manage your pages. You can create a new one, but also edit and delete those already existing." %}
+	</p>
+	<h3>{% trans "Type of page" %}</h3>
+	<p>
+		{% trans "Each page of your website as a type (also call Page App) which allow you to display informations in the optimized way (ex: blog, pictures, ...)" %}
+	</p>
+	<h3>{% trans "Move a page" %}</h3>
+	<img src="{{ STATIC_URL}}admin/images/pages_list_move.jpg" alt="Liste de page" />
+	<p>
+		{% trans "To move a page, click on the extreme right part and drag it to the wished position. The address (url) will automaticaly be edited and the structure of your site modified in real time (Be careful, changing a page address will unvalid existing link on this page, which will have to be manually edited.)" %}
+	</p>
+</div>
+
+{% endblock %} 

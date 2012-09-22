@@ -1,0 +1,11 @@
+<span class="subdomain">
+  <span class="domain">http://</span>
+  {% include 'floppyforms/input.html' %}
+</span>
+
+<script type="text/javascript">
+  /* Click on the http:// also select the input */
+  $('.subdomain').click(function () { $(this).find('input').focus(); });
+  /* After loaded the page autofocus the input */
+  $('.subdomain').find('input').focus();
+</script>

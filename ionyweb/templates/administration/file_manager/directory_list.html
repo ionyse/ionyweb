@@ -1,0 +1,16 @@
+{% load mptt_tags i18n %}
+<li>
+	<span id="directory-{{ root.id }}" {% if current == root %}class="selected"{% endif %} onClick="admin.file_manager.directory.get({{ root.id }});"><i class="icon-hdd icon-white"></i> {{ root.name }}</span>
+	<ul>
+	{% recursetree directories %}
+		<li>
+			<span id="directory-{{ node.id }}" {% if current == node %}class="selected"{% endif %} onClick="admin.file_manager.directory.get({{ node.id }});"><i class="icon-folder-open icon-white"></i>  {{ node.name }}</span>
+			{% if not node.is_leaf_node %}
+			<ul>
+				{{ children }}
+			</ul>
+			{% endif %}
+		</li>
+	{% endrecursetree %}
+	</ul>
+</li>

@@ -1,0 +1,9 @@
+<div class="entry">
+    <h2>{{ object.title }}</h2>
+    <p class="entry-meta">
+        {{ object.publication_date|date:"d/m/Y @ H:i" }} - {% include 'page_blog/display_category.html' %}
+    </p>
+    <div class="entry-body">
+        {{ object.body|safe }}
+    </div>
+</div>

@@ -1,0 +1,45 @@
+{% extends 'administration/base_admin.html' %}
+
+{% load api_actions_admin_tags i18n %}
+
+{% block title %}{% trans "Domain names" %}{% endblock %}
+{% block action_close %}admin.settings.cancel_form();{% endblock %}
+
+{% block content %}
+<div id="object_list">
+  <ul class="object-tools">
+    <li>
+      <input class="btn" type="button" onclick="admin.settings.domains.add();" class="addlink" value="{% trans "Add a domain" %}" />
+    </li>
+  </ul>
+  <table cellspacing="0" id="result_list">
+	<thead>
+	  <tr>
+		<th>{% trans "Domain name" %}</th>
+		<th class="actions-buttons" colspan="3">{% trans 'Actions' %}</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {% for result in domains %}
+	  <tr class="{% cycle 'row1' 'row2' %}{% if result == primary_domain %} selected{% endif %}">
+		<td><a href="http://{{ result.domain }}/">{{ result.domain }}</a></td>
+		{% if result != primary_domain %}
+		<td><input type="button" onclick="admin.settings.domains.set_primary({{ result.pk }});" value="{% trans 'Set as primary' %}"/></td>
+		<td><input type="button" onclick="admin.settings.domains.edit_form({{ result.pk }});" value="{% trans 'Edit' %}"/></td>
+		<td><input type="button" onclick="admin.settings.domains.remove({{ result.pk }});" value="{% trans 'Delete' %}"/></td>
+		<td></td>
+		{% else %}
+		<td></td>
+		<td></td>
+		<td></td>
+		{% endif %}
+	  </tr>
+	  {% empty %}
+	  <tr>
+		<td class="empty_result" style="text-align: center;">{% trans 'No object yet' %}</td>
+	  </tr>
+	  {% endfor %}
+	</tbody>
+  </table>
+</div>
+{% endblock %}

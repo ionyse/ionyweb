@@ -1,0 +1,11 @@
+{% load i18n %}
+
+{% if is_admin %}
+<p>{% trans "You have to edit url redirection in settings:" %}</p>
+<p>
+  <a href=""
+     onclick="admin.apps.edit({{ request.page.id }}); return false;">
+    {% trans "Display settings of the app" %}
+  </a>
+</p>
+{% endif %}

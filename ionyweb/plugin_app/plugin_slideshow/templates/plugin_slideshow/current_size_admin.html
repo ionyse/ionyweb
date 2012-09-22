@@ -1,0 +1,14 @@
+{% load i18n %}
+<tr>
+  <th><label>{% trans "Current size" %}:</label></th>
+  <td style="padding-top: 5px;">{% trans "Width" %} : <span id="plugin-slideshow-{{ object_pk }}-current-width"></span>px {% trans "and" %} {% trans "Height" %} : <span id="plugin-slideshow-{{ object_pk }}-current-height"></span>px.
+    <br />
+    <span class="helptext">
+      {% trans "It is advisable to resize slides with those dimensions to get optimal rendering." %}</span>
+  </td>
+</tr>
+<script type="text/javascript">
+  var container = $("#plugin-slideshow-container-{{ object_pk }}");
+  $("#plugin-slideshow-{{ object_pk }}-current-width").text(container.width());
+  $("#plugin-slideshow-{{ object_pk }}-current-height").text(container.height());
+</script>

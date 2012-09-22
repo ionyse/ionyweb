@@ -1,0 +1,21 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Add a domain" %}{% endblock %}
+{% block action_close %}admin.settings.domains.cancel_form();{% endblock %}
+{% block content %}
+
+<div style="float: left; width: 70%; display: inline-block; vertical-align: middle;">
+	<form style="padding-left: 30px;" id="domain_form">
+		<p>{{ form.render_form }}</p>
+		<p><input class="btn btn-primary" type="submit" value="Sauvegarder" onClick="{% if edit %}admin.settings.domains.edit({{ form.instance.pk }}); return false;{% else %}admin.settings.domains.create(); return false;{% endif %}" /> <input class="btn" type="button" value="Annuler" onClick="admin.settings.domains.cancel_form();" /></p>
+	</form>
+</div>
+
+<div style="float: left; width: 30%; display: inline-block; vertical-align: middle;">
+	<p>{% trans "You can add a domain's name. Then set the DNS CNAME field as :" %}</p>
+	<p style="text-align: center; font-weight: bold;">{{ DOMAIN_DNS_CNAME }}.</p>
+</div>
+
+<div style="clear: both;"></div>
+{% endblock %}

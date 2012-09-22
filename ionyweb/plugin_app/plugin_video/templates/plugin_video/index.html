@@ -1,0 +1,13 @@
+<div class="iw-plugin-video">
+
+  {% include 'themes/plugin_app_title.html' %}
+
+  {% if object.description %}
+  <p>{{ object.description }}</p>
+  {% endif %}
+
+  <div style="max-width:100%; {% if object.width %}width:{{ object.width }}px; {% endif %}height:{{ object.height }}px; margin:auto;">
+	{{ object.viewer }}
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Create a new plugin" %}{% endblock %}
+{% block id_form %}plugin_form_form{% endblock %}
+{% block form-extras %}
+	  <input type="hidden" name="placeholder_id" value="{{ placeholder_id }}" />
+	  <input type="hidden" name="plugin_type" value="{{ plugin_type }}" />
+{% endblock %}
+{% block form-submit-action %}admin.plugins.create();{% endblock %}

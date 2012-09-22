@@ -1,0 +1,26 @@
+{% load plugin_extras i18n %}
+
+{% if is_admin %}
+
+<div class="placeholder" id="{{ ID_PLACEHOLDER }}" style="display: none; clear: both;">
+
+  <div class="wa_placeholder_widget">
+    <p>{% trans "Page's plugins currently not displayed" %}</p>
+    <div style="clear: both;"></div>
+    <div class="wa_plugins_list"></div>
+  </div>
+  <div id="wa_before_plugin_0" style="clear: both;"></div>
+
+  {% for item in rendering_items %}
+    {% if item.is_app %}
+      {% include "layout/placeholder-app.html" %}
+    {% else %}
+      {% include "layout/plugin.html" %}
+    {% endif %}
+  {% endfor %}
+
+  <div style="clear: both;"></div>
+
+</div>
+
+{% endif %}

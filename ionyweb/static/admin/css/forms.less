@@ -1,0 +1,131 @@
+@input_size: 400px;
+
+.bouton_style(){
+
+}
+
+
+#ionyweb_admin, #plugins_listform, #ionyweb_admin_login{
+	input[type=button]{
+		
+	}
+	form{
+		border: none;
+		background: none;
+		margin: 0;
+		padding:0;
+		table{
+			width: 90%;
+			margin: auto;
+			tr{
+				background: none;
+				th{
+					background: none;
+					border: none;
+					width: 30%;
+					padding: 4px 0px 8px 0px;
+					text-align: right;
+					vertical-align: top;
+					label{
+						color: @text_color;
+						display: block;
+						padding-top: 3px;
+						margin-right: 5px;
+					}
+				}
+				td{
+					background: none;
+					padding: 0px 0px 8px 0px;
+				}
+			}
+		}
+		p{
+			border: none;
+		}
+		.helptext{
+			font-style: italic;
+			font-size: 0.9em;
+			padding: 2px 0px 0px 4px;
+		}
+		label{
+			padding-top: 6px;
+			color: @text_color;
+		}
+		
+		
+		input[type=checkbox] + br{
+			display: none;
+		} 
+		textarea{
+			
+		}
+		input[type=text], input[type=email], input[type=password], textarea, select{
+			width: 70%;
+		}
+		.fb_show{
+			float: right;
+			display: block;
+			 background: url('/_static/grappelli/img/icons/icon-fb-show.png') white;
+			 height: 23px;
+			 margin-top: 5px;
+			 width: 23px;
+			 .border-radius();
+		}
+		ul.errorlist{
+			li{
+				color: red;
+				list-style-type: none;
+			}
+			
+		}
+		ul.errorlist + input, ul.errorlist + select, ul.errorlist + textarea{
+			border: solid 1px red;
+		}
+		
+		/* Style TinyMCE */
+		.mceToolbar{
+			padding: 0;
+			margin: 0;
+			margin: auto;
+			td{
+				padding-left: 2px;
+			}
+			.mceFirst, .mceLast{
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+		}
+		.mceLayout {
+			border: none;
+			table{
+				width: auto;
+			}
+			.mceListBoxSelected{
+				z-index: 1000;
+			}
+		}
+		.mceButton{
+			border: none;
+			background: #F4F4F4;
+			.border-radius(4px);
+		}
+		.mceSplitButton, .mceOpen{
+			
+			background-color: #F4F4F4;
+		}
+		.mceText{
+			color: black;
+			background: white;
+		}
+		
+	}
+}
+
+#ionyweb_admin, #page_list, #ionyweb_admin_login {
+    text-align: left;
+    ul{
+        list-style-type: disc;
+		margin-left: 30px;	
+    }
+}

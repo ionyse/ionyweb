@@ -1,0 +1,52 @@
+#events-nav {
+	margin-bottom: 30px;
+}
+
+#events-nav a.selected {
+	font-style: italic;
+}
+
+.event {
+    margin-bottom: 20px;
+    background: url('../img/event_background.png') repeat-y;
+}
+
+.event .event_left {
+    float: left;
+    width: 400px;
+    padding: 5px;
+}
+
+.event .event_left img {
+    display: block;
+    margin: 10px auto;
+}
+
+.event .event_left ul {
+    padding: 0 10px;
+    list-style: none;
+}
+
+.event .event_left li {
+    font-size: 0.9em;
+}
+
+.event .event_left p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    text-align: left;
+}
+
+.event .event_right {
+    margin-left: 240px;
+    padding: 10px 20px;
+}
+
+h3.month {
+    display: inline;
+}
+
+a.selected {
+    font-weight: bold;
+}

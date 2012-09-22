@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 14:37+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5 models.py:113
+msgid "Slideshow"
+msgstr "Carousel d'image"
+
+#: __init__.py:8
+msgid "Slidehow of pictures"
+msgstr "Carousel d'images avec animation"
+
+#: __init__.py:9
+msgid ""
+"Easily add an animate slideshow of pictures on your page. Select a list of "
+"picture from your files manager, define correct order, and configure the "
+"animation as you want it to be. "
+msgstr ""
+"Créez facilement un carousel d'image animé. Sélectionnez une liste d'images "
+"issuent du gestionnaire de fichier, définissez en l'ordre, et configurez l'animation "
+"dans ses moindres détails."
+
+#: models.py:11
+msgid "Fade"
+msgstr "Fondu"
+
+#: models.py:12
+msgid "Scroll Left"
+msgstr "Défilé par la gauche"
+
+#: models.py:15
+msgid "Scroll Right"
+msgstr "Défilé par la droite"
+
+#: models.py:26
+msgid "Effect"
+msgstr "Effet"
+
+#: models.py:30
+msgid "Select the transition effect."
+msgstr "Sélectionnez l'effet de transition."
+
+#: models.py:32
+msgid "Speed transition"
+msgstr "Vitesse de transition"
+
+#: models.py:35
+msgid ""
+"The speed option defines the number of milliseconds it will take to "
+"transition from one slide to the next."
+msgstr ""
+"La vitesse de transition définie le nombre de millisecondes que prendra la "
+"transition d'un slide à l'autre."
+
+#: models.py:39
+msgid "Timeout transition"
+msgstr "Temporisation de la transition"
+
+#: models.py:42
+msgid ""
+"The timeout option specifies how many milliseconds will elapse between the "
+"start of each transition."
+msgstr ""
+"La temporisation spécifie combien de millisecondes s'écoulera entre le début "
+"de chaque transition."
+
+#: models.py:46
+msgid "Pause"
+msgstr "Pause"
+
+#: models.py:48
+msgid ""
+"The pause option causes the slideshow to pause when the mouse hovers over "
+"the slide."
+msgstr ""
+"L'option de pause permet de stopper le slideshow lorsque la souris est au-"
+"dessus de l'image."
+
+#: models.py:51
+msgid "Random"
+msgstr "Aléatoire"
+
+#: models.py:53
+msgid ""
+"The random option causes the slides to be shown in random order, rather than "
+"sequential."
+msgstr ""
+"L'option aléatoire permet d'afficher les images dans un ordre quelconque."
+
+#: models.py:56
+msgid "Pager"
+msgstr "Pagination"
+
+#: models.py:58
+msgid "The pager option allow to display a selector item for the slideshow."
+msgstr "L'option de pagination permet d'afficher la pagination des slides."
+
+#: models.py:61
+msgid "Pager thumbs"
+msgstr "Miniatures"
+
+#: models.py:63
+msgid ""
+"The pager thumbs option allow to display thumbnails in the pager selector."
+msgstr ""
+"L'option des miniatures permet d'afficher les miniatures des slides dans la "
+"pagination."
+
+#: models.py:66
+msgid "width"
+msgstr "largeur"
+
+#: models.py:69
+#, python-format
+msgid ""
+"You can set the slideshow width in pixels. By default, the slideshow will "
+"take 100%% of length available. Max width : %(size)s px."
+msgstr ""
+"Vous pouvez spécifier la largeur du carousel en pixels. Par défaut, "
+"il prendra toute la largeur disponible. Largeur maximum : %(size)s px."
+
+#: models.py:74
+msgid "height"
+msgstr "hauteur"
+
+#: models.py:77
+#, python-format
+msgid ""
+"You can set the slideshow height in pixels. The default height is %(size)s "
+"px."
+msgstr ""
+"Vous pouvez spécifier la hauteur du carousel. La hauteur par défaut est de "
+"%(size)s px."
+
+#: models.py:114
+msgid "Slideshows"
+msgstr "Carousels"
+
+#: models.py:118
+msgid "Edit slides"
+msgstr "Gérer les slides"
+
+#: models.py:127
+msgid "Image"
+msgstr "Image"
+
+#: models.py:130
+msgid "Order"
+msgstr "Ordre"
+
+#: models.py:141
+msgid "Thumbnail"
+msgstr "Miniature"
+
+#: models.py:144
+msgid "Slide"
+msgstr "Slide"
+
+#: models.py:145
+msgid "Slides"
+msgstr "Slides"
+
+#: templates/plugin_slideshow/current_size_admin.html:3
+msgid "Current size"
+msgstr "Taille actuelle"
+
+#: templates/plugin_slideshow/current_size_admin.html:4
+msgid "Width"
+msgstr "Largeur"
+
+#: templates/plugin_slideshow/current_size_admin.html:4
+msgid "and"
+msgstr "et"
+
+#: templates/plugin_slideshow/current_size_admin.html:4
+msgid "Height"
+msgstr "Hauteur"
+
+#: templates/plugin_slideshow/current_size_admin.html:7
+msgid ""
+"It is advisable to resize slides with those dimensions to get optimal "
+"rendering."
+msgstr ""
+"Il est conseillé de redimensionner les images avec ces dimensions pour "
+"obtenir un rendu optimal."
+
+#~ msgid "Scroll Up"
+#~ msgstr "Défilé par le haut"
+
+#~ msgid "Scroll Down"
+#~ msgstr "Défilé par le bas"

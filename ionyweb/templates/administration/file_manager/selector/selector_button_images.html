@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<div class="selector_send">
+	<div class="btn-group">
+    <button class="btn" onClick="admin.file_manager.selector.send('{{ absolute_url }}'); return false;">{% trans "Select" %}</button>
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+    	<span class="caret"></span>
+    </button>
+	    <ul class="dropdown-menu">
+	    	{% for name, verbose in versions %}
+		    	<li>
+		    		<a onClick="admin.file_manager.file.get_thumbnail('{{ absolute_url }}', '{{ name }}'); return false;">{{ verbose }}</a>
+		    	</li>
+	    	{% endfor %}
+	    </ul>
+    </div>
+	
+	<p>{% trans "Consider using thumbnails for your images to make your pages load faster." %}</p>
+</div>

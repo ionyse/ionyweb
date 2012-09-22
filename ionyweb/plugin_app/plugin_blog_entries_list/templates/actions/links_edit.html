@@ -1,0 +1,19 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "EntiresList modification" %}{% endblock %}
+
+{% block id_form %}plugin_form{% endblock %}
+
+{% block form-content %}
+{% for form in formset %}
+<tr><th><strong>Lien #{{ forloop.counter }}</strong></th><td></td></tr>
+{{ form.as_table }}
+{% endfor %}
+{% endblock %}
+
+
+{% block form-extras %}{{ formset.management_form }}{% endblock %}
+
+
+{% block form-submit-action %}admin.plugin_blog_entries.save_entries_order('{{ relation_id }}');{% endblock %}

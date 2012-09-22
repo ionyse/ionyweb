@@ -1,0 +1,60 @@
+{% extends 'administration/base_admin.html' %}
+{% load api_actions_admin_tags i18n %}
+{% block title %}
+{% if add %}
+{% blocktrans with verbose_name as name %}Add {{ name }}{% endblocktrans %}
+{% else %}
+{% blocktrans with verbose_name as name %}Edit {{ name }}{% endblocktrans %}
+{% endif %}
+{% endblock %}
+{% block action_close %}action_admin.cancel_form();{% endblock %}
+
+
+{% block content %}
+<div id="content-main">
+<form {% if form.is_multipart %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ module_name }}_form">{% csrf_token %}{% block form_top %}{% endblock %}
+{{ form.media }}
+  <table>
+      {{ form.render_form|safe }}
+      <tr>
+	<td></td>
+	<td>
+	  <input type="submit" class="btn btn-primary" value="{% trans "Save" %}" onClick="action_admin.save(); return false;"/>
+	  <input type="button" class="btn" value="{% trans "Cancel" %}" onClick="action_admin.cancel_form();"/>
+	</td>
+      </tr>
+    </table>
+
+<script type="text/javascript">  
+  $('#{{ module_name }}_form input:not([type=hidden])').first().focus();
+
+  action_admin = {
+      'save': function () {
+          url = '{% url_add request.path %}';
+          list = admin.serialize('#{{ module_name }}_form');
+
+          admin.{% if add %}PUT{% else %}POST{% endif %}({
+             url: url,
+             data: list,
+             statusCode: {
+                 200: function(json) {
+                     if(json.msg){
+                         admin.messages.alert(json.msg);
+                     }
+                     if(json.placeholder_slug && json.html){
+					     admin.pages.refresh_placeholder(json.placeholder_slug, json.html);
+					     admin.edit.refresh();
+                     }
+                     action_admin.cancel_form();
+                 }
+             }
+          });
+      },
+      cancel_form: function () {
+          admin.GET({url: '{% url_list request.path %}'});
+      }
+  };
+</script>
+
+</form></div>
+{% endblock %}

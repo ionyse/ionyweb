@@ -1,0 +1,10 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Create a new page" %}{% endblock %}
+{% block action_close %}admin.pages.cancel_form();{% endblock %}
+
+{% block id_form %}page_form_form{% endblock %}
+
+{% block form-submit-action %}admin.pages.create();{% endblock %}
+{% block form-cancel-action %}admin.pages.cancel_edit_form();{% endblock %}

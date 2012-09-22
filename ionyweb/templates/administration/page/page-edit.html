@@ -1,0 +1,9 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Edit a page" %}{% endblock %}
+{% block action_close %}admin.pages.cancel_edit_form();{% endblock %}
+{% block id_form %}page_form_form{% endblock %}
+
+{% block form-submit-action %}admin.pages.edit({{ page.id }});{% endblock %}
+{% block form-cancel-action %}admin.pages.cancel_edit_form();{% endblock %}

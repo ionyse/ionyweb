@@ -1,0 +1,46 @@
+{% load mptt_tags i18n %}
+
+
+<div id="wa_file_manager">
+	{% if selector %}
+	<div class="fermer_panel" onClick="admin.file_manager.selector.close();">{% trans "Close" %}</div>
+	{% else %}
+	<div class="fermer_panel" onClick="admin.file_manager.toggle();">{% trans "Close" %}</div>
+	{% endif %}
+
+	<div id="wa_file_manager_list">
+		<h3>{% trans "File manager" %}</h3>
+		<ul class="directory_list">
+		{{ directory_list }}
+		</ul>
+		<div class="quota">
+			{{ quota }}
+		</div>
+	</div>
+	
+	<div id="wa_file_manager_content">
+		<div class="toolbar">
+			<div class="add">
+				<p><a onClick="admin.file_manager.upload.get();"><i class="icon-file icon-white"></i> {% trans "Add files" %}</a></p>
+				<p><a onClick="admin.file_manager.directory.put();"><i class="icon-folder-open icon-white"></i> {% trans "Add a directory" %}</a></p>
+			</div>
+			<div class="selector">
+				<!--<input type="text" value="{% trans 'Search' %}" />-->
+				<p style="float: left; margin-right: 8px;">{% trans "View : " %} </p>
+			    <div class="btn-group" style="float: left;">
+				    <button class="btn" onClick="admin.file_manager.display_mode('L')"><i class="icon-th-list"></i></button>
+				    <button class="btn" onClick="admin.file_manager.display_mode('I')"><i class="icon-th-large"></i></button>
+			    </div>
+			</div>
+		</div>
+		
+		<div class="file_list">
+			{{ files_list }}
+		</div>
+	</div>
+	
+	<div id="wa_file_manager_right">
+		
+	</div>
+</div>
+<script src="{{ STATIC_URL}}admin/js/fileuploader.js"></script>

@@ -1,0 +1,29 @@
+<div class="iw-plugin-image">
+  
+  {% with plugin as object %}
+  {% include 'themes/plugin_app_title.html' %}
+  {% endwith %}
+
+  {% if plugin.lightbox %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      ionyweb.lightbox.init({'selector': '#iw-plugin-image-{{ plugin.id }}'});
+    });
+  </script>
+  <a  id="iw-plugin-image-{{ plugin.id }}"
+	  class="lightbox" href="{{ plugin.original_file }}"
+	  {% if plugin.description %}title="{{ image.description }}"{% endif %}>
+  {% endif %}
+
+  <img class="{% if plugin.alignment == 'R' %}pull-right{% else %}{% if plugin.alignment == 'L' %}pull-left{% else %}{% if plugin.alignment == 'C' %}center{% endif %}{% endif %}{% endif %}"
+	   src="{{ image }}"
+	   alt="{% firstof plugin.description plugin.file_name %}"
+	   {% if plugin.description %} title="{{ plugin.description }}" {% endif %}
+	   style="{% if plugin.width or plugin.height %}{% if plugin.width %}width: {{ plugin.width }}px;{% endif %}{% if plugin.height %}height: {{ plugin.height }}px;{% endif %}{% else %}width: 100%;{% endif %}" />
+
+  {% if plugin.lightbox %}
+  </a>
+  {% endif %}
+
+  <div style="clear: both;"></div>
+</div>

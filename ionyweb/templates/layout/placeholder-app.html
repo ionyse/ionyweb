@@ -1,0 +1,36 @@
+{% load i18n %}
+
+<div class="placeholder-container{# style-{{ item.verbose_name|slugify }}#}"
+     id="{{ item.html_id }}"
+     {% if is_admin %}data-placeholder-slug="{{ item.placeholder_slug }}"{% endif %}>
+
+
+  {# DISPLAY IONYWEB ADMIN #}
+  {% if is_admin %}
+  <div class="wa_plugin_widget">
+    <p>{{ item.verbose_name }}&nbsp;:&nbsp;
+      <a href="" onClick="admin.apps.edit(); return false;">
+		<i class="icon-edit icon-white" rel="tooltip" data-title="{% trans 'Edit' %}" data-placement="bottom"></i>
+      </a>&nbsp;
+      <span class="sortable_click">
+	  <a href="" onClick="return false;">
+	    <i class="icon-move icon-white" rel="tooltip" data-title="{% trans 'Move' %}" data-placement="bottom"></i>
+	  </a>
+      </span>
+    </p>
+    {% if item.actions_list %}
+    <ul>{% for action in item.actions_list %}<li>{{ action|safe }}</li>{% endfor %}</ul>
+    {% endif %}
+  </div>
+  <div style="clear: both;"></div>
+
+  {% endif %}
+  {# END DISPLAY IONYWEB ADMIN #}
+
+
+  {# DISPLAY APP #}
+  <div class="app-container">{{ item.html }}</div>
+  {# END DISPLAY APP #}
+
+
+</div>

@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<h3>{% trans "Description" %}</h3>
+<div class="description">
+	<p>{{ file.get_thumbnail|safe }}</p>
+	<p>{% trans "Size " %} : {{ file.file.size|filesizeformat }}</p>
+	
+	{% if selector %}
+		{{ selector }}	
+	{% endif %}
+	<!--
+	<ul class="action">
+		<li><a href="{{ file.file.url }}">{% trans "See" %}</a></li>
+		<li><a onClick="admin.file_manager.file.remove({{ file.id }})">{% trans "Delete" %}</a></li>
+	</ul>
+	-->
+</div>

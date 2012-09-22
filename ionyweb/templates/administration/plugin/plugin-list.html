@@ -1,0 +1,44 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Add a plugin" %}{% endblock %}
+{% block action_close %}admin.pages.cancel_form();{% endblock %}
+
+{% block content %}
+<div id="plugins_list" class="wa_arborescence">
+
+	<div id="plugins_categories">
+		<h6>{% trans "Category list plugin" %}</h6>
+		<ul>
+			{% for category in list_categories %}
+			<li class="{{ category.slug}}" onClick="admin.plugins.list_by_category('{{ category.slug }}')"><img src="{{ STATIC_URL }}{{ category.icon }}" alt="" />{{ category.verbose_name }} <b class="arrow_right"></b></li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div id="plugins_categorieslist">
+		
+	</div>
+	
+	<div id="plugins_description">
+		
+	</div>
+</div>
+
+{% comment %}
+<div id="plugins_listform">
+	<form><p style="text-align: center;">
+		<select name="">
+			<option value="0">----------</option>
+			{% for p in list_plugin %}
+			<option value="{{ p.id }}">{{ p.name }}</option>
+			{% endfor %}
+		</select></p>
+		<p style="text-align: center;">
+		<input type="button" value="{% trans "Add" %}" onClick='admin.plugins.add($("#plugins_listform select:first-child").val());' />
+		<input type="button" value="{% trans "Cancel" %}" onClick='$("#plugins_listform").parent().hide("slow", function(){ $("#plugins_listform").parent().html("");});' />
+	</p></form>
+</div>
+{% endcomment %}
+
+{% endblock %}

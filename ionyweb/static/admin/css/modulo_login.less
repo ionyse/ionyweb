@@ -1,0 +1,82 @@
+@import "css_fonctions.less";
+
+@ionyweb_color: #d5a96a;
+@ionyweb_color_dark: #ef7746;
+
+
+@background: rgba(120, 120, 120, 0.95); /* background of the admin section : also #444 or #999*/
+@background_red: #F00; /* background of the admin section : also #444 or #999*/
+
+/* Shadow */
+@background_action: @background;
+@shadow: @background;
+
+
+@background_widget: rgba(220, 220, 220, 0.3); /* background of the admin section : also #444 or #999*/
+@background_hover: rgba(220, 220, 220, 0.1); /* background of the admin section : also #444 or #999*/
+@zindex: 1000;
+@select_height: 48px;
+/* Gradients are mainly use in admin_toolbar */
+@background_gradient_top: #777;
+@background_gradient_bottom: #444;
+
+/* Text-color of the admin_toolbar */
+@text_color: #FFF;
+@text_color_hover: #999;
+
+@background_focus: #F4F4F4;
+
+#ionyweb_admin_login{
+	font-family: Verdana;
+	position: fixed;
+	display: none;
+	width: 500px;
+	height: 300px;
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -250px;
+	.gradient-background( @background_gradient_bottom, @background_gradient_bottom - #222);
+	.border-radius(18px);
+	.shadow-box(black, 0px, 0px, 10px, 2px);
+	z-index: 99999;
+	div.logo{
+		h2{
+			float: left;
+			margin: 0;
+			position: absolute;
+			left: 10px;
+			font-family: "PacificoRegular";
+			color: white;
+			.text-shadow(#000, 4px, 1px, 2px);
+			.gradient-background(@ionyweb_color, @ionyweb_color_dark);
+			padding: 0px 20px 0px 20px;
+			margin-left: 10px;
+			font-size: 3.2em;
+			font-style: normal;
+			.border-radius-bottom(10px);
+			text-transform: none !important;
+			font-weight: normal !important;
+			a{
+				color: white;
+				&:hover{
+				 	color: white;	
+				}
+			}
+		}
+		padding: 0;
+	}
+	form{
+		padding-top: 120px !important;
+		font-size: 14px;
+		td{
+			border: none;
+		}
+		#ionyweb_admin_login_error {
+			color: red;
+			text-align: center;
+		}
+	}
+}
+
+@import "forms.less";

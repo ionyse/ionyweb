@@ -1,0 +1,19 @@
+{% load i18n %}
+<html>
+  <head>
+	<title>{% trans 'Login in progress' %}</title>
+	{% if CROSSDOMAIN_AUTH_URL and not user.is_authenticated %}
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookies.js"></script>
+	<script type="text/javascript" src="{{ CROSSDOMAIN_AUTH_URL }}?v={% now "f" %}"></script>
+	{% else %}
+	<script type="text/javascript">
+	  window.location.href = '{{ request.website.get_absolute_url }}';
+	</script>
+	{% endif %}
+  </head>
+  <body>
+	<h1>{% trans 'Login in progress' %}</h1>
+	<p><a href="{{ request.website.get_absolute_url }}">{% trans 'Continue to domain' %}</a></p>
+  </body>
+</html>

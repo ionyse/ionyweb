@@ -1,0 +1,5 @@
+{% load mptt_tags %}
+{% for category,structure in object.category.get_ancestors|tree_info %}
+<a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+{% if structure.new_level %}>{% endif %}	
+{% endfor %}<a href="{{ object.category.get_absolute_url }}">{{ object.category.name }}</a>

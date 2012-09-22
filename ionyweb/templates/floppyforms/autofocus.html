@@ -1,0 +1,9 @@
+{% include "floppyforms/input.html" %}
+
+<script type="text/javascript">
+  window.onload = function() {
+    if (!("autofocus" in document.createElement("input"))) {
+      document.getElementById("{{ attrs.id }}").focus();
+    }
+  };
+</script>

@@ -1,0 +1,32 @@
+{% load slideshow_tags %}
+
+<div class="iw-plugin-slideshow">
+
+  {% include 'themes/plugin_app_title.html' %}
+
+  {% if slides_list %}
+  <script type="text/javascript">
+	$(document).ready(function() {
+	  ionyweb.slideshow.init('plugin-slideshow-{{ object.pk }}', {
+        'fx': '{{ object.fx|slideshow_fx }}',
+        {% if object.speed %}speed: {{ object.speed }},{% endif %}
+        {% if object.timeout %}timeout: {{ object.timeout }},{% endif %}
+        {% if object.pause %}pause: 1,{% endif %}
+        {% if object.random %}random: 1,{% endif %}
+        {% if object.pager %}pager: 'plugin-slideshow-{{ object.pk }}-nav',{% endif %}
+        {% if object.pager_thumbs %}thumb: true,{% endif %}
+	  });
+	});
+  </script>
+  {% endif %}
+
+  <div id="plugin-slideshow-container-{{ object.pk }}" class="plugin-slideshow"
+       style="{% if object.width %}width: {{ object.width }}px; margin: auto;{% endif %} height: {{ object.height }}px; overflow: hidden; position:relative;">
+	<div id="plugin-slideshow-{{ object.pk }}">
+      {% for slide in slides_list %}
+      <img src="{{ slide.image.url }}" style="{% if object.width %}min-width: {{ object.width }}px;{% else %}width: 100%;{% endif %} min-height: {{ object.height }}px; margin: 0px; padding: 0px;" />
+      {% endfor %}
+	</div>
+  </div>
+
+</div>

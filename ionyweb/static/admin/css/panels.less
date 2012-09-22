@@ -1,0 +1,605 @@
+/*
+ * This file manage CSS of ionyweb's panels.
+ * 
+ * There is three kind of panels :
+ * 		- wa_panel : use to display form and content
+ * 		- wa_placeholder_widget : On the top of a placeholder, small menu with links like edit position of placeholder
+ */
+#wa_bg_panels {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.4;
+    z-index: 1000;
+}
+
+.wa_panel{
+	font-family: Verdana;
+	z-index: @zindex;
+	display: none;
+	font-size: 12px;
+	.shadow-box(black, 0px, 0px, 10px, 2px);
+	.gradient-background( @background_gradient_bottom, @background_gradient_bottom - #222);
+	h3{
+		color: @text_color;
+		width: 100%;
+		margin: 0;
+	}
+	table{
+		background: none;
+	}
+	form{
+		background: none;
+		p{
+			
+		}
+	}
+	.content{
+		color: @text_color;
+		height: 100%;
+	}
+}
+
+.widget{
+	position: relative;
+	.wa_plugin_widget{
+		position: absolute;
+		right: 0px;
+	}
+}
+
+.wa_plugin_widget, .wa_placeholder_widget, .wa_actions_object_widget,
+{
+	font-family: Verdana;
+	display: none;
+	font-size: 12px;
+	text-transform: none;
+	font-style: normal;
+	text-align: right;
+	position: static;
+	letter-spacing: 0px;
+	&:hover{
+		position: relative;
+	}
+	h3{
+	   font-size: 16px;
+	   text-transform: capitalize !important;
+	}
+	p{
+		padding: 0px 10px !important;
+		margin: 2px 0px !important;
+		font-size: inherit !important;
+		line-height: inherit !important;
+	}
+	a{
+	    display: inline !important;
+	    text-decoration: none;
+		text-transform: none;
+		font-style: normal;
+		color: #DDD !important;
+		padding-left: 2px;
+		border: none !important;
+		&:hover{
+			color: white;
+			background: none !important;
+			cursor: pointer !important;
+		}
+		img {
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+		
+	}
+	.sortable_click{
+		a{
+			cursor: move;
+		}
+	}
+	color: white;
+	background: @background_widget;
+	ul{
+		clear: both;
+		z-index: 900;
+		display: none;
+		right: 0px;
+		position: absolute;
+		background: @background_widget;
+		margin: 0 10px 0 10px !important;
+		padding: 0px 8px 5px 8px;
+		.border-radius-bottom(10px);
+		li{
+			list-style: none !important;
+			margin: 0 !important;
+			float: right !important;
+			padding: 5px 5px 0px 6px !important;
+			border: none !important;
+			background: none !important;
+			font-weight: normal !important;
+			a{
+				padding: 2px 0 0 5px !important;
+			}
+		}
+		li.others{
+			text-align: left;
+			font-size: 0.7em;
+			margin-top: 5px !important;
+						
+		}
+	}
+	&:hover{
+		ul{
+			display: block;
+		}
+	}
+	img {
+		background: none;
+	}
+}
+
+.wa_placeholder_widget{
+	width: 100%;
+	margin: 0 0 0 0;
+	text-align: left;
+	padding: 5px 0px 5px 20px;
+	p{
+	    a{
+		padding-left: 10px;
+	    }
+	}
+	.wa_plugins_list{
+		display: none;
+	}
+	img{
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+	}
+}
+
+.wa_plugin_widget, .wa_actions_object_widget{
+	float: right;
+	.border-radius(10px);
+	padding: 1px 8px;
+	z-index: @zindex - 1;
+	img{
+		vertical-align: middle;
+		padding-bottom: 1px;
+	}
+}
+
+.wa_actions_object_widget {
+    position: static !important;
+    float: right !important;
+}
+
+.wa_placeholder_structure{
+	display: none;
+	font-size: 12px;
+	font-family: Verdana;
+	.border-radius(8px);
+	width: 75%;
+	background: @background_widget;
+	margin: 0 0 10px 0;
+	padding: 5px 15px;
+	letter-spacing: 0px;
+	p{
+		color: white !important;
+		font-weight: bold !important;
+		float: left;
+		text-transform: uppercase;
+		padding: 0!important;
+		margin: 0 !important;
+		font-size: inherit !important;
+		line-height: inherit !important;
+	}
+	a{
+		text-decoration: none;
+		color: @text_color !important;
+		img {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+	}
+	img{
+		background: none;
+		vertical-align: middle;
+		opacity: 0.8;
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		float: right;
+		text-align: right;
+		padding: 0;
+		margin: 0 !important;
+		list-style: none;
+		li{
+			float: left;
+			list-style-type: none !important;
+			list-style-image: none !important;
+			margin: 0 20px 0 0 !important;
+			padding: 0 !important;
+			a{
+				color: white;
+			}
+		}
+	}
+}
+
+.wa_placeholder{
+	.background-rayure();
+	padding: 0px 0;
+	margin: 0 0 20px 0;
+	min-height: 80px;
+	/*border-right: solid 1px @background_widget;*/
+	height: auto;
+	.wa_placeholder_widget, .wa_plugin_widget{
+		color: white;
+		display: block;
+		background: @background_widget;
+		a{
+			color: #DDD;
+			&:hover{
+				color: white;
+			}
+		}
+	}
+	.wa_placeholder_widget{
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 5px 0;
+		.wa_plugins_list{
+			display: none;
+		}
+	}
+	.wa_plugin_widget{
+		margin: 10px 0px 10px 0px;
+	}
+	.ui-state-highlight{
+		border: dashed 2px @background_widget;
+		.border-radius(10px);
+		
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.placeholder-container:hover{
+		background: @background_hover;
+	}
+	form{
+		background: none;
+		color: black;
+		margin: 0;
+		padding: 0;
+		border: none;
+		p{
+			border: none;
+		}
+		select{
+			background: default;
+			border: default;
+			color: black;
+		}
+		input[type='button']{
+			background: none;
+			color: black;
+		}
+	}
+}
+
+#default-placeholder, #clipboard-placeholder {
+    width: 100%;
+    clear: both;
+	.background-rayure();
+	ul{
+		li{
+			color: #888;
+		}
+	}
+    .placeholder-container{
+        max-width: 200px;
+		max-height: 200px;
+		overflow: hidden;
+		float: left;
+		border: dashed 1px @background_red;
+		.border-radius(15px);
+    }
+    .wa_placeholder_widget, .wa_plugin_widget{
+    	background: @background_red;
+    }
+}
+
+#default-placeholder{
+	margin-top: 20px;
+	.wa_placeholder_widget{
+		li{
+			color: white;
+		}
+	}
+}
+
+#clipboard-placeholder {
+    display: block;
+    position: fixed;
+    border: none;
+    background: none;
+    top: 75px;
+    left: -250px;
+    bottom: 75px;
+    z-index: 950;
+    width: 250px;
+    background: @background_widget !important;
+    .wa_placeholder_widget{
+    	width: 180px;
+    	height: 24px;
+    	font-size: 1.4em;
+    	background: @background_widget !important;
+    	position: absolute;
+    	.rotate(270deg);
+    	padding-left: 20px;
+    	top: 140px;
+    	left: 167px;
+    	cursor: pointer;
+	    h3{
+	    	color: @text_color;
+	    	margin: 0;
+	    	padding: 0;
+	    }
+    }
+}
+
+/* This is a list of basic CSS for all panel like title, close button, padding, ... */
+#wa_panel_bottom, 
+#wa_panel_bottom_large, 
+#wa_panel_center, 
+#wa_panel_left, 
+#wa_panel_right, 
+#wa_panel_full, 
+#wa_panel_menu,  
+#wa_panel_loading, 
+#wa_panel_right_colomn, 
+#wa_panel_left_colomn{
+	header.title{
+		padding-top: 0px;
+		padding-bottom: 15px;
+		margin-bottom: 4px;
+		height: 26px;
+		border-bottom: solid 1px #666;
+		h3{
+			text-align: left;
+			padding-left: 20px;
+			font-size: 1.2em;
+			padding-top: 8px;
+			text-transform: uppercase;
+		}
+		div.fermer_panel{
+			position: absolute;
+			top: -8px;
+			right: -8px;
+			cursor: pointer;
+			border: solid 2px white;
+			width: 18px;
+			height: 18px;
+			.border-radius(16px);
+			background: url('icons-white/glyphicons_207_remove_2.png') no-repeat black;
+			background-position: center center;
+			background-size: 8px;
+			.shadow-box(black, 0px, 0px, 10px, 2px);
+		}
+	}
+	section{
+		position: absolute;
+		top: 42px;
+		bottom: 0px;
+		left: 0;
+		right: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		padding: 15px 10px 0px 10px;
+	}
+	footer{
+		
+	}
+	div#object_list{
+		ul.object-tools{
+			float: left;
+			margin: 10px 25px 10px 25px;
+			list-style: none;
+		}
+		table{
+			clear: both;
+			width: 95%;
+			margin: auto;
+			tr{
+				th{
+					padding: 4px 0px;
+					text-align: center;
+				}
+				th.actions-buttons{
+					width: 10%;
+				}
+				th:first-child,	td:first-child{
+					padding-left: 10px;
+				}
+				td{
+					vertical-align: middle;
+					&.action{
+						margin: 0px 5px;
+					}
+				}
+				&.row1{
+					background: @background_widget;	
+				}
+				&.row2{
+					background: @background_widget - #444;
+				}
+				&.selected {
+					background: @ionyweb_color_dark;					
+				}
+			}
+		}
+	}
+}
+
+#wa_panel_bottom_large{
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	height: 350px;
+	.bottom_large_left{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 500px;
+		border-right: solid 1px #999;
+	}
+	.bottom_large_right{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 500px;
+		right: 0;
+
+	}
+}
+
+#wa_panel_bottom{
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	height: 200px;
+	
+	section{
+		top: 10px;
+		bottom: 0;
+	}
+	
+	div.texte{
+		float: left;
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+		top: 34px;
+		width: 200px;
+		padding: 4px 10px;
+		text-align: left;
+	}
+	div.liste{
+		float: right;
+		position: absolute;
+		left: 260px;
+		right: 0px;
+		bottom: 0px;
+		top: 34px;
+		overflow: auto;
+		div{
+			float: left;
+			margin: 10px 20px 10px 2px;
+			cursor: pointer;
+			background: white;
+			border: solid 1px #DEDEDE;
+			padding: 5px 5px 2px 5px;
+		}
+	}
+	#layouts_listform{
+		img{
+			height: 80px;
+		}
+	}
+}
+
+#wa_panel_center{
+	position: fixed;
+	width: 800px;
+	top: 65px;
+	bottom: 40px;
+	left: 50%;
+	padding-bottom: 10px;
+	margin-left: -400px;
+}
+
+#wa_panel_left{
+	position: fixed;
+	left: 0px;
+	top: 50px;
+	bottom: 0px;
+	right: 40%;
+}
+
+#wa_panel_right{
+	position: fixed;
+	width: 800px;
+	top: 50px;
+	bottom: 0px;
+	right: 0px;
+}
+
+#wa_panel_full{
+	position: fixed;
+	top: 65px;
+	bottom: 40px;
+	right: 40px;
+	left: 40px;
+}
+
+#wa_panel_menu{
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+}
+
+#wa_panel_loading{
+	position: fixed;
+	width: 300px;
+	top: 200px;
+	right: 0px;
+	left: 50%;
+	margin-left: -150px;
+	z-index: @zindex * 3;
+	opacity: 0.8;
+	font: bold 2.2em "PacificoRegular", Verdana, Arial !important;
+	text-align: center;
+	img{
+		vertical-align: middle;
+		padding: 5px;
+		margin: 10px;
+	}
+}
+
+#wa_panel_right_colomn{
+	position: fixed;
+	width: 300px;
+	top: 65px;
+	padding-bottom: 10px;
+	max-height: 80%;
+	bottom: 20px;
+	right: 20px;	
+}
+
+#wa_panel_left_colomn{
+	position: fixed;
+	width: 300px;
+	top: 65px;
+	padding-bottom: 10px;
+	bottom: 20px;
+	left: 20px;
+}
+
+#wa_panel_file_manager_selector{
+	display: none;
+	position: fixed;
+	top: 65px;
+	bottom: 40px;
+	right: 40px;
+	left: 40px;
+}

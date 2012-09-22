@@ -1,0 +1,22 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Search Engine Optimization" %}{% endblock %}
+{% block action_close %}admin.settings.cancel_form();{% endblock %}
+
+{% block content %}
+
+<div style="float: left; width: 70%; display: inline-block; vertical-align: middle;">
+	<form style="padding-left: 30px;" id="page_referencement_form">
+		<p>{{ form.as_table }}</p>
+		<p><input class="btn btn-primary" type="submit" value="Sauvegarder" onClick="admin.settings.referencement.post(); return false;" /> <input class="btn" type="button" value="Annuler" onClick="admin.settings.cancel_form();" /></p>
+	</form>
+</div>
+
+<div style="float: left; width: 30%; display: inline-block; vertical-align: middle;">
+	<p>{% trans "Key words you put here will present your website. It has to be a list of word, separate by coma, which describe majors domains of your website.<br/>Description will be display in search website (Google) to introduce briefly your site." %}</p>
+	<p>{% trans "You can also describe each page of you website with specified key words and description. They will be display before your website inforamtions, that way referencing will be optimized for each page of you site." %}</p>	
+</div>
+
+<div style="clear: both;"></div>
+{% endblock %}

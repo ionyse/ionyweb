@@ -1,0 +1,30 @@
+{% load plugin_extras i18n %}
+
+
+<div class="placeholder" id="{{ ID_PLACEHOLDER }}">
+  
+  {# DISPLAY IONYWEB ADMIN #}
+  {% if is_admin %}
+  <div class="wa_placeholder_widget">
+    <p>{% trans "Placeholder" %}&nbsp;:&nbsp;
+      <a href="" onClick="admin.plugins.list('{{ ID_PLACEHOLDER }}'); return false;">
+		<i class="icon-plus-sign icon-white" rel="tooltip" data-title="{% trans 'Add plugin' %}" data-placement="bottom"></i>
+      </a>
+    </p>
+    <div style="clear: both;"></div>
+    <div class="wa_plugins_list"></div>
+  </div>
+  {% endif %}
+  {# END DISPLAY IONYWEB ADMIN #}
+
+  {# DISPLAY PLACEHOLDER CONTENT #}
+  {% for item in rendering_items %}
+    {% if item.is_app %}
+      {% include "layout/placeholder-app.html" %}
+    {% else %}
+      {% include "layout/plugin.html" %}
+    {% endif %}
+  {% endfor %}
+  {# END DISPLAY PLACEHOLDER CONTENT #}
+
+</div>

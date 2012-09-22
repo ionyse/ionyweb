@@ -1,0 +1,14 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Website version" %}{% endblock %}
+{% block action_close %}admin.settings.cancel_form();{% endblock %}
+
+{% block content %}
+<div style="font-size: 0.8em;">
+	<p>{% trans "This website is working under 'Modulo' CMS developed by Ionyse companie. It's powered by Python and use Django Framework" %}</p>
+	<p>Python : {{ v_python }}</p>
+	<p>Django : {{ v_django }}</p>
+	<p>IonyWeb : {{ v_ionyweb }}</p>
+</div>
+{% endblock %}

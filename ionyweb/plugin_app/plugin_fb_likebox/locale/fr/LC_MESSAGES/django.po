@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 15:03+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5 models.py:34
+msgid "Facebook Likebox"
+msgstr "Facebook Likebox"
+
+#: __init__.py:8
+msgid "Link your site to your facebook page."
+msgstr "Présentez votre page Facebook sur votre site."
+
+#: __init__.py:9
+msgid ""
+"With this plugin, you can display a facebook box on your site to invite your "
+"visitors to like it. It will also show the number of your fans and some "
+"people already in."
+msgstr ""
+"Affichez sur votre site internet un boite facebook qui y présente votre page et "
+"invitez ainsi vos visiteurs à devenir fan. Sera également visible le nombre de vos fans "
+" ainsi qu'une liste d'utilisateurs déjà inscrits."
+
+#: models.py:10
+msgid "Facebook profile's url"
+msgstr "URL du profil Facebook"
+
+#: models.py:11
+msgid "width"
+msgstr "largeur"
+
+#: models.py:14
+msgid ""
+"You can set the likebox width in pixels.<br/>By default, the likebox will be "
+"312px. Min width : 292px."
+msgstr ""
+"Vous pouvez définir la largeur de la likebox en pixels.<br/>Par défaut, elle "
+"fera 312px, et ne peux faire moins de 292px."
+
+#: models.py:17
+msgid "height"
+msgstr "hauteur"
+
+#: models.py:20
+msgid ""
+"You can set the likebox height in pixels.<br/>By default, the height will be "
+"260px"
+msgstr ""
+"Vous pouvez définir la hauteur de la likebox en pixels.<br/>Par défaut, elle "
+"fera 260px."
+
+#: models.py:22
+msgid "Color's scheme"
+msgstr "Thème de Couleurs"
+
+#: models.py:24
+msgid "Light"
+msgstr "Claire"
+
+#: models.py:25
+msgid "Dark"
+msgstr "Sombre"
+
+#: models.py:26
+msgid "show faces?"
+msgstr "afficher les portaits"
+
+#: models.py:27
+msgid "stream?"
+msgstr "Aperçu du contenu"
+
+#: models.py:28
+msgid "header?"
+msgstr "Entête avec le titre 'Retrouvez-nous sur Facebook'"

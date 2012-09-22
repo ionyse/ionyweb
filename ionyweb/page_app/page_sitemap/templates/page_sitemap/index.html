@@ -1,0 +1,12 @@
+{% load mptt_tags %}
+
+<h3>{{ page.title }}</h3>
+
+<div class="app-sitemap">
+  {% full_tree_for_model page.Page as pages_tree %}
+  {% for node,structure in pages_tree|tree_info %}
+      {% if structure.new_level %}<ul><li>{% else %}</li><li>{% endif %}
+      <a href="{{ node.get_absolute_url }}">{{ node.title }}</a>
+      {% for level in structure.closed_levels %}</li></ul>{% endfor %}
+  {% endfor %}
+</div>

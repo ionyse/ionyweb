@@ -1,0 +1,76 @@
+{% load ionyweb_tags i18n %}
+{# Minimum XHTML template #}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{% firstof LANGUAGE_CODE "en" %}" lang="{% firstof LANGUAGE_CODE "en" %}">
+  <head>
+	{% admin_toolbar_medias %}
+
+	{% block head %}
+	{% block header_title %}
+      		<title>{% title %} - {{ request.website.title }}</title>
+      	{% endblock %}
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+	{% render_favicon %}
+	{% block theme-design-css %}{% endblock %}
+	{% endblock %}
+
+	{% render_meta_kw %}
+	{% render_meta_description %}
+	{% render_medias %}		
+  </head>
+
+  {% block body-tag %}
+  <body>
+  {% endblock %}
+  
+    {% admin_toolbar %}
+  
+    {% block top_body %}{% endblock %}
+
+	{% block body %}
+
+	<!-- Header -->
+	{% block header %}
+	<div id="header">
+	  {% render_layout "header" %}
+	</div>
+	{% endblock %}
+	<!-- End of Header -->
+
+	<!-- Navigation -->
+	{% block navigation %}
+	<div id="navigation">
+	  {% render_navigation %}
+	</div>
+	{% endblock %}
+	<!-- End of Navigation -->
+
+	<!-- Content -->
+	{% block content %}
+	<div id="main-content">
+	  {% block page %}{% render_page %}{% endblock %}
+	</div>
+	{% endblock %}
+	<!-- End of Content -->
+
+	<!-- Footer -->
+	{% block footer %}
+	<div id="footer">
+	  {% render_layout "footer" %}
+	</div>
+	{% endblock %}
+	<!-- End of Footer -->
+				
+	{% render_clipboard %}	
+	{% render_default %}
+
+	{% endblock %}
+
+	{% googleanalytics %}
+	{% block extra-medias %}{% endblock %}
+
+    {% block bottom_body %}{% endblock %}
+
+  </body>
+</html>

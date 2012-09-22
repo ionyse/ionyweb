@@ -1,0 +1,5 @@
+{% load fm_versions %}
+
+<a class="admin_lightbox" rel="group" href="{{ file.url }}" title="{{ file.name }}">
+<img src="{% version file.url 'medium' %}" alt="{{ file.name }}" style="width: 250px; margin: auto; display: block;" />
+</a>

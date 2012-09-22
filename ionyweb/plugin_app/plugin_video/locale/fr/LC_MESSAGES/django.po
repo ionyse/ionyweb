@@ -1,0 +1,111 @@
+# Traduction française du plugin de vidéos
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 14:29+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5
+msgid "Video player"
+msgstr "Lecteur vidéo"
+
+#: __init__.py:8
+msgid "Add a vidéo on your page."
+msgstr "Ajouter une vidéo sur votre page"
+
+#: __init__.py:9
+msgid ""
+"You can display a video on your page simply by copying/pasting the url from "
+"your video hoster. Currently work with Youtube, Vimeo, and Dailymotion."
+msgstr ""
+"Vous pouvez afficher une vidéo sur votre page directement en copiant / collant l'URL du site d'hébergement. Fonctionne actuellement avec Youtube, Vimeo, et Dailymotion."
+
+#: forms.py:56
+#, python-format
+msgid ""
+"The video URL could not be recognised. Make sure it is a %(video_types)s "
+"valid URL."
+msgstr ""
+"L'URL de la vidéo n'est pas reconnue. Assurez-vous qu'il s'agisse bien d'une "
+"vidéo YouTube, Dailymotion, ou Vimeo (actuellement %(video_types)s)."
+
+#: forms.py:66
+#, python-format
+msgid "Max width : %s pixels."
+msgstr "Largeur max : %s pixels."
+
+#: forms.py:73
+#, python-format
+msgid "Max height : %s pixels."
+msgstr "Hauteur max: %s pixels."
+
+#: models.py:26
+msgid "type"
+msgstr "type"
+
+#: models.py:30
+msgid "id"
+msgstr "id"
+
+#: models.py:33
+msgid "description"
+msgstr "description"
+
+#: models.py:37
+msgid "URL"
+msgstr "URL"
+
+#: models.py:40
+msgid ""
+"Copy/Paste the video URL.<br/>You can paste a YouTube, Dailymotion or Vimeo "
+"video URL."
+msgstr ""
+"Copiez/Collez l'URL de la vidéo.<br/>Vous pouvez saisir une URL YouTube, "
+"Dailymotion ou Vimeo."
+
+#: models.py:43
+msgid "width"
+msgstr "largeur"
+
+#: models.py:46
+#, python-format
+msgid ""
+"You can set the video width in pixels.<br/>By default, the video will take "
+"100%% of length available. Max width : %(size)s px."
+msgstr ""
+"Vous pouvez fixer la largeur de la vidéo (en pixels).<br/>Par défaut, la "
+"vidéo prendra toute la largeur disponible. Largeur max : %(size)s px."
+
+#: models.py:51
+msgid "height"
+msgstr "hauteur"
+
+#: models.py:54
+#, python-format
+msgid ""
+"You can set the video height in pixels.<br/>By default, the height will be "
+"80%% of the width if set, or %(size)s px otherwise. Max height: %(max)s px."
+msgstr ""
+"Vous pouvez fixer la hauteur de la vidéo (en pixels).<br/>Par défaut, la "
+"vidéo fera 80%% de la largeur (si celle-ci est définie) ou bien %(size)s px. "
+"Hauteur max : %(max)s px."
+
+#: models.py:85
+msgid "Video"
+msgstr "Vidéo"
+
+#~ msgid "title"
+#~ msgstr "titre"

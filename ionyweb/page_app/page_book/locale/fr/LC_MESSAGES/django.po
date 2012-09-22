@@ -1,0 +1,87 @@
+# Traduction française de l'application Book
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-03 14:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: models.py:11 models.py:52
+msgid "title"
+msgstr "titre"
+
+#: models.py:22
+msgid "Edit categories"
+msgstr "Gérer les catégories"
+
+#: models.py:23
+msgid "Edit clients"
+msgstr "Gérer les clients"
+
+#: models.py:24
+msgid "Edit references"
+msgstr "Gérer les références"
+
+#: models.py:27
+msgid "Book App"
+msgstr "Références App"
+
+#: models.py:31 models.py:42
+msgid "name"
+msgstr "nom"
+
+#: models.py:37
+msgid "Category"
+msgstr "Catégorie"
+
+#: models.py:38
+msgid "Categories"
+msgstr "Catégories"
+
+#: models.py:43
+msgid "logo"
+msgstr "logo"
+
+#: models.py:43
+msgid "client's logo"
+msgstr "logo du client"
+
+#: models.py:44 models.py:59
+msgid "URL"
+msgstr "URL"
+
+#: models.py:54
+msgid "Reference's title"
+msgstr "Titre de la référence"
+
+#: models.py:55
+msgid "description"
+msgstr "description"
+
+#: models.py:58
+msgid "Screenshot"
+msgstr "Capture d'écran"
+
+#: models.py:60
+msgid "Realised at"
+msgstr "Date de réalisation"
+
+#: models.py:67
+msgid "Reference"
+msgstr "Référence"
+
+#: templates/page_book/index.html:8
+msgid "Preview of the realisation"
+msgstr "Aperçu de la réalisation"

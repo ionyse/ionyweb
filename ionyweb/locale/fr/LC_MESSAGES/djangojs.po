@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-04 16:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: static/admin/js/edit.js:122
+msgid "You can't move this item in this placeholder."
+msgstr "Cet élément ne peut pas être déplacé à cet emplacement."
+
+#: static/admin/js/edit.js:130
+msgid "Items can not be moved in the default placeholder !"
+msgstr "Aucun élément ne peut être déplacé dans l'emplacement par défaut !"
+
+#: static/admin/js/edit.js:136
+msgid "The App Page can not be moved in the clipboard !"
+msgstr ""
+"L'application de page ne peut pas être déplacée dans le presse-papier !"
+
+#: static/admin/js/layouts.js:43
+msgid "Do you want save this layout ?"
+msgstr "Voulez-vous enregistrer ce nouveau layout ?"
+
+#: static/admin/js/messages.js:24
+msgid "Yes"
+msgstr "Oui"
+
+#: static/admin/js/messages.js:33
+msgid "No"
+msgstr "Non"
+
+#: static/admin/js/ionyweb_admin.js:39
+msgid "You don't have the right to modify this settings."
+msgstr "Vous n'avez pas les droits de modifier ces paramêtres"
+
+#: static/admin/js/ionyweb_admin.js:48
+msgid "Element not found."
+msgstr "Élément introuvable."
+
+#: static/admin/js/pages.js:158
+msgid ""
+"Deleting the page :<br /><br />Be careful : the app and all plugins will be "
+"deleted.<br/><br />Are you sure you want to delete this page now?<br /><br />"
+msgstr ""
+"Suppression de la page :<br /><br />Attention : l'application et tous les "
+"plugins liés à la page vont également être supprimés.<br/><br />Êtes-vous "
+"sûr de vouloir supprimer la page maintenant ?<br /><br />"
+
+#: static/admin/js/plugins.js:56
+msgid "Are you sure you want to delete this plugin ?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce plugin ?"
+
+#: static/admin/js/settings.js:104
+msgid ""
+"Deleting the domain :<br /><br />Are you sure that you want to delete this "
+"domain name now?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce nom de domaine ?"

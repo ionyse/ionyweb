@@ -1,0 +1,14 @@
+{% load i18n fm_versions %}
+
+{% if object.title %}<h3>{{ object.title }}</h3>{% endif %}
+
+{% for reference in references %}
+	<div class="element_double_colonne">
+		<a href="{{ reference.url }}">
+			<img src="{% version reference.img 'medium' %}" alt="{% trans 'Preview of the realisation' %}" title="{{ reference.description }}" />
+			<h5 class="dark"><span class='date'>[ {{ reference.date|date:"d/m/Y" }} ]</span> {{ reference.title }}</h5>
+		</a>
+	</div>
+	{% if forloop.counter == 2 or forloop.counter == 4 or forloop.counter == 6 %}<div style="clear: both;"></div>{% endif %}
+{% endfor %}
+<div style="clear: both;"></div>

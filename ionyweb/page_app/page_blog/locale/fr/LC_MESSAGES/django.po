@@ -1,0 +1,139 @@
+# Traduction française de l'application de blog.
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-11 11:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: admin.py:28
+msgid "Headline"
+msgstr "Titre et informations principales"
+
+#: admin.py:29
+msgid "Publication"
+msgstr "Publication"
+
+#: admin.py:30
+msgid "Body"
+msgstr "Contenu"
+
+#: feeds.py:28
+#, python-format
+msgid "%(site_name)s: RSS entries"
+msgstr "%(site_name)s: articles RSS"
+
+#: feeds.py:36
+#, python-format
+msgid "RSS feed of recent entries posted on %(site_name)s."
+msgstr "Flux RSS des derniers articles publiés sur %(site_name)s."
+
+#: feeds.py:69
+#, python-format
+msgid "%(site_name)s: RSS %(category)s category"
+msgstr "%(site_name)s: catégorie %(category)s RSS"
+
+#: feeds.py:78
+#, python-format
+msgid ""
+"RSS feed of recent entries posted in the category %(category)s on "
+"%(site_name)s."
+msgstr ""
+"Flux RSS des dernies articles de la catégorie %(category)s publiés sur "
+"%(site_name)s."
+
+#: models.py:17 models.py:108
+msgid "title"
+msgstr "titre"
+
+#: models.py:20
+msgid "Blog App"
+msgstr "Blog App"
+
+#: models.py:23
+msgid "Edit categories"
+msgstr "Editer les catégories"
+
+#: models.py:24
+msgid "Edit entries"
+msgstr "Editer les articles"
+
+#: models.py:63
+msgid "name"
+msgstr "nom"
+
+#: models.py:64 models.py:109
+msgid "slug"
+msgstr "slug"
+
+#: models.py:65 models.py:112
+msgid "creation date"
+msgstr "date de création"
+
+#: models.py:66
+msgid "edit date"
+msgstr "date d'édition"
+
+#: models.py:72 models.py:111
+msgid "category"
+msgstr "catégorie"
+
+#: models.py:73
+msgid "categories"
+msgstr "catégories"
+
+#: models.py:102
+msgid "Offline"
+msgstr "Hors ligne"
+
+#: models.py:103
+msgid "Online"
+msgstr "En ligne"
+
+#: models.py:110
+msgid "author"
+msgstr "auteur"
+
+#: models.py:113
+msgid "modification date"
+msgstr "date de modification"
+
+#: models.py:114
+msgid "publication date"
+msgstr "date de publication"
+
+#: models.py:115
+msgid "status"
+msgstr "statut"
+
+#: models.py:116
+msgid "body"
+msgstr "contenu"
+
+#: models.py:122
+msgid "entry"
+msgstr "article"
+
+#: models.py:123
+msgid "entries"
+msgstr "articles"
+
+#: templates/page_blog/entry_archive.html:2
+msgid "Latest entries"
+msgstr "Derniers articles"
+
+#: templates/page_blog/entry_archive.html:17
+msgid "No entry yet"
+msgstr "Aucun article disponible actuellement"

@@ -1,0 +1,237 @@
+{% load i18n %}
+{% if is_admin %} <div id="wa_bg_panels" style="display:none;"></div>
+<div id="ionyweb_admin">
+	<div id="wa_toolbar">
+		<div id="wa_toolbar_menu">
+			<div class="logo">
+				<h2><a href="{{ page.get_absolute_url }}">{% trans "Ionyweb" %}</a></h2>
+			</div>
+			<ul class="toolbar_menu left_menu">
+				<li class="sub_menu icon_btn my_page">
+					<a>{% trans "My Page" %} <b class="arrow"></b></a>
+					<div class="content bubble_right">
+						<div class="arrow-up"></div>
+						<div class="sous_menu" style="width: 180px;">
+							{#<h6>{{ page.title }}</h6>#}
+							<ul>
+								<li>
+									<a onClick="admin.pages.edit_form({{ page.id }}); return false;">{% trans "Edit" %}</a>
+								</li>
+								<li>
+									<a onClick="admin.pages.remove({{ page.id }}); return false;">{% trans "Delete" %}</a>
+								</li>
+							</ul>
+							<h6>{{ page.verbose_name_app }}</h6>
+							<ul>
+								<li>
+									<a onClick="admin.apps.edit({{ page.id }});">{% trans "Configuration of content" %}</a>
+								</li>
+								{% for action in rendering_context.app.actions_list %}
+								<li>
+									{{ action|safe }}
+								</li>
+								{% endfor %}
+							</ul>
+							
+							<div style="clear:both;"></div>
+						</div>
+					</div>
+				</li>
+				<li class="icon_btn page_manager">
+					<a onClick="admin.pages.list();" >{% trans "Pages manager" %}</a>
+				</li>
+			</ul>
+			<ul class="toolbar_menu right_menu">
+				<li class="selected icon_btn preview">
+					<a onClick="admin.menu.see(); return false;">{% trans "Preview" %}</a>
+				</li>
+				<li class="icon_btn content">
+					<a onClick="admin.edit.active(); return false;">{% trans "Content" %}</a>
+				</li>
+				<li class="sub_menu icon_btn settings">
+					<a>{% trans "Settings" %} <b class="arrow"></b></a>
+					<div class="content bubble_left">
+						<div class="arrow-up"></div>
+						<div class="sous_menu" style="width: 360px;">
+							<div class="colonne_150">
+								<h6>{% trans "Data" %}</h6>
+								<ul>
+									<li>
+										<a onClick="admin.file_manager.toggle();">{% trans "File manager" %}</a>
+									</li>
+									<!--
+									<li class="disabled">
+									<a onClick="">{% trans "User manager" %}</a>
+									</li>
+									-->
+								</ul>
+								<h6>{% trans "Users" %}</h6>
+								<ul>
+									<li>
+										<a onClick="admin.settings.currentUser.get()">{% trans "My account" %}</a>
+									</li>
+								</ul>
+								<!--
+								<h6>{% trans "Documentation" %}</h6>
+								<ul>
+								<li class="disabled">
+								<a onClick="">{% trans "User guide" %}</a>
+								</li>
+								<li class="disabled">
+								<a onClick="">{% trans "Feedback" %}</a>
+								</li>
+								</ul>
+								-->
+							</div>
+							<div class="colonne_150">
+								<h6>{% trans "My website" %}</h6>
+								<ul>
+									{% if is_superuser %} <!--
+									<li class="disabled">
+									<a onClick="">{% trans "Settings" %}</a>
+									</li>
+									-->
+									<li>
+										<a onClick="admin.settings.maintenance.get()">{% trans "Maintenance mode" %}</a>
+									</li>
+									<li>
+										<a onClick="admin.settings.domains.list()">{% trans "Domain names" %}</a>
+									</li>
+									<li>
+										<a onClick="admin.design.styles()">{% trans "Design" %}</a>
+									</li>
+									<li>
+										<a onClick="admin.settings.analytics.get()">{% trans "Statistics" %}</a>
+									</li>
+									{% endif %}
+									<li>
+										<a onClick="admin.settings.referencement.get()">{% trans "Referencing" %}</a>
+									</li>
+									<li>
+										<a onClick="admin.settings.more();">{% trans "Versions" %}</a>
+									</li>
+								</ul>
+								<!--
+								<h6>{% trans "Administration" %}</h6>
+								<ul>
+								<li class="disabled">
+								<a onClick="">{% trans "Settings" %}</a>
+								</li>
+								</ul>
+								-->
+							</div>
+							<div style="clear:both;"></div>
+						</div>
+					</div>
+				</li>
+				<li class="icon_btn logout">
+					<a onClick="admin.logout();"></a>
+				</li>
+			</ul>
+			
+			<div style="clear:both;"></div>
+		
+		</div>
+		<div id="wa_toolbar_action"></div>
+		<div id="wa_toolbar_panel"></div>
+		{# Message de l'administration #} <div id="admin_message"></div>
+		<div id="admin_bubble"></div>
+	</div>
+	<div id="wa_panel_center" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_bottom_large" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_bottom" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_left" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_right" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_full" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_menu" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_right_colomn" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_left_colomn" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_file_manager_selector" class="wa_panel">
+		<div class="content"></div>
+	</div>
+	<div id="wa_panel_loading" class="wa_panel">
+		<div class="content">
+			<p><img src="{{ STATIC_URL }}admin/css/images/ajax-loader.gif" alt="Loading animation" />{% trans "Loading" %}</p>
+		</div>
+	</div>
+</div>
+{{ clipboard }}
+<script type="text/javascript">
+	var uvOptions = {}; (function() {
+		var uv = document.createElement('script');
+		uv.type = 'text/javascript';
+		uv.async = true;
+		uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/qogZUpAVSrQii4LOEnJQ.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(uv, s);
+	})();
+
+</script>
+</div>
+
+{% else %}
+<div id="ionyweb_admin_login">
+	<div class="logo">
+		<h2>{% trans "Ionyweb" %}</h2>
+	</div>
+	<form>
+		<table>
+			<tbody>
+				<tr>
+					<th><label>{% trans "Mail" %}</label></th>
+					<td>
+					<input id="auth_id" type="text" name="email" />
+					</td>
+				</tr>
+				<tr>
+					<th><label>{% trans "Password" %}</label></th>
+					<td>
+					<input type="password" name="password" autofocus="autofocus" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" id="ionyweb_admin_login_error"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+					<input type="submit" value="{% trans "Login" %}" onClick="admin.login.connect(); return false;"/>
+					<input type="button" value="{% trans "Cancel" %}" onClick="admin.login.hide(); return false;" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$(window).hashchange(function() {
+			if(location.hash === "#admin") {
+				admin.login.show();
+				document.getElementById("auth_id").focus();
+			}
+		});
+
+		$(window).hashchange();
+	});
+
+</script>
+{% endif %} 

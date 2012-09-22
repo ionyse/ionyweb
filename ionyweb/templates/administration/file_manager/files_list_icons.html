@@ -1,0 +1,81 @@
+{% load i18n %}
+
+<ul class="list_icons">
+	{% if directory.parent %}
+		<li class="item droppable" id="dir-{{ directory.parent.id }}">
+			<a class='link' onClick="admin.file_manager.directory.get({{ directory.parent.id }});">
+				<div class='icon'>
+					<img src="{{ STATIC_URL}}admin/images/glyphicons/205_white.png" />
+				</div>
+				<div class="name">
+					<p>..</p>
+				</div>	
+			</a>
+			<div style="clear: both;"></div>
+		</li>
+	{% endif %}
+	
+	{% for directory in folders %}
+		
+		<li class="item draggable droppable" id="dir-{{ directory.id }}">
+			<a class='link' onClick="admin.file_manager.directory.get({{ directory.id }});">
+				<div class='icon'>
+					<img src="{{ STATIC_URL}}admin/images/glyphicons/205_white.png" />
+				</div>
+				<div class="name">
+					<p> <span class='label_js'>{{ directory.name }}</span></p>
+				</div>	
+			</a>
+		
+			
+			<div class="action">
+				   <div class="btn-group">
+					    <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown" href="#">
+					    <span class="caret"></span>
+					    </a>
+					    <ul class="dropdown-menu">
+					    	<li>
+					    		<a onClick="admin.file_manager.directory.rename({{ directory.id }})">{% trans "Rename" %}</a>
+					    	</li>
+					    	<li>
+					    		<a onClick="admin.file_manager.directory.remove({{ directory.id }});">{% trans "Delete" %}</a>
+					    	</li>
+					    </ul>
+					</div> 
+			</div>
+			<div style="clear: both;"></div>
+		</li>
+	{% endfor %}
+		
+	{% if files %}
+		{% for file in files %}
+			<li class="item draggable" path="{{ file.get_absolute_url }}" id="{{ file.id }}">
+			<a class='link' onClick="admin.file_manager.file.get({{ file.id }});">
+				<div class='icon'>
+					{{ file.get_thumbnail_icon|safe }}
+				</div>
+				<div class="name">
+					 <p> <span class='label_js'>{{ file.name }}</span></p>
+				</div>
+			
+			</a>
+			<div class="action">
+				   <div class="btn-group">
+					    <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown" href="#">
+					    <span class="caret"></span>
+					    </a>
+					    <ul class="dropdown-menu">
+					    	<li>
+					    		<a onClick="admin.file_manager.file.rename({{ file.id }});">{% trans "Rename" %}</a>
+					    	</li>
+					    	<li>
+					    		<a onClick="admin.file_manager.file.remove({{ file.id }});">{% trans "Delete" %}</a>
+					    	</li>
+					    </ul>
+					</div> 
+			</div>
+			<div style="clear: both;"></div>
+		</li>
+		{% endfor %}		
+	{% endif %}
+</ul>

@@ -1,0 +1,9 @@
+<span class="subdomain">
+  <span class="domain">http://</span>
+  {% include 'floppyforms/input.html' %}
+  <span class="domain">.{{ DOMAIN_NAME }}</span>
+</span>
+
+<script type="text/javascript">
+  $('.subdomain').click(function () { $(this).find('input').focus(); });
+</script>

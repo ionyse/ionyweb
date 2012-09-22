@@ -1,0 +1,7 @@
+<div class="iw-plugin-fb-likebox">
+
+  {% include 'themes/plugin_app_title.html' %}
+
+  <iframe src="//www.facebook.com/plugins/likebox.php?href={{ object.href|urlencode }}&amp;width={% firstof object.width "312" %}&amp;height={% firstof object.height "270" %}&amp;colorscheme={% firstof object.colorscheme "light" %}&amp;show_faces={% if object.show_faces %}true{% else %}false{% endif %}&amp;border_color&amp;stream={% if object.stream %}true{% else %}false{% endif %}&amp;header={% if object.header %}true{% else %}false{% endif %}&amp;appId=295021393847212" scrolling="no" frameborder="0" style="border: none; overflow:hidden; width:{% firstof object.width "312" %}; height:{% firstof object.height "270" %}px;" allowTransparency="true"></iframe>
+
+</div>

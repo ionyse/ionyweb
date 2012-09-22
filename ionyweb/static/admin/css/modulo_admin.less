@@ -1,0 +1,286 @@
+@ionyweb_color: #d5a96a;
+@ionyweb_color_dark: #ef7746;
+
+
+@import "css_fonctions.less";
+
+
+/* Div which include all admin element
+ * Those element are mostly in absolute position so overlay the website
+ */
+#ionyweb_admin{
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	display: block;
+	z-index: @zindex + 100;
+	padding: 0;
+	margin: 0;
+	letter-spacing: 0px;
+	/* Modulo Logo in admin tool bar */
+	div.logo{
+		h2{
+			float: left;
+			margin: 0;
+			position: absolute;
+			left: 10px;
+			font: 1.7em "PacificoRegular", Verdana !important;
+			/* bold 1em/1.5em 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif */
+			color: @text_color;
+			.text-shadow(#000, 4px, 1px, 2px);
+			.gradient-background(@ionyweb_color, @ionyweb_color_dark);
+			padding: 0px 20px 0px 20px;
+			margin: 0;
+			margin-top: -5px;
+			.border-radius-bottom(10px);
+			letter-spacing: 0px;
+			text-transform: none !important;
+			a{
+				background: none;
+				text-decoration: none;
+				color: white;
+				margin: 0;
+				&:hover{
+				 	color: white;
+					text-decoration: none;
+				}
+			}
+		}
+		padding: 0;
+		margin: 0;
+	}
+	a{
+		background: none;
+    	color: @text_color;
+		cursor: pointer;
+		text-decoration: none;
+		&:hover{
+			color: @text_color_hover;
+			text-decoration: none;
+		}
+	}
+	p, ul, ol, li, img{
+		padding: 0;
+		margin: 0;
+	}
+	.content p{
+		margin: 3px 0 8px 0;
+	}
+	h1, h2, h3, h4, h5, h6{
+		text-decoration: none;
+		font-style: normal;
+		margin: 0;
+		padding: 0;
+	}
+	img{
+		border: none;
+		background: none;
+		
+	}
+	table{
+		background: none;
+				border: none;
+		tr{
+			background: none;
+				border: none;
+			td{
+				background: none;
+				border: none;
+			}
+		}
+	}
+	/* Admin Tool bar with action menu */
+	#wa_toolbar_menu{
+		.shadow-box(black, 0px, 0px, 3px, 2px);
+		.gradient-background(@background_gradient_top, @background_gradient_bottom);
+		width: 100%;
+		position: fixed;
+		z-index: @zindex + 100;
+		font-size: 14px;
+		height: 30px;
+		
+		/* Each UL is a list of action in admin_tool_bar*/
+		ul.toolbar_menu{
+			z-index: 1100;
+			/* Left menu, just after Modulo Logo */
+			&.left_menu{
+				float: left;
+				padding-left: 120px;
+			}
+			/* Right menu, on the right part of the toolbar*/
+			&.right_menu{
+				float: right;
+			}
+			/* Each action is an LI html block*/
+			li{
+				float: left;
+				min-width: 18px;
+				list-style-type: none;
+				padding: 5px 12px 6px 12px;
+				margin: 0px 0px 2px 0px;
+				color: @text_color;
+				&:first-child{
+					border-left: solid #666 1px;
+				}
+				border-right: #666 solid 1px;
+				&.selected{
+					.gradient-background(@ionyweb_color, @ionyweb_color_dark);
+				}
+				a{
+					background: none;
+					cursor: pointer;
+					text-decoration: none;
+				}
+				a:hover{
+					color: white;
+					text-decoration: none;
+				}
+				&.disabled{
+					a{
+						background: none;
+						color: #888;
+						text-decoration: line-through;
+					}
+				}
+				&.small{
+					font-size: 10px;
+					padding-top: 8px;
+					height: 30px;
+				}
+				&.sub_menu{
+					position: relative;
+					z-index: @zindex * 2;
+					a{
+						display: block;
+						padding-right: 5px;
+						.arrow{
+							display: inline;
+							width: 0;
+							height: 0;
+							border-left: 4px solid transparent;
+							border-right: 4px solid transparent;
+							border-top: 5px solid white;
+							position: relative;
+							top: 13px;
+							left: 8px;
+						}
+					}
+					.bubble_left{
+						.arrow-up {
+							right: 25px;
+						}
+						top: 13px;
+						right: 0px;
+					}
+					.bubble_right{
+						.arrow-up {
+							left: 25px;
+						}
+						top: 13px;
+						left: 0px;
+					}
+					.content{
+						.arrow-up {
+							position: absolute;
+							top: 5px;
+							width: 0;
+							height: 0;
+							border-left: 13px solid transparent;
+							border-right: 13px solid transparent;
+							border-bottom: 13px solid @background_gradient_bottom;
+						}
+						display: none;
+						position: absolute;
+						top: 30px;
+						.sous_menu{
+							.shadow-box(black, 0px, 0px, 10px, 2px);
+							.border-radius(5px);
+							margin-top: 18px;
+							padding: 5px 20px 10px 10px;
+							.gradient-background( @background_gradient_bottom, @background_gradient_bottom - #222);
+							h6{
+								padding: 0;
+								padding: 5px 0 5px 0;
+								color: #AAA;
+								clear: both;
+							}
+							div.colonne_150{
+								width: 160px;
+								float: left;
+								&:first-child{
+									padding-left: 15px;
+									padding-right: 20px;
+								}
+							}
+							ul{
+								margin: 0 0 0 5px;
+								li{
+									padding: 4px 0 4px 0;
+									margin: 0;
+									text-align: left;
+									clear: both;
+									font-size: 0.9em;
+									border: none;
+								}
+							}
+						}
+					}
+				}
+				&.icon_btn{
+					height: 20px;
+					& > a{
+						display: block;
+						padding-left: 22px;
+						height: 100%;
+						background-repeat: no-repeat;
+						background-position: left center;
+						background-size: auto 14px;
+					}
+				}
+				&.my_page{
+					& > a{
+						background-image: url('icons-white/glyphicons_153_single_windows.png');
+					}
+				}
+				&.page_manager{
+					& > a{
+						background-image: url('icons-white/glyphicons_153_more_windows.png');
+					}
+				}
+				&.preview{
+					& > a{
+						background-image: url('icons-white/glyphicons_051_eye_open.png');
+					}
+				}
+				&.content{
+					& > a{
+						background-image: url('icons-white/glyphicons_151_edit.png');
+					}
+				}
+				&.settings{
+					& > a{
+						background-image: url('icons-white/glyphicons_019_cogwheel.png');
+					}
+				}
+				&.logout{
+					padding-right: 4px;
+					& > a{
+						background-image: url('icons-white/glyphicons_063_power.png');
+					}
+				}
+			}
+		}
+		
+		#admin_message{
+		}
+	}
+}
+
+
+
+@import "messages.less";
+@import "panels.less";
+@import "file_manager.less";
+@import "forms.less";
+@import "pages.less";
+@import "design.less";
+@import "apps_and_plugins.less";

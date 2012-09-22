@@ -1,0 +1,34 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Ordering links" %}{% endblock %}
+{% block close-action %}admin.plugin_links_list.cancel_links_order();{% endblock %}
+
+{% block form-content %}
+
+<tr>
+  <th></th>
+  <td>
+    <ul id="links-ordering-container" style="margin: 0; padding: 0; width: 60%;">
+      {% for link in plugin.links_list %}
+      <li id="link-{{ link.pk }}"
+	  class="ui-state-default"
+	  style="margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 0.5em; font-size: 1.4em; height: 18px; cursor: pointer;">
+	<span class="ui-icon ui-icon-arrowthick-2-n-s"
+	      style="position: absolute; margin-left: -1.3em;">
+	</span>{{ link.text }}</li>
+      {% endfor %}
+    </ul>
+  </td>
+</tr>
+
+{% endblock %}
+
+
+{% block form-submit-action%}
+admin.plugin_links_list.save_links_order('{{ relation_id }}'); return false;
+{% endblock %}
+
+{% block form-cancel-action %}
+admin.plugin_links_list.cancel_links_order(); return false;
+{% endblock %}

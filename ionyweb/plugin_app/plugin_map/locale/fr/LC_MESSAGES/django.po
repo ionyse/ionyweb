@@ -1,0 +1,70 @@
+# Traduction française du plugin de Carte
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 14:42+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5
+msgid "Google Maps"
+msgstr "Carte google maps"
+
+#: __init__.py:7
+msgid "Display a Google Maps element"
+msgstr "Affiche une carte google map"
+
+#: __init__.py:8
+msgid ""
+"You can display a google maps element on your page to show a specific place. "
+"A bubble of informations is displayed a this point to describe it"
+msgstr ""
+"Vous pouvez afficher une carte google maps pour présenter un emplacement précis. Une bulle d'information rajoute des détails directement sur la page."
+
+#: models.py:9
+msgid "address"
+msgstr "adresse"
+
+#: models.py:10
+msgid "latitude"
+msgstr "latitude"
+
+#: models.py:11
+msgid "longitude"
+msgstr "longitude"
+
+#: models.py:13
+msgid "description"
+msgstr "description"
+
+#: models.py:15
+msgid "Auto open the infobox"
+msgstr "Ouvrir la bulle d'information à l'affichage"
+
+#: models.py:17
+msgid "zoom"
+msgstr "zoom"
+
+#: models.py:19
+msgid "width"
+msgstr "largeur"
+
+#: models.py:23
+msgid "height"
+msgstr "hauteur"
+
+#: models.py:33
+msgid "Map"
+msgstr "Carte"

@@ -15,7 +15,10 @@ NAME = 'ionyweb'
 README = read_relative_file('README.rst')
 VERSION = read_relative_file('VERSION').strip()
 PACKAGES = ['ionyweb']
-REQUIRES = ['django>=1.4', 'Jinja2']
+REQUIRES = ['django>=1.4', 'Jinja2', 'MySQL-python', 'PIL', 'PyYAML', 'South',
+            'django-floppyforms', 'django-mptt', 'django-tinymce', 
+            'djangorestframework', 'dnspython', 'python-magic', 'requests',
+            'django-less', 'django-sekizai', 'django-grappelli']
 
 
 setup(name=NAME,
@@ -36,4 +39,10 @@ setup(name=NAME,
       include_package_data=True,
       zip_safe=False,
       install_requires=REQUIRES,
+      entry_points={
+          'console_scripts': [
+              'ionyweb-manage = ionyweb.bin.manage:main',
+              'ionyweb-quickstart = ionyweb.bin.quickstart:main',
+          ]
+      },
       )

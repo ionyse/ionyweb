@@ -1,0 +1,24 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Statistics of your website" %}{% endblock %}
+{% block action_close %}admin.settings.cancel_form();{% endblock %}
+
+{% block content %}
+
+<div style="float: left; width: 60%; display: inline-block; vertical-align: middle;">
+	<p>{% trans "Modulo use 'Google Analytics' to analyse your traffic in real time. This tool is recognized to be extremely effective."%}</p>
+	<div style="text-align: center;">
+		<img src="{{ STATIC_URL }}admin/images/analytics_logo.gif" alt="Logo Google Analytics" style="background: white; padding: 8px 6px 0 6px; margin: 8px;" />
+	</div>	<p>{% trans "Complete the left form with your google analytics id, and then connect on the website <a href='http://analytics.google.com'>http://analytics.google.com</a> to see your stats in real time." %}</p>
+</div>
+
+<div style="float: left; width: 40%; display: inline-block; vertical-align: middle;">
+	<form style="padding-left: 30px;" id="page_analytics_form">
+		<p>{{ form.as_table }}</p>
+		<p><input class="btn btn-primary" type="submit" value="Sauvegarder" onClick="admin.settings.analytics.post(); return false;" /> <input class="btn" type="button" value="Annuler" onClick="admin.settings.cancel_form();" /></p>
+	</form>
+</div>
+
+<div style="clear: both;"></div>
+{% endblock %}

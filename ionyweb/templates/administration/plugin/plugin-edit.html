@@ -1,0 +1,10 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Edit the plugin content" %}{% endblock %}
+{% block id_form %}plugin_form_form{% endblock %}
+{% block form-extras %}
+	  <input type="hidden" name="id" value="{{ plugin_relation_html_id }}" />
+      {% if extra_content %}{{ extra_content }}{% endif %}
+{% endblock %}
+{% block form-submit-action %}admin.plugins.save();{% endblock %}

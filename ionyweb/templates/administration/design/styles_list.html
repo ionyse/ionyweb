@@ -1,0 +1,80 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Design" %} > {% trans "Styles" %}{% endblock %}
+{% block action_close %}admin.settings.cancel_form();{% endblock %}
+
+{% block content %}
+
+<div id="wa_themes">
+	
+	<div class="bottom_large_left">
+		<div style="margin: 10px;">
+			<ul class="themes_list" style="float: left;">
+				<li style="float: none;">
+					<div class="apercu">
+						<a href="" onClick="admin.design.styles('{{ theme.slug }}'); return false;">
+							<div class="info">
+								<h3>{{ theme.title}}</h3>
+								<p>( {{ theme.styles|length|add:"1" }} {% blocktrans with theme.styles|length|add:"1" as count %}style{% endblocktrans %} )</p>
+							</div>
+							<img src="{{ theme.preview.0 }}" alt="{{ theme.title}}"/>
+						</a>
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+		<div class="details_theme">
+			<p>{{ theme.description }}</p>
+			<ul>
+				 {% if theme.author %}<li>{% trans "Author" %} : {{ theme.author}}</li>{% endif %}
+				 {% if theme.website %}<li>{% trans "Website" %} : <br/><a href="{{ theme.website}}">{{ theme.website|truncatechars:30 }}</a></li>{% endif %}
+
+			</ul>
+		</div>
+		<div style="clear: both;"></div>
+		<div class='btn' onClick="admin.design.list();" style="clear: both; margin: 0 0 0 40px;"><i class="icon-chevron-left" style="margin-top: 2px;"></i> {% trans "Themes list" %}</div>
+	
+		
+		<div style="clear: both;"></div>
+	</div>
+	
+	<div class="bottom_large_right">
+		<ul class="themes_list">
+			<li>
+				<div class="apercu">
+					<a href="" onClick="admin.design.change('{{ theme.slug }}', '{{ csrf_token }}'); return false;">
+						<div class="info">
+							<h3>Default</h3>
+						</div>
+						{% if theme.slug == current_theme and not current_style %}
+							<!--<div class="custom"><a href="" onClick="alert('CUSTOM'); return false;"><i class="icon-share icon-white"></i> {% trans "Custom" %}</a></div>-->
+                        	<p class="current">Activé</p>
+                        {% endif %}
+						<img src="{{ theme.preview.0 }}" alt="{{ theme.title}}"/>
+					</a>
+				</div>
+			</li>
+			{% for style in theme.styles %}
+			<li>
+				<div class="apercu">
+					<a href="" onClick="admin.design.change('{{ theme.slug }}/{{ style.slug }}', '{{ csrf_token }}'); return false;">
+						<div class="info">
+							<h3>{{ style.title}}</h3>
+						</div>
+						{% if style.slug == current_style and theme.slug == current_theme %}
+							<!--<div class="custom"><a href="" onClick="alert('CUSTOM'); return false;"><i class="icon-share icon-white"></i> {% trans "Custom" %}</a></div>-->
+                        	<p class="current">Activé</p>
+                        {% endif %}
+						<img src="{{ style.preview }}" alt="{{ style.title}}"/>
+						
+					</a>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+</div>
+{% endblock %}

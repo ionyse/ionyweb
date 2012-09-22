@@ -1,0 +1,29 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Design" %}{% endblock %}
+
+{% block action_close %}admin.settings.cancel_form();{% endblock %}
+{% block content %}
+
+<div id="wa_themes">
+	<ul class="themes_list">
+		{% for theme in list_themes %}
+		<li>
+			<div class="apercu">
+				<a href="" onClick="admin.design.styles('{{ theme.slug }}'); return false;">
+					<div class="info">
+						<h3>{{ theme.title}}</h3>
+						<p>( {{ theme.styles|length|add:"1" }} {% blocktrans with theme.styles|length|add:"1" as count %}style{% endblocktrans %} )</p>
+						
+					</div>
+					<img src="{{ theme.preview.0 }}" alt="{{ theme.title}}"/>
+				</a>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+	
+	<div style="clear: both;"></div>
+</div>
+{% endblock %}

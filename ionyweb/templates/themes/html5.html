@@ -1,0 +1,79 @@
+{% load ionyweb_tags i18n %}
+{# Minimum HTML5 template #}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{% firstof LANGUAGE_CODE "en" %}">
+  <head>
+    {% admin_toolbar_medias %}
+
+    {% block head %}
+    	{% block header_title %}
+      		<title>{% title %} - {{ request.website.title }}</title>
+      	{% endblock %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      {% render_favicon %}
+      {% block theme-design-css %}{% endblock %}
+      {% block theme-design-js %}{% endblock %}
+    {% endblock %}
+
+    {% render_meta_kw %}
+    {% render_meta_description %}
+    {% render_medias %}
+  </head>
+
+  {% block body-tag %}
+  <body>
+  {% endblock %}
+
+    {% admin_toolbar %}
+
+    {% block top_body %}{% endblock %}
+
+    {% block body %}
+
+      <!-- Header -->
+      {% block header %}
+        <header>{% render_layout "header" %}</header>
+      {% endblock %}
+      <!-- End of Header -->
+
+      <!-- Navigation -->
+      {% block navigation %}
+	<nav>{% render_navigation %}</nav>
+      {% endblock %}
+      <!-- End of Navigation -->
+
+      <!-- Content -->
+      {% block content %}
+	<div id="main-content">
+	  {% block page %}{% render_page %}{% endblock %}
+	</div>
+      {% endblock %}
+      <!-- End of Content -->
+
+      <!-- Footer -->
+      {% block footer %}
+	<footer>{% render_layout "footer" %}</footer>
+      {% endblock %}
+      <!-- End of Footer -->
+      {% render_clipboard %}
+      
+	  {% block render_default %}
+      	{% render_default %}
+      {% endblock %}
+
+    {% endblock %}
+
+    {% googleanalytics %}
+    {% block extra-medias %}{% endblock %}
+
+    {% block bottom_body %}{% endblock %}
+
+  </body>
+
+</html>

@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 15:24+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5
+msgid "Blog entries list"
+msgstr "Liste d'articles"
+
+#: __init__.py:8 __init__.py:9
+msgid "Display a list of recents posts from your blog."
+msgstr "Affiche la liste des derniers posts de votre blog"
+
+#: models.py:17
+msgid "Entries number"
+msgstr "Nombre d'articles"
+
+#: models.py:40
+msgid "Entries List"
+msgstr "Liste d'articles"
+
+#: models.py:41
+msgid "Entries Lists"
+msgstr "Listes d'articles"
+
+#: models.py:45
+msgid "Edit entries"
+msgstr "Modifier les articles"
+
+#: models.py:55
+msgid "text"
+msgstr "texte"
+
+#: models.py:61
+msgid "order"
+msgstr "ordre"
+
+#: models.py:82
+msgid "Entry"
+msgstr "Article"
+
+#: models.py:83
+msgid "Entries"
+msgstr "Articles"
+
+#: templates/actions/links_edit.html:4
+msgid "EntiresList modification"
+msgstr "Modifier la liste des articles"
+
+#~ msgid "title"
+#~ msgstr "titre"
+
+#~ msgid "Title header displayed above the entries list."
+#~ msgstr "Titre d'entête qui s'affichera avant la liste des articles"

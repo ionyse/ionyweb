@@ -1,0 +1,43 @@
+{% load i18n %}
+
+<div>
+  <header class="title">
+    <h3>{% block title %}Titre du panel{% endblock %}</h3>
+    <div class="fermer_panel" onClick="{% block action_close %}admin.cancel_form();{% endblock %}"></div>
+  </header>
+  <section>
+  {% block content %}
+  <form id="{% block id_form %}app_form_form{% endblock %}">{% csrf_token %}
+	{% block form-media %}
+    {{ form.media }}
+	{% endblock %}
+    <table>
+	  {% block form-content %}
+	  {% if form.render_form != "" %}
+      {{ form.render_form }}
+	  {% else %}
+	  <tr>
+		<td></td>
+		<td>{% trans "Save to activate your plugin" %}</td>
+	  </tr>
+	  {% endif %}
+	  {% endblock %}
+      <tr>
+	<td></td>
+	<td>
+	  {% block form-extras %}{% endblock %}
+	  
+	   <input class="btn btn-primary" type="submit" value="{% trans "Save" %}" onClick="{% block form-submit-action %}admin.plugins.save();{% endblock %}return false;"/>
+	   <input class="btn" type="button" value="{% trans "Cancel" %}" onClick="{% block form-cancel-action %}admin.cancel_form();{% endblock %}"/>
+ 
+	</td>
+      </tr>
+    </table>
+    
+  </form>
+  {% endblock %}
+  </section>
+  <footer>
+  	
+  </footer>
+</div>

@@ -1,0 +1,56 @@
+{% load i18n fm_versions %}
+<div id="events">
+
+  {# AFFICHAGE DE LA NAVIGATION DES MOIS #}
+  <p id="events-nav" style="text-align: center;">
+    <a href="{{ url }}p/{{ prev_year }}/{% if month == 1 %}{{ prev_month }}{% else %}{{ month }}{% endif %}/#month">&lt;&nbsp;{{ prev_year }}</a>
+
+    <a href="{{ url }}p/{{ year }}/1/"{% if month == 1 %} class="selected"{% endif %}>{% trans "January" %}</a>
+    <a href="{{ url }}p/{{ year }}/2/"{% if month == 2 %} class="selected"{% endif %}>{% trans "February" %}</a>
+    <a href="{{ url }}p/{{ year }}/3/"{% if month == 3 %} class="selected"{% endif %}>{% trans "March" %}</a>
+    <a href="{{ url }}p/{{ year }}/4/"{% if month == 4 %} class="selected"{% endif %}>{% trans "April" %}</a>
+    <a href="{{ url }}p/{{ year }}/5/"{% if month == 5 %} class="selected"{% endif %}>{% trans "May" %}</a>
+    <a href="{{ url }}p/{{ year }}/6/"{% if month == 6 %} class="selected"{% endif %}>{% trans "June" %}</a>
+    <a href="{{ url }}p/{{ year }}/7/"{% if month == 7 %} class="selected"{% endif %}>{% trans "July" %}</a>
+    <a href="{{ url }}p/{{ year }}/8/"{% if month == 8 %} class="selected"{% endif %}>{% trans "August" %}</a>
+    <a href="{{ url }}p/{{ year }}/9/"{% if month == 9 %} class="selected"{% endif %}>{% trans "September" %}</a>
+    <a href="{{ url }}p/{{ year }}/10/"{% if month == 10 %} class="selected"{% endif %}>{% trans "October" %}</a>
+    <a href="{{ url }}p/{{ year }}/11/"{% if month == 11 %} class="selected"{% endif %}>{% trans "November" %}</a>
+    <a href="{{ url }}p/{{ year }}/12/"{% if month == 12 %} class="selected"{% endif %}>{% trans "December" %}</a>
+
+
+    <a href="{{ url }}p/{{ next_year }}/{% if month == 12 %}{{ next_month }}{% else %}{{ month }}{% endif %}/#month">{{ next_year }}&nbsp;&gt;</a>
+  </p>
+
+
+  {# AFFICHAGE DES EVENTS #}
+  {% for event in events %}
+  <div class="event">
+    <div class="event_left">
+      <img src="{% if event.image %}{% version event.image "croppedthumbnail" %}{% else %}{{ STATIC_URL }}img/page_agenda/default-event.jpg{% endif %}" title="{{ event.title }} - {% filter upper %}{{ event.start_date|date:"l d F Y- H:i" }}{% endfilter %}" alt="{{ event.title }}" />
+      <ul>
+		{% if event.place %}
+		<li><strong>Lieu :</strong> {{ event.place }}</li>
+		<li><strong>Adresse :</strong> {{ event.address|safe }}</li>
+		<li><strong>Ville :</strong> {{ event.city }} ({{ event.zipcode }})</li>
+		{% endif %}
+		<li><strong>Début :</strong> {{ event.start_date|date:"l d F Y- H:i" }}</li>
+		{% if event.end_date %}
+		<li><strong>Fin :</strong> {{ event.end_date|date:"l d F Y - H:i" }}</li>
+		{% endif %}
+      </ul>
+    </div>
+    <div class="event_right">
+      <h4>{% filter upper %}{{ event.start_date|date:"l d F Y- H:i" }}{% endfilter %}</h4>
+      <h5>{{ event.title }}</h5>
+      {{ event.description|safe }}
+    </div>
+    <div style="clear: both"></div>
+  </div>
+  {% empty %}
+  <p>{% trans "No events yet." %}</p>
+  {% endfor %}
+
+</div>
+
+<div style="height: 10px;"></div>

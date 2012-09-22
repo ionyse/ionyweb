@@ -1,0 +1,21 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Change website's theme" %}{% endblock %}
+
+{% block content %}
+<div id="themes_listform">
+	<form><p style="text-align: center;">
+		<select name="">
+			<option value="0">----------</option>
+			{% for p in list_themes %}
+			<option value="{{ p.slug }}" {% if current == p.slug %} selected="selected"{% endif %}>{{ p.title }}</option>
+			{% endfor %}
+		</select><br/>
+		<input type="button" value="{% trans "Save" %}" onClick='admin.themes.edit($("#themes_listform select:first-child").val(), "{{ csrf_token }}");' />
+		<input type="button" value="{% trans "Cancel" %}" onClick='admin.themes.cancel_form();' />
+		{% csrf_token %}
+	</p></form>
+</div>
+{% endblock %}
+

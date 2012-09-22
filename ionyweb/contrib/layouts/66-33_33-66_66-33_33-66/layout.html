@@ -1,0 +1,55 @@
+{% extends "layout/base.html" %}
+{% load placeholder_tags %}
+
+
+{% block layout %}
+
+<div style="float: left; width: 66.6%; min-height: 1px;">
+  <div style="margin-right: 15px;">
+    {% render_placeholder "1" %}
+  </div>
+</div>
+
+<div style="float: left; width: 33.3%; min-height: 1px;">
+  {% render_placeholder "2" %}
+</div>
+
+<div style="clear: both;"></div>
+
+<div style="float: left; width: 33.3%; min-height: 1px;">
+  {% render_placeholder "3" %}
+</div>
+
+<div style="float: left; width: 66.6%; min-height: 1px;">
+  <div style="margin-left: 15px;">
+    {% render_placeholder "4" %}
+  </div>
+</div>
+
+<div style="clear: both;"></div>
+
+<div style="float: left; width: 66.6%; min-height: 1px;">
+  <div style="margin-right: 15px;">
+    {% render_placeholder "5" %}
+  </div>
+</div>
+
+<div style="float: left; width: 33.3%; min-height: 1px;">
+  {% render_placeholder "6" %}
+</div>
+
+<div style="clear: both;"></div>
+
+<div style="float: left; width: 33.3%; min-height: 1px;">
+  {% render_placeholder "7" %}
+</div>
+
+<div style="float: left; width: 66.6%; min-height: 1px;">
+  <div style="margin-left: 15px;">
+    {% render_placeholder "8" %}
+  </div>
+</div>
+
+<div style="clear: both;"></div>
+
+{% endblock layout %}

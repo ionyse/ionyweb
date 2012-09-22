@@ -1,0 +1,21 @@
+{# datepicker.html #}
+{% include "floppyforms/input.html" %}
+
+<script type="text/javascript">
+      var options = {
+          dateFormat: 'dd/mm/yy',
+          dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 
+                     'Jeudi', 'Vendredi', 'Samedi'],
+          monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
+                       'Juillet','Août','Septembre','Octobre',
+                       'Novembre','Décembre'],
+          dayNamesShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+          dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
+          firstDay: 1,
+          changeMonth: true,
+		  changeYear: true,
+		  yearRange: '1980:2020',
+		  monthNamesShort: ['Jan','Fev','Mar','Avr','Mai','Jui','Juil','Aou','Sep','Oct','Nov','Dec']
+      };
+      $('#{{ attrs.id }}').datepicker(options);
+</script>

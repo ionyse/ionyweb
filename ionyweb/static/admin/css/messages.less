@@ -1,0 +1,66 @@
+#admin_message{
+    position: fixed;
+    right: 10px;
+    z-index: 2000;
+    width: 300px;
+    margin-top: 90px;
+    .message, .confirm, .error, .draft{
+    	.border-radius(5px);
+    	padding: 8px 15px 10px 15px;
+	    margin-bottom: 6px;
+    }
+    .message{
+		.gradient-background( @background_gradient_bottom, @background_gradient_bottom - #222);
+    	.shadow-box(black, 0px, 0px, 5px, 1px);
+	    color: @text_color;
+    }
+    .confirm{
+	    .gradient-background( @background_gradient_bottom, @background_gradient_bottom - #222);
+    	.shadow-box(black, 0px, 0px, 5px, 1px);
+	    color: @text_color;
+	    text-align: left;
+	    form{
+	    	width: 90%;
+	    	margin: auto;
+	    	text-align: center;
+	    }
+	    input{
+	    	width: 30%;
+	    	margin: auto;
+	    }
+    }
+    .error{
+	    .gradient-background( @background_red + #666, @background_red);
+    	.shadow-box(@background_red + #666, 0px, 0px, 5px, 1px);
+	    color: @text_color;
+    }
+    .draft{
+	    background: url('images/draft_background_box.png') repeat-x @background_gradient_bottom;
+    	.shadow-box(black, 0px, 0px, 5px, 1px);
+	    color: @text_color;
+    }
+    
+}
+
+#admin_bubble{
+	background: rgba(0,0,0,0.8);
+	.shadow-box(#333, 0px, 0px, 2px, 2px);
+	padding: 4px 10px;
+	position: absolute;
+	z-index: 2000;
+	color: #DDD;
+	.border-radius(5px);
+	margin-top: 12px;
+	margin-left: -8px;
+	display: none;
+	.arrow_up{
+		position: absolute;
+		margin-top: -12px;
+		margin-left: 18px;
+		width: 0;
+		height: 0;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid #222;
+	}
+}

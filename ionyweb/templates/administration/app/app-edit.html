@@ -1,0 +1,9 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Edit application settings" %}{% endblock %}
+{% block action_close %}admin.pages.cancel_edit_form();{% endblock %}
+{% block id_form %}app_form_form{% endblock %}
+
+{% block form-submit-action %}admin.apps.save({{ page.id }});{% endblock %}
+{% block form-cancel-action %}{% if page %}admin.pages.list();{% else %}admin.pages.cancel_edit_form();{% endif %}{% endblock %}

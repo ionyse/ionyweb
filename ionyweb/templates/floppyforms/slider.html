@@ -1,0 +1,18 @@
+{# slider.html #}
+{% include "floppyforms/input.html" %}
+<div id="{{ attrs.id }}-slider"></div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#{{ attrs.id }}').attr("readonly", true);
+      $('#{{ attrs.id }}-slider').slider({
+        {% if value %}value: {{ value }},{% endif %}
+        min: {{ attrs.min }},
+        max: {{ attrs.max }},
+        step: {{ attrs.step }},
+        slide: function(event, ui) {
+          $('#{{ attrs.id }}').val(ui.value);
+        }
+      });
+  });
+</script>

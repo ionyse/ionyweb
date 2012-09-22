@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<div class="iw-plugin-contact">
+
+  {% include 'themes/plugin_app_title.html' %}
+
+  {% if message %}
+  <div class="alert {% if form.errors %}alert-error{% else %}alert-success{% endif %}">
+	{{ message }}
+  </div>
+  {% endif %}
+
+  <form action="" method="post">
+    {{ form.render_basic_form }}
+	<input type="hidden" name="contactform" value="{{ object.pk }}" />
+	<div><button type="submit" class="btn">{% trans "Send" %}</button></div>
+  </form>
+
+</div>
+

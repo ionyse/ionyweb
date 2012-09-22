@@ -1,0 +1,20 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% blocktrans %}Edit the structure of {{ layout_section_slug }}{% endblocktrans %}{% endblock %}
+
+{% block content %}
+<div id="layouts_listform">
+  <div class="texte">
+    <p>{% trans "Select the layout you want for this section." %}</p>
+  </div>
+  <div class="liste">
+    {% for p in list_layouts %}
+    <div onClick="admin.layouts.preview('{{ p.slug }}', '{{ layout_section_slug }}', '{{ csrf_token }}');"
+	 {% if p.slug == current_layout_slug %} class="current"{% endif %}>
+      <img src="{{ p.preview }}" alt="{{ p.slug }}" />
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

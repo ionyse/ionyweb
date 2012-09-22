@@ -1,0 +1,24 @@
+{% extends 'administration/base_admin.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Edit user account" %}{% endblock %}
+{% block action_close %}admin.settings.cancel_form();{% endblock %}
+
+{% block content %}
+
+<div style="float: left; width: 70%; display: inline-block; vertical-align: middle;">
+	<form style="padding-left: 30px;" id="user_pass_form">
+		<p>{{ userform.as_p }}</p>
+		<p>{{ passform.as_p }}</p>
+		<p><input class="btn btn-primary" type="submit" value="Sauvegarder" onClick="admin.settings.currentUser.post(); return false;" /> 
+			<input class="btn" type="button" value="Annuler" onClick="admin.settings.cancel_form();" /></p>
+	</form>
+</div>
+
+<div style="float: left; width: 30%; display: inline-block; vertical-align: middle; padding-top: 40px;">
+	<p>{% trans "To edit your user name of mail address, keep the password input empty and confirm the form" %}</p>	
+	<p style="margin-top: 50px;">{% trans "Editing constantly your password is the best way to keep the access of your website secure." %}</p>	
+</div>
+
+<div style="clear: both;"></div>
+{% endblock %}

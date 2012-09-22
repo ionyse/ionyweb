@@ -1,0 +1,88 @@
+# Traduction française du plugin Contact
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 15:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5
+msgid "Contact"
+msgstr "Formulaire de Contact"
+
+#: __init__.py:7
+msgid "Contact form with anwser by mail"
+msgstr "Formulaire de contact avec notification par mail"
+
+#: __init__.py:8
+msgid ""
+"Sometime, it's better to do not show your email adresse of your website. You "
+"can propose a form to contact you. You will receive all details directly "
+"into your mailbox and will be able to anwser from there."
+msgstr ""
+"Il est parfois intressant de ne pas mettre son adresse mail en accès libre sur "
+"son site. Pour ce faire, vous pouvez utiliser un formulaire de contact. Vous recevrez "
+"chaque message directement dans votre mail d'où vous pourrez y répondre."
+
+#: forms.py:19
+msgid "Name :"
+msgstr "Nom "
+
+#: forms.py:20
+msgid "Email *:"
+msgstr "Email *"
+
+#: forms.py:21
+msgid "Object :"
+msgstr "Objet "
+
+#: forms.py:22
+msgid "Message *:"
+msgstr "Message *"
+
+#: models.py:10
+msgid "Object"
+msgstr "Objet "
+
+#: models.py:13
+msgid ""
+"Enter a default object for this form. If set it will prefix the subject of "
+"the email sent."
+msgstr ""
+"Saisissez un objet par défaut pour ce formulaire. S'il est renseigné, il "
+"sera ajouté au sujet du mail envoyé."
+
+#: models.py:16
+msgid "email"
+msgstr "email"
+
+#: models.py:35
+msgid "Contact Form"
+msgstr "Formulaire de Contact"
+
+#: views.py:18
+msgid "Message sent"
+msgstr "Message envoyé"
+
+#: views.py:21
+msgid "The mail could not be sent"
+msgstr "Le mail n'a pu être envoyé"
+
+#: templates/plugin_contact/index.html:16
+msgid "Send"
+msgstr "Envoyer"
+
+#~ msgid "title"
+#~ msgstr "titre"

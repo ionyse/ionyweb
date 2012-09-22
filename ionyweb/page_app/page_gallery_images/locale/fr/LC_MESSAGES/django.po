@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-09 09:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: forms.py:30 models.py:116
+msgid "Images"
+msgstr "Images"
+
+#: forms.py:30
+msgid "Edit images"
+msgstr "Modifier les images"
+
+#: models.py:16
+msgid "Album title displayed"
+msgstr "Tire de l'album affiché ?"
+
+#: models.py:18
+msgid "The title of album is displayed on the album page."
+msgstr "Le titre de l'album est affiché (ou non) sur la page de l'album."
+
+#: models.py:21
+msgid "Edit albums"
+msgstr "Modifer les albums"
+
+#: models.py:31
+msgid "Gallery App"
+msgstr "Galerie d'images"
+
+#: models.py:32
+msgid "Gallery Apps"
+msgstr "Galeries d'images"
+
+#: models.py:39 models.py:91
+msgid "title"
+msgstr "titre"
+
+#: models.py:40
+msgid "slug"
+msgstr "slug"
+
+#: models.py:41 models.py:92
+msgid "description"
+msgstr "description"
+
+#: models.py:42 models.py:93
+msgid "order"
+msgstr "ordre"
+
+#: models.py:50
+msgid "Number of Images"
+msgstr "Nombre d'Images"
+
+#: models.py:82
+msgid "Album"
+msgstr "Album"
+
+#: models.py:83
+msgid "Albums"
+msgstr "Albums"
+
+#: models.py:89
+msgid "image"
+msgstr "image"
+
+#: models.py:112
+msgid "Thumbnail"
+msgstr "Miniature"
+
+#: models.py:115
+msgid "Image"
+msgstr "Image"
+
+#: templates/page_gallery_images/album.html:34
+msgid "No image available."
+msgstr "Aucune image disponible."
+
+#: templates/page_gallery_images/album.html:36
+msgid "Go back to albums"
+msgstr "Retour aux albums"
+
+#: templates/page_gallery_images/index.html:16
+msgid "No image available"
+msgstr "Pas d'image disponible"
+
+#: templates/page_gallery_images/index.html:21
+#, python-format
+msgid "%(nb)s image"
+msgid_plural "%(nb)s images"
+msgstr[0] "%(nb)s image"
+msgstr[1] "%(nb)s images"
+
+#: templates/page_gallery_images/index.html:28
+msgid "No item available."
+msgstr "Aucun album disponible."
+
+#: templates/page_gallery_images/actions_admin/action_admin_edit_images.html:3
+msgid "Edit Images"
+msgstr "Modifier les Images"

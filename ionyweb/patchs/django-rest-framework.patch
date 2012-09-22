@@ -1,0 +1,13 @@
+diff -r 06444072471f djangorestframework/views.py
+--- a/djangorestframework/views.py  Tue Jan 03 02:00:06 2012 -0800
++++ b/djangorestframework/views.py  Tue Jan 03 14:32:03 2012 +0100
+@@ -109,7 +109,8 @@
+         # Calls to 'reverse' will not be fully qualified unless we set the scheme/host/port here.
+         orig_prefix = get_script_prefix()
+         prefix = '%s://%s' % (request.is_secure() and 'https' or 'http', request.get_host())
+-        set_script_prefix(prefix + orig_prefix)
++        if not orig_prefix.startswith('http'):
++            set_script_prefix(prefix + orig_prefix)
+
+         try:
+             self.initial(request, *args, **kwargs)

@@ -1,0 +1,94 @@
+# Traduction française du plugin de Liste de Liens
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 14:51+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5
+msgid "Links list"
+msgstr "Liste de Liens"
+
+#: __init__.py:8
+msgid "Write, and reorder a list of internet links"
+msgstr "Saisissez et ordonnez un liste de liens hypertexte"
+
+#: __init__.py:9
+msgid ""
+"Because it is some time easier to manager a list of links with a dedicated "
+"plugin than a simple text block. You can easily reorder it and edit them "
+"individually."
+msgstr ""
+"Parce qu'il est parfois plus façile de gérer une liste de liens hypertexte "
+"avec un plugin dédié qu'un simple bloque de texte. Vous pouvez ainsi "
+"façilement l'ordonner et les modifier individuellement."
+
+#: models.py:9
+msgid "show list decoration"
+msgstr "Afficher les puces"
+
+#: models.py:18
+msgid "Links number"
+msgstr "Numéro du lien"
+
+#: models.py:38
+msgid "Links List"
+msgstr "Liste de Liens"
+
+#: models.py:39
+msgid "Links Lists"
+msgstr "Listes de Liens"
+
+#: models.py:43
+msgid "Edit links"
+msgstr "Modifier les liens"
+
+#: models.py:54
+msgid "text"
+msgstr "texte"
+
+#: models.py:57
+msgid "target"
+msgstr "cible"
+
+#: models.py:60
+msgid "order"
+msgstr "ordre"
+
+#: models.py:81
+msgid "Link"
+msgstr "Lien"
+
+#: models.py:82
+msgid "Links"
+msgstr "Liens"
+
+#: templates/plugin_links_list/actions/links_edit.html:4
+msgid "Links modification"
+msgstr "Modifier les liens"
+
+#: templates/plugin_links_list/actions/links_edit_order.html:4
+msgid "Ordering links"
+msgstr "Ordonner les liens"
+
+#~ msgid "title"
+#~ msgstr "titre"
+
+#~ msgid "Title header displayed above the links list."
+#~ msgstr "Titre affiché au-dessus de la liste."
+
+#~ msgid "Modification of links"
+#~ msgstr "Modification des liens"

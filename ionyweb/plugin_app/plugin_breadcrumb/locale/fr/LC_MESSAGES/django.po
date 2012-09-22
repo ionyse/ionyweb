@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 15:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5 models.py:28
+msgid "Breadcrumb"
+msgstr "Fil d'ariane"
+
+#: __init__.py:7
+msgid "An intelligent breadcrumb to help navigation."
+msgstr "File d'ariane d'aide à la navigation"
+
+#: __init__.py:8
+msgid ""
+"This will optimize navigation on your website by understanding the structure "
+"of your pages."
+msgstr ""
+"Optimisez la compréhension de la navigation au sein de votre site grace au fil d'ariane."
+
+#: models.py:9
+msgid "separator"
+msgstr "Séparateur"
+
+#: models.py:10
+msgid "Define a separator string."
+msgstr "Définissez un séparateur"
+
+#: models.py:12
+msgid "ancestors displayed?"
+msgstr "Afficher les pages parentes"
+
+#: models.py:13
+msgid "Activate this option for display all ancestors pages in breadcrumb."
+msgstr "Activez cette option pour afficher tous les ancêtres de la page."
+
+#: models.py:15
+msgid "Links enabled?"
+msgstr "Activer les liens"
+
+#: models.py:16
+msgid "Enable/Disable link on each item."
+msgstr "Activer / Désactiver les liens sur chaque élément"
+
+#: models.py:29
+msgid "Breadcrumbs"
+msgstr "Fils d'ariange"

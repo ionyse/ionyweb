@@ -1,0 +1,81 @@
+-   fields: {domain: 'testserver', name: Philanthropix}
+    model: sites.site
+    pk: 1
+-   fields: {user: 1}
+    model: authentication.userprofile
+    pk: 1
+-   fields:
+        analytics_key: ''
+        default_layout: '100'
+        domain: 1
+        footer_layout: footer_100
+        header_layout: header_100
+        logo: ''
+        meta_description: ''
+        meta_keywords: ''
+        ndds: [1]
+        slug: philanthropix
+        theme: philanthropix
+        title: Philanthropix
+    model: website.website
+    pk: 1
+-   fields: {is_superuser: true, user: 1, website: 1}
+    model: website.websiteowner
+    pk: 1
+-   fields:
+        app_page_id: 1
+        app_page_type: [page_book, pageapp_book]
+        is_diplayed_in_menu: true
+        last_modif: 2011-12-25
+        layout: null
+        level: 0
+        lft: 1
+        menu_title: ''
+        meta_description: ''
+        meta_keywords: ''
+        parent: null
+        placeholder_slug: placeholder-content-1
+        plugin_order: 0
+        rght: 2
+        sha1: 97fda2b510c94993d63c468d7044c1ce5d1ef5ba
+        slug: references
+        title: "R\xE9f\xE9rences"
+        tree_id: 1
+        website: 1
+    model: page.page
+    pk: 1
+-   fields: {title: ''}
+    model: page_book.pageapp_book
+    pk: 1
+-   fields: {name: Site internet}
+    model: page_book.category
+    pk: 1
+-   fields: {logo: uploads/book/clients_logos/1.jpg, name: Ionyse, url: 'http://www.ionyse.com/'}
+    model: page_book.client
+    pk: 1
+-   fields: {logo: '', name: Coopilote, url: 'http://www.coopilote.com/'}
+    model: page_book.client
+    pk: 2
+-   fields:
+        book: 1
+        categories: [1]
+        client: 1
+        date: 2011-12-22
+        description: Site internet de Ionyse
+        img: "uploads/book/references/518_-_panorama_depuis_le_col_des_fours,_\xE0\
+            _2976m.jpg"
+        title: Ionyse
+        url: http://www.ionyse.com/
+    model: page_book.reference
+    pk: 1
+-   fields:
+        book: 1
+        categories: [1]
+        client: 2
+        date: 2011-12-15
+        description: Site internet de Coopilote
+        img: "uploads/book/references/494_-_fin_de_journ\xE9e_au_refuge_du_fond_des_fours.jpg"
+        title: Coopilote
+        url: http://www.coopilote.com/
+    model: page_book.reference
+    pk: 2

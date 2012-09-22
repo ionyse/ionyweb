@@ -1,0 +1,17 @@
+<div class="iw-plugin-blog-entries-list">
+
+  {% include 'themes/plugin_app_title.html' %}
+
+  {% with object.entries_list as entries %}
+
+  {% if entries %}
+  <ul>
+	{% for entry in entries %}
+	<li><a href="{{  entry.entry.get_absolute_url }}">{{ entry.text }}</a></li>
+	{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% endwith %}
+  
+</div>

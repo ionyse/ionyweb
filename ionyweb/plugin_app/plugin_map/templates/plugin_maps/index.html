@@ -1,0 +1,58 @@
+<div class="iw-plugin-map">
+
+  {% include 'themes/plugin_app_title.html' %}
+
+  <div id="map_canvas-{{ object.id }}" style="width: {% if object.width %}{{ object.width }}px;{% else %}100%;{% endif %} height: {% firstof object.height '350' %}px; display: block;"></div>
+  <script type="text/javascript">
+	var map;
+	
+	function initialize() {
+		 var myLatlng = new google.maps.LatLng({{ object.map_lat }}, {{ object.map_lon }});
+		 var myOptions = {
+		    zoom: {{ object.zoom }},
+		    center: myLatlng,
+		    mapTypeId: google.maps.MapTypeId.HYBRID
+		 }
+		 map = new google.maps.Map(document.getElementById("map_canvas-{{ object.id }}"), myOptions);
+
+		var contentString = '<div id="info-marker"><br>' +
+		    '{{ object.description|linebreaksbr|escapejs }}' +
+		    '</div>';
+		
+		var infowindow = new google.maps.InfoWindow({
+		        content: contentString
+		    });
+		
+		marker = new google.maps.Marker({
+			map: map,
+			position: myLatlng
+		    });
+		
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map,marker);
+		    });
+		
+		var first = true;
+		
+	    {% if object.window_open %}
+		google.maps.event.addListener(map, 'tilesloaded', function() {
+			if(first) {
+			    first = false;
+			    infowindow.open(map, marker);
+			}
+		});
+	    {% endif %}
+	}
+	
+	function loadScript() {
+	  var script = document.createElement("script");
+	  script.type = "text/javascript";
+	  script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+	  document.body.appendChild(script);
+	}
+	  
+	loadScript();
+
+  </script>
+
+</div>

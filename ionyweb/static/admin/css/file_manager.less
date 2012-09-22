@@ -1,0 +1,359 @@
+#wa_file_manager{
+	form{
+		input[type='text']{
+			color: white;
+		}
+	}
+	.fermer_panel{
+		position: absolute;
+		top: 5px;
+		right: 20px;
+		z-index: 10000;
+		cursor: pointer;
+	}
+	h3{
+		height: 30px;
+		padding: 0 0 0 25px;
+		.gradient-background( @background_gradient_bottom, @background_gradient_bottom - #222);
+		font-size: 14px;
+	}
+	
+	.btn{
+		color: black;
+		a{
+			color: black;
+		}
+	}
+	
+	.btn-group{
+		color: black;
+		.btn{
+			background: white;
+		}
+		a{
+			color: black;
+		}
+		ul{
+			padding: 3px 0;
+		}
+		li:hover{
+			a{
+				background: @ionyweb_color;
+			}
+		}
+	}
+	
+	#wa_file_manager_list{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0px;
+		width: 280px;
+		border-right: solid 1px #777;
+		ul.directory_list{
+			position: absolute;
+			top: 30px;
+			left: 0px;
+			right: 0px;
+			bottom: 30px;
+			overflow: auto;
+			padding-top: 10px;
+			li{
+				cursor: pointer;
+				span.selected{
+					color: orange;
+				}
+			}
+			ul{
+				margin-left: 15px;
+				li{
+					padding: 4px 6px 1px 6px;
+					list-style-type: none;
+					ul{
+						li{
+						}
+					}
+				}
+			}
+		}
+		.quota{
+			position: absolute;
+			bottom: 0px;
+			right: 0;
+			left: 0;
+			height: 30px;
+			overflow: hidden;
+			background: green;
+			h3{
+				cursor: pointer;
+			}
+			.diagramme{
+				width: 300px;
+				height: 300px;
+			}
+		}
+	}
+	
+	#wa_file_manager_content{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 281px;
+		right: 0;
+		overflow: hidden;
+		.toolbar{
+			.gradient-background( @background_gradient_bottom, @background_gradient_bottom - #222);
+			height: 30px;
+			div.add{
+				float: left;
+				margin: 6px 0 0 10px;
+				p{
+					float: left;
+					margin: 0 10px;
+				}
+			}
+			div.selector{
+				float: right;
+				margin-right: 80px;
+				input[type='text']{
+					color: #666;
+					border: #444;
+					margin: 5px 20px 0 20px;
+					padding: 2px 8px 2px 15px;
+					height: 15px;
+					.border-radius(10px);
+				}
+			}
+		}
+		.file_list{
+			overflow: auto;	
+			position: absolute;
+			top: 30px;
+			bottom: 0;
+			left: 0;
+			right: 0;		
+		}
+		
+	}
+	
+	#wa_file_manager_right{
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		right: 0px;
+		width: 0px;
+		display: none;
+		.description{
+			
+			position: absolute;
+			top: 30px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			border-left: solid 1px #777;
+			padding: 5px 12px;
+			
+			.selector_send{
+				.btn{
+				}
+			}
+		}
+		.upload{
+			position: absolute;
+			top: 30px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			border-left: solid 1px #777;
+			.qq-upload-button{
+				color: white;
+				margin: 4px 10px 10px 10px;
+				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+				i{
+					padding-left: 8px;
+				}
+			}
+			.qq-upload-list{
+				margin: 5px 15px;
+				li{
+					list-style-type: none;
+					.qq-upload-spinner{
+						display: none;
+					}
+					.qq-upload-failed-text{
+						display: none;
+					}
+					.qq-upload-close-error{
+						display: none;
+						cursor: pointer
+					}
+				}
+				
+			}
+
+		}
+	}
+}
+
+
+/* Desccription des type de view */
+#wa_file_manager{
+	.file_list{
+		padding-top: 10px;
+		ul.list{
+			margin: 0;
+			li.item{
+				width: 100%;
+				list-style-type: none;
+				position: relative;
+				padding: 4px 0;
+				a:hover{
+					color: white;
+				}
+				&.row1{
+					background: @background_widget + #222;	
+				}
+				&.row2{
+					background: @background_widget + #333;
+				}
+				&.selected{
+					background: @ionyweb_color;
+				}
+				div.size, div.type, div.date{
+					padding: 4px 10px;
+				}
+				div.name{
+					float: left;
+					padding: 4px 0;
+					width: 100%;
+					vertical-align: center;
+					cursor: pointer;
+					p{
+						margin: 0;
+						padding: 0;
+						margin-left: 20px;
+					}
+					form{
+						display: inline;
+						input[type="text"]{
+							display: inline;
+							font-size: 12px;
+							width: 250px;
+							padding: 1px 4px 1px 8px;
+							margin: 0 0 0 10px;
+							background: none;
+							border: none;
+						}
+					}
+				}
+				.list_data{
+					position: absolute;
+					right: 80px;
+					div.size,  div.type, div.date{
+						float: right;
+						width: 110px;
+						text-align: right;
+					}
+				}
+				div.action{
+					position: absolute;
+					right: 0;
+					margin-left: 20px;
+					margin-right: 20px;
+					.btn-group{
+						margin-top: 3px;
+					}
+				}
+			}
+		}
+	}
+	ul.list_icons{
+		margin: 0;
+		li.item{
+			position :relative;
+			.border-radius(15px);
+			float: left;
+			height: 150px;
+			width: 140px;
+			margin: 0 5px 10px 5px;
+			cursor: pointer;
+			list-style-type: none;
+			a.link{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			a:hover{
+				color: white;
+			}
+			&:hover{
+				background:#555;
+			}
+			&.row1{
+				background: @background_widget + #222;	
+			}
+			&.row2{
+				background: @background_widget + #333;
+			}
+			&.selected{
+				background: @ionyweb_color;
+			}
+			div.icon{
+				position :absolute;
+				top: 15px;
+				left: 15px;
+				right: 15px;
+				height: 80px;
+				text-align: center;
+				border: solid black 0px;
+				img{
+					margin: auto;
+					display: inline-block;
+					padding-top: 25px;
+				}
+				div.thumbnail_icon{
+					width: 100%; 
+					height: 100%; 
+					background: white;
+					background-position: center;
+					-webkit-background-size: cover; 
+			        -moz-background-size: cover; 
+			        -o-background-size: cover; 
+			        background-size: cover; 
+					.shadow-box(black, 0px, 0px, 10px, 2px);
+				}
+			}
+			div.name{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 45px;
+				text-align: center;
+				p{
+					margin: 0;
+					padding: 0;
+				}
+				form{
+					display: inline;
+					input[type="text"]{
+						display: inline;
+						font-size: 12px;
+						padding: 1px 4px 1px 8px;
+						margin: 0 0 0 0px;
+						background: none;
+						border: none;
+					}
+				}
+			}
+			div.action{
+				position: absolute;
+				bottom: 48px;
+				right: 8px;
+				.btn-group{
+					margin-top: 3px;
+				}
+			}
+		}
+	}
+}

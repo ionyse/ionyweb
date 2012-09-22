@@ -1,0 +1,19 @@
+{% load i18n %}
+
+{% if is_admin %}
+
+<div class="placeholder" id="{{ ID_PLACEHOLDER }}" style="display:none; clear: both;">
+
+  <div class="wa_placeholder_widget">
+    <h3>{% trans "Clipbaord" %}</h3>
+  </div>
+
+  {% for item in rendering_items %}
+    {% include "layout/plugin.html" %}
+  {% endfor %}
+  
+  <div style="clear: both;"></div>
+
+</div>
+
+{% endif %}

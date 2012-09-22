@@ -1,0 +1,11 @@
+{% load i18n %}
+
+<h6>{% trans "List of plugins" %}</h6>
+	<ul>
+		{% for p in list_plugins%}
+		<li class="plugin_{{ p.id }}" onClick="admin.plugins.description({{ p.id }}); return false;">
+			<h5>{{ p.name }}</h5>
+			<p>{{ p.description }}</p>
+		</li>
+		{% endfor %}
+	</ul>

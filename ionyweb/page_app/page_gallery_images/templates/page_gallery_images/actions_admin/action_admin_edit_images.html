@@ -1,0 +1,4 @@
+{% load i18n %}
+<input type="button"
+       value="{% trans 'Edit Images' %}"
+       onclick="admin.page_gallery_images.edit_images('{{ relation_id }}', '{{ object.id }}');" />

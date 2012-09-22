@@ -1,0 +1,1221 @@
+# Traduction française de Modulo.
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-18 17:53+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: administration/utils.py:10
+msgid "Sorry, an error occured."
+msgstr "Désolé, une erreur est survenue."
+
+#: administration/utils.py:11
+msgid "Element successfuly edited."
+msgstr "L'élément a été modifié avec succès."
+
+#: administration/utils.py:12
+msgid "Element successfuly created."
+msgstr "L'élément a été créé avec succès."
+
+#: administration/utils.py:13
+msgid "Element successfuly deleted."
+msgstr "L'élément a été supprimé avec succès."
+
+#: administration/utils.py:14
+msgid "Elements successfuly edited."
+msgstr "Les éléments ont été modifiés avec succès."
+
+#: administration/utils.py:15
+msgid "Some datas are not valid."
+msgstr "Ceraines données ne sont pas correctes."
+
+#: administration/utils.py:16
+msgid "Plugin successfuly deleted."
+msgstr "Le plugin a été supprimé avec succès."
+
+#: administration/utils.py:17
+msgid "Items positions successly updated."
+msgstr "Les éléments ont été déplacés avec succès."
+
+#: administration/utils.py:19
+msgid "Action not found."
+msgstr "L'action demandée n'existe pas."
+
+#: administration/utils.py:21
+msgid "Application successfuly edited."
+msgstr "L'application a été modifiée avec succès."
+
+#: administration/utils.py:23
+msgid "User already authenticated."
+msgstr "L'utilisateur est déjà connecté."
+
+#: administration/utils.py:24
+msgid "User authenticated."
+msgstr "L'utilisateur est connecté."
+
+#: administration/utils.py:25
+msgid "Wrong login or password."
+msgstr "Le nom d'utilisateur et/ou le mot de passe sont incorrects."
+
+#: administration/utils.py:26
+msgid "Please activate your account."
+msgstr "Merci d'activer votre compte"
+
+#: administration/utils.py:28
+msgid "Layout successfuly updated."
+msgstr "La disposition de la page a été modifiée avec succès."
+
+#: administration/utils.py:30
+msgid "Theme successfuly updated. Page is going to reload in few seconds."
+msgstr ""
+"Le thème a été mis à jour. La page va se recharger dans quelques secondes."
+
+#: administration/utils.py:32
+msgid "You can't delete the home page."
+msgstr "Vous ne pouvez supprimer la page d'accueil"
+
+#: administration/utils.py:33
+msgid "Page successfuly deleted."
+msgstr "La page a été supprimée avec succès."
+
+#: administration/utils.py:34
+msgid "Page's draft status toggled."
+msgstr "Le status brouillon a été modifié."
+
+#: administration/utils.py:36
+msgid "Must have files attached!"
+msgstr "Vous devez séléctionnez un fichier !"
+
+#: administration/actions/utils.py:103
+#: templates/actions_admin/change_list.html:26
+#: templates/administration/website/domains.html:18
+msgid "Actions"
+msgstr "Actions"
+
+#: administration/actions/views.py:139
+#, python-format
+msgid ""
+"Caught ImproperlyConfigured while rendering: ActionAdminListView."
+"list_display, '%(attr)s' is not a callable or an attribute of the model "
+"'%(model)s'."
+msgstr ""
+
+#: authentication/forms.py:23
+msgid "Email Address"
+msgstr "Saisissez votre adresse mail"
+
+#: authentication/forms.py:42
+msgid "Emails from this domain are not accepted"
+msgstr "Les adresses mail de ce domaine ne sont pas acceptées"
+
+#: authentication/models.py:17
+msgid "Display Mode"
+msgstr "Mode d'affichage"
+
+#: authentication/models.py:21
+msgid "Display mode for directory content."
+msgstr "Mode d'affichage pour le contenu du répertoire"
+
+#: file_manager/models.py:27
+msgid "Select the parent directory for this directory."
+msgstr "Sélectionnez le répertoire parent."
+
+#: file_manager/models.py:30
+msgid "Folder Name"
+msgstr "Nom du répertoire"
+
+#: file_manager/models.py:32
+msgid "Name of the folder"
+msgstr "Choisissez le nom du répertoire"
+
+#: file_manager/models.py:62
+msgid "Directory"
+msgstr "Répertoire"
+
+#: file_manager/models.py:63
+msgid "Directories"
+msgstr "Répertoires"
+
+#: file_manager/models.py:97 website/models.py:75
+msgid "Files Library"
+msgstr "Bibliothèque de fichiers"
+
+#: file_manager/models.py:98
+msgid "Files Libraries"
+msgstr "Bibliothèques de fichiers"
+
+#: file_manager/models.py:108
+msgid "File name"
+msgstr "Nom du fichier"
+
+#: file_manager/models.py:109
+msgid "Type"
+msgstr "Type"
+
+#: file_manager/models.py:111
+msgid "Creation date"
+msgstr "Date de création"
+
+#: file_manager/models.py:112
+msgid "Modification date"
+msgstr "Date de modification"
+
+#: file_manager/models.py:117
+msgid "file_type"
+msgstr "Type de fichier"
+
+#: file_manager/models.py:283
+msgid "Image"
+msgstr "Image"
+
+#: file_manager/models.py:284
+msgid "Images"
+msgstr "Images"
+
+#: file_manager/models.py:291
+msgid "Document"
+msgstr "Document"
+
+#: file_manager/models.py:292
+msgid "Documents"
+msgstr "Documents"
+
+#: file_manager/models.py:301 plugin/settings.py:18
+msgid "Audio"
+msgstr "Audio"
+
+#: file_manager/models.py:302
+msgid "Audios"
+msgstr "Audios"
+
+#: file_manager/models.py:309
+msgid "Archive"
+msgstr "Archive"
+
+#: file_manager/models.py:310
+msgid "Archives"
+msgstr "Archives"
+
+#: file_manager/models.py:317 plugin/settings.py:22
+msgid "Other"
+msgstr "Autre"
+
+#: file_manager/models.py:318
+msgid "Others"
+msgstr "Autres"
+
+#: file_manager/views.py:121
+#, python-format
+msgid ""
+"This file is %(type)s/%(extension)s type and is not allow in file manager."
+msgstr ""
+"Les fichier de type `%(type)s/%(extension)s` ne sont pas autorisé dans le "
+"gestionnaire de fichier."
+
+#: page/exceptions.py:11
+msgid "Page App"
+msgstr "Application de page"
+
+#: page/exceptions.py:16 plugin/exceptions.py:16
+msgid "An error has occured."
+msgstr "Une erreur est survenue."
+
+#: page/exceptions.py:31
+msgid "`models.get_admin_form()` method does not override."
+msgstr "La méthode `models.get_admin_form()` n'est pas surchargée."
+
+#: page/forms.py:30 page/models.py:91
+msgid "template"
+msgstr "Gabarit"
+
+#: page/forms.py:31 page/models.py:93
+msgid "Select the theme template for the page."
+msgstr "Sélectionnez le gabarit de votre theme pour cette page."
+
+#: page/forms.py:43
+msgid ""
+"Be careful : if you change the app type, the current app will be deleted."
+msgstr ""
+"Atttention : si vous modifiez le type de l'application de page, "
+"l'application actuelle sera supprimée."
+
+#: page/forms.py:89
+msgid "You cannot change the homepage slug."
+msgstr "Vous ne pouvez modifier le slug de la page d'accueil"
+
+#: page/forms.py:93
+msgid "A page without slug cannot have a parent"
+msgstr "Une page sans slug ne peut avoir de parent"
+
+#: page/forms.py:98
+msgid "This slug is already used by another page."
+msgstr "Ce slug est déjà utilisé par une autre page."
+
+#: page/forms.py:103
+#, python-format
+msgid "A slug should be at least %(min_size)d characters long."
+msgstr "Un slug doit avoir une taille d'au moins %(min_size)d caractères."
+
+#: page/forms.py:109
+msgid "You cannot add a sub_page to the empty slug page."
+msgstr "Vous ne pouvez ajouter une sous-page à la page d'accueil."
+
+#: page/models.py:33
+msgid "Allows to specify the website which contains the page."
+msgstr "Permet de spécifier le site internet de la page."
+
+#: page/models.py:40
+msgid "Select the place to add this section."
+msgstr "Sélectionnez la place de cette page."
+
+#: page/models.py:48 plugin/models.py:90 website/models.py:30
+msgid "title"
+msgstr "titre"
+
+#: page/models.py:50
+msgid "title of the page"
+msgstr "titre de la page"
+
+#: page/models.py:51 page/models.py:271
+msgid "slug"
+msgstr "slug"
+
+#: page/models.py:54
+msgid "The section's URL. As to be meaningful and contains only ASCII."
+msgstr ""
+"URL de la page. Doit être parlant et ne contenir que des caractères ASCII."
+
+#: page/models.py:56
+msgid "last modification"
+msgstr "dernière modification"
+
+#: page/models.py:61
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: page/models.py:62
+msgid "Check if you want to display this section in the main menu."
+msgstr ""
+"Cochez la case si vous souhaitez afficher cette page dans le menu principal."
+
+#: page/models.py:64
+msgid "Main menu title"
+msgstr "Titre du menu principal"
+
+#: page/models.py:72
+msgid "page application"
+msgstr "application de la page"
+
+#: page/models.py:76 plugin/models.py:56
+msgid "placeholder"
+msgstr "emplacement"
+
+#: page/models.py:78
+msgid "Placeholder slug of the page app."
+msgstr "Slug de l'emplacement pour l'application de page."
+
+#: page/models.py:79
+msgid "order"
+msgstr "ordre"
+
+#: page/models.py:81
+msgid "Order of the page app in the placeholder."
+msgstr "Ordre de l'application de page au sein de l'emplacement."
+
+#: page/models.py:84 website/models.py:57
+msgid "META Keywords"
+msgstr "Méta mots clés"
+
+#: page/models.py:87 website/models.py:59
+msgid "META Description"
+msgstr "Méta description"
+
+#: page/models.py:95 templates/administration/page/page-list.html:24
+#: templates/layout/base.html:11
+msgid "Draft"
+msgstr "Brouillon"
+
+#: page/models.py:97
+msgid "Draft are not accessible by visitors but can be edit by administrator."
+msgstr ""
+"Les brouillons ne sont pas visibles par les utilisateurs mais éditable par "
+"l'administrateur."
+
+#: page/models.py:272
+msgid "template file"
+msgstr "template slug"
+
+#: page/models.py:275 page/models.py:276
+msgid "related object type"
+msgstr "type de l'objet"
+
+#: page/models.py:288
+msgid "Layout"
+msgstr "disposition"
+
+#: page/models.py:289
+msgid "Layouts"
+msgstr "disposition"
+
+#: plugin/exceptions.py:11
+msgid "Plugin"
+msgstr "Plugin"
+
+#: plugin/exceptions.py:32
+msgid ""
+"Define the `views.index_view()` function or overide the default `models."
+"render_html()` method."
+msgstr ""
+"Définissez la fonction `views.index_view()` ou surchargez la méthode `models."
+"render_html()` utilisée par défaut."
+
+#: plugin/exceptions.py:46
+msgid "`models.get_admin_form()` method was not override."
+msgstr "La méthode `models.get_admin_form()` n'est pas surchargée."
+
+#: plugin/models.py:52
+msgid "plugin type"
+msgstr "type de plugin"
+
+#: plugin/models.py:63
+msgid "Display on new pages"
+msgstr "Afficher sur les nouvelles pages"
+
+#: plugin/models.py:93
+msgid "Define the title displayed above the plugin."
+msgstr "Définir le titre du plugin à afficher"
+
+#: plugin/models.py:95
+msgid "display title rule"
+msgstr "Afficher le filet du titre"
+
+#: plugin/settings.py:7
+#, fuzzy
+msgid "Ionyweb Team"
+msgstr "Ionyweb"
+
+#: plugin/settings.py:16
+msgid "Text"
+msgstr "Texte"
+
+#: plugin/settings.py:17
+msgid "Pictures"
+msgstr "Images"
+
+#: plugin/settings.py:19
+msgid "Video"
+msgstr "Vidéo"
+
+#: plugin/settings.py:20
+msgid "Social network"
+msgstr "Réseaux sociaux"
+
+#: plugin/settings.py:21
+msgid "Advertising"
+msgstr "Publicité"
+
+#: start_website/forms.py:8
+msgid "Name"
+msgstr "Nom"
+
+#: start_website/forms.py:9
+msgid "Slug"
+msgstr "Slug"
+
+#: start_website/forms.py:10
+msgid "Domain"
+msgstr "Noms de domaine"
+
+#: start_website/forms.py:12 website/models.py:62
+msgid "Theme slug"
+msgstr "Slug du thème"
+
+#: start_website/forms.py:16 website/models.py:68
+msgid "Default layout"
+msgstr "Disposition par défaut"
+
+#: start_website/views.py:48
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/404.html:2
+msgid "404 Not Found"
+msgstr "La page est introuvable."
+
+#: templates/500.html:2
+msgid "Error 500"
+msgstr "Une erreur est survenue sur le serveur."
+
+#: templates/actions_admin/change_form.html:5
+#: templates/actions_admin/change_list.html:10
+#, python-format
+msgid "Add %(name)s"
+msgstr "Ajouter %(name)s"
+
+#: templates/actions_admin/change_form.html:7
+#, python-format
+msgid "Edit %(name)s"
+msgstr "Editer %(name)s"
+
+#: templates/actions_admin/change_form.html:22
+#: templates/administration/base_admin.html:30
+#: templates/administration/manifest/themes-list.html:15
+#: templates/errors/website_error.html:60
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: templates/actions_admin/change_form.html:23
+#: templates/administration/admin_toolbar_tag.html:217
+#: templates/administration/base_admin.html:31
+#: templates/administration/manifest/themes-list.html:16
+msgid "Cancel"
+msgstr "Annuler"
+
+#: templates/actions_admin/change_list.html:38
+#: templates/administration/website/domains.html:38
+msgid "No object yet"
+msgstr "Aucun objet disponible"
+
+#: templates/actions_admin/change_list.html:55
+#, python-format
+msgid "Are you sure you want to delete this %(name)s and all linked elements ?"
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer ce %(name)s et tous les éléments liés ?"
+
+#: templates/actions_admin/change_list_result.html:8
+#: templates/layout/placeholder-app.html:17 templates/layout/plugin.html:18
+msgid "Move"
+msgstr "Déplacer"
+
+#: templates/actions_admin/change_list_result.html:10
+#: templates/administration/admin_toolbar_tag.html:18
+#: templates/administration/website/domains.html:27
+#: templates/layout/base.html:22 templates/layout/placeholder-app.html:13
+#: templates/layout/plugin.html:14
+msgid "Edit"
+msgstr "Modifier"
+
+#: templates/actions_admin/change_list_result.html:11
+#: templates/administration/admin_toolbar_tag.html:21
+#: templates/administration/file_manager/file_details.html:14
+#: templates/administration/file_manager/files_list.html:35
+#: templates/administration/file_manager/files_list.html:75
+#: templates/administration/file_manager/files_list_icons.html:41
+#: templates/administration/file_manager/files_list_icons.html:72
+#: templates/administration/page/page-list.html:38
+#: templates/administration/website/domains.html:28
+#: templates/layout/plugin.html:22
+msgid "Delete"
+msgstr "Supprimer"
+
+#: templates/admin/includes_grappelli/header.html:20
+msgid "Change password"
+msgstr "Modifier le mot de passe"
+
+#: templates/admin/includes_grappelli/header.html:28
+msgid "Log out"
+msgstr "Se déconnecter"
+
+#: templates/admin/includes_grappelli/header.html:36
+msgid "Tests"
+msgstr "Tests"
+
+#: templates/admin/includes_grappelli/header.html:41
+#: templates/administration/admin_toolbar_tag.html:75
+msgid "Documentation"
+msgstr "Documentation"
+
+#: templates/administration/admin_toolbar_medias_tag.html:51
+#: templates/administration/website/maintenance.html:10
+msgid "You are in maintenance mode"
+msgstr "Vous êtes en mode maintenance"
+
+#: templates/administration/admin_toolbar_tag.html:7
+#: templates/administration/admin_toolbar_tag.html:193
+msgid "Ionyweb"
+msgstr "Ionyweb"
+
+#: templates/administration/admin_toolbar_tag.html:11
+msgid "My Page"
+msgstr "Ma page"
+
+#: templates/administration/admin_toolbar_tag.html:27
+#: templates/administration/page/page-list.html:53
+msgid "Configuration of content"
+msgstr "Configuration du contenu"
+
+#: templates/administration/admin_toolbar_tag.html:41
+msgid "Pages manager"
+msgstr "Gestionnaire de pages"
+
+#: templates/administration/admin_toolbar_tag.html:46
+msgid "Preview"
+msgstr "Aperçu"
+
+#: templates/administration/admin_toolbar_tag.html:49
+msgid "Content"
+msgstr "Contenu"
+
+#: templates/administration/admin_toolbar_tag.html:52
+#: templates/administration/admin_toolbar_tag.html:91
+#: templates/administration/admin_toolbar_tag.html:118
+msgid "Settings"
+msgstr "Préférences"
+
+#: templates/administration/admin_toolbar_tag.html:57
+msgid "Data"
+msgstr "Données"
+
+#: templates/administration/admin_toolbar_tag.html:60
+#: templates/administration/file_manager/index.html:12
+msgid "File manager"
+msgstr "Gestionnaire de fichiers"
+
+#: templates/administration/admin_toolbar_tag.html:64
+msgid "User manager"
+msgstr "Gestionnaire des utilisateurs"
+
+#: templates/administration/admin_toolbar_tag.html:68
+msgid "Users"
+msgstr "Utilisateur"
+
+#: templates/administration/admin_toolbar_tag.html:71
+msgid "My account"
+msgstr "Mon compte"
+
+#: templates/administration/admin_toolbar_tag.html:78
+msgid "User guide"
+msgstr "Guide utilisateur"
+
+#: templates/administration/admin_toolbar_tag.html:81
+msgid "Feedback"
+msgstr "Commentaires"
+
+#: templates/administration/admin_toolbar_tag.html:87
+msgid "My website"
+msgstr "Mon site internet"
+
+#: templates/administration/admin_toolbar_tag.html:95 website/models.py:77
+msgid "Maintenance mode"
+msgstr "Mode maintenance"
+
+#: templates/administration/admin_toolbar_tag.html:98
+#: templates/administration/website/domains.html:5
+msgid "Domain names"
+msgstr "Noms de domaine"
+
+#: templates/administration/admin_toolbar_tag.html:101
+#: templates/administration/design/styles_list.html:4
+#: templates/administration/design/themes_list.html:4
+msgid "Design"
+msgstr "Design"
+
+#: templates/administration/admin_toolbar_tag.html:104
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: templates/administration/admin_toolbar_tag.html:108
+msgid "Referencing"
+msgstr "Référencement"
+
+#: templates/administration/admin_toolbar_tag.html:111
+msgid "Versions"
+msgstr "Versions"
+
+#: templates/administration/admin_toolbar_tag.html:115
+msgid "Administration"
+msgstr "Administration"
+
+#: templates/administration/admin_toolbar_tag.html:172
+msgid "Loading"
+msgstr "Chargement"
+
+#: templates/administration/admin_toolbar_tag.html:199
+msgid "Mail"
+msgstr "Email"
+
+#: templates/administration/admin_toolbar_tag.html:205
+msgid "Password"
+msgstr "Mot de passe"
+
+#: templates/administration/admin_toolbar_tag.html:216
+msgid "Login"
+msgstr "Connexion"
+
+#: templates/administration/base_admin.html:21
+msgid "Save to activate your plugin"
+msgstr "Merci de sauvegarder pour activer ce plugin"
+
+#: templates/administration/app/app-edit.html:4
+msgid "Edit application settings"
+msgstr "Modifier les préférences de l'application"
+
+#: templates/administration/authentication/crossdomain_login.html:4
+#: templates/administration/authentication/crossdomain_login.html:16
+msgid "Login in progress"
+msgstr "Connexion en cours"
+
+#: templates/administration/authentication/crossdomain_login.html:17
+msgid "Continue to domain"
+msgstr "Continuer vers ce domaine"
+
+#: templates/administration/design/styles_list.html:4
+msgid "Styles"
+msgstr "Styles"
+
+#: templates/administration/design/styles_list.html:19
+#: templates/administration/design/themes_list.html:16
+msgid "style"
+msgstr "style"
+
+#: templates/administration/design/styles_list.html:31
+#: templates/administration/plugin/plugin-description.html:36
+msgid "Author"
+msgstr "Auteur"
+
+#: templates/administration/design/styles_list.html:32
+#: templates/administration/plugin/plugin-description.html:41
+msgid "Website"
+msgstr "Site internet"
+
+#: templates/administration/design/styles_list.html:37
+msgid "Themes list"
+msgstr "Liste des designs"
+
+#: templates/administration/design/styles_list.html:66
+msgid "Custom"
+msgstr "Personnaliser"
+
+#: templates/administration/file_manager/file_details.html:3
+msgid "Description"
+msgstr "Description"
+
+#: templates/administration/file_manager/file_details.html:6
+msgid "Size "
+msgstr "Taille "
+
+#: templates/administration/file_manager/file_details.html:13
+msgid "See"
+msgstr "Voir"
+
+#: templates/administration/file_manager/files_list.html:32
+#: templates/administration/file_manager/files_list.html:72
+#: templates/administration/file_manager/files_list_icons.html:38
+#: templates/administration/file_manager/files_list_icons.html:69
+msgid "Rename"
+msgstr "Renommer"
+
+#: templates/administration/file_manager/files_upload.html:4
+msgid "Add a file"
+msgstr "Ajouter un fichier"
+
+#: templates/administration/file_manager/index.html:6
+#: templates/administration/file_manager/index.html:8
+msgid "Close"
+msgstr "Fermer"
+
+#: templates/administration/file_manager/index.html:24
+msgid "Add files"
+msgstr "Ajouter des fichiers"
+
+#: templates/administration/file_manager/index.html:25
+msgid "Add a directory"
+msgstr "Ajouter un répertoire"
+
+#: templates/administration/file_manager/index.html:28
+msgid "Search"
+msgstr "Rechercher"
+
+#: templates/administration/file_manager/index.html:29
+msgid "View : "
+msgstr "Affichage : "
+
+#: templates/administration/file_manager/selector/selector_button.html:4
+#: templates/administration/file_manager/selector/selector_button_images.html:5
+msgid "Select"
+msgstr "Séléctionner"
+
+#: templates/administration/file_manager/selector/selector_button_images.html:18
+msgid ""
+"Consider using thumbnails for your images to make your pages load faster."
+msgstr ""
+"Pensez à utiliser des miniatures afin que vos pages se chargent plus "
+"rapidement."
+
+#: templates/administration/manifest/layouts-list.html:4
+#, python-format
+msgid "Edit the structure of %(layout_section_slug)s"
+msgstr "Modifier la structure de la section : %(layout_section_slug)s"
+
+#: templates/administration/manifest/layouts-list.html:9
+msgid "Select the layout you want for this section."
+msgstr ""
+"Sélectionnez la disposition du contenu que vous souhaitez pour cet "
+"emplacement."
+
+#: templates/administration/manifest/themes-list.html:4
+msgid "Change website's theme"
+msgstr "Modifier le thème du site internet"
+
+#: templates/administration/page/page-create.html:4
+msgid "Create a new page"
+msgstr "Créer une nouvelle page"
+
+#: templates/administration/page/page-edit.html:4
+msgid "Edit a page"
+msgstr "Modifier une page"
+
+#: templates/administration/page/page-list.html:4
+msgid "Page manager"
+msgstr "Gestionnaire de page"
+
+#: templates/administration/page/page-list.html:10
+msgid "Add a new page"
+msgstr "Ajouter une nouvelle page"
+
+#: templates/administration/page/page-list.html:10
+#, python-format
+msgid "You currently have %(nb_pages)s page on your website."
+msgid_plural "You currently have %(nb_pages)s pages on your website."
+msgstr[0] "Vous avez actuellement %(nb_pages)s page sur votre site."
+msgstr[1] "Vous avez actuellement %(nb_pages)s pages sur votre site."
+
+#: templates/administration/page/page-list.html:24
+#: templates/layout/base.html:9
+msgid "Bring online"
+msgstr "Mettre en ligne"
+
+#: templates/administration/page/page-list.html:30
+msgid "Add a page as child"
+msgstr "Ajouter une sous-page"
+
+#: templates/administration/page/page-list.html:33
+msgid "Cannot add a page as child to a page with no slug"
+msgstr "Impossible d'ajouter une page comme fil de la page d'accueil"
+
+#: templates/administration/page/page-list.html:37
+msgid "Settings of this page"
+msgstr "Configurer la page"
+
+#: templates/administration/page/page-list.html:46
+msgid "Page type"
+msgstr "Application de page"
+
+#: templates/administration/page/page-list.html:69
+msgid "Manage pages of your website"
+msgstr "Gérer les pages de votre site"
+
+#: templates/administration/page/page-list.html:72
+msgid ""
+"You website can have an unlimited number of page. This screen allow you to "
+"manage your pages. You can create a new one, but also edit and delete those "
+"already existing."
+msgstr ""
+"Votre site internet peut contenir un nombre illimité de page et cet écran "
+"vous permet de les gérer. Vous pouvez en créer une nouvelle, mais également "
+"modifier et supprimer les existantes."
+
+#: templates/administration/page/page-list.html:74
+msgid "Type of page"
+msgstr "Type de page"
+
+#: templates/administration/page/page-list.html:76
+msgid ""
+"Each page of your website as a type (also call Page App) which allow you to "
+"display informations in the optimized way (ex: blog, pictures, ...)"
+msgstr ""
+"Chaque page de votre site a un type (également appelé Application de Page) "
+"qui vous permet d'afficher vos informations de façon optimale (ex: blog, "
+"galerie d'images, ...)."
+
+#: templates/administration/page/page-list.html:78
+msgid "Move a page"
+msgstr "Déplacer une page"
+
+#: templates/administration/page/page-list.html:81
+msgid ""
+"To move a page, click on the extreme right part and drag it to the wished "
+"position. The address (url) will automaticaly be edited and the structure of "
+"your site modified in real time (Be careful, changing a page address will "
+"unvalid existing link on this page, which will have to be manually edited.)"
+msgstr ""
+"Pour déplacer une page, cliquez sur la partie à l'extrême gauche d'une page "
+"et déplacez la à la position souhaitée. L'adresse de la page (URL) sera "
+"automatiquement modifiée et la structure du site sera adaptée en temps réel. "
+"(Attention : modifier l'url d'une page va rendre les liens vers celle-ci "
+"inopérants. Ils devront être corrigés manuellement.)"
+
+#: templates/administration/plugin/plugin-create.html:4
+msgid "Create a new plugin"
+msgstr "Créer un nouveau plugin"
+
+#: templates/administration/plugin/plugin-description.html:21
+msgid "Add this plugin"
+msgstr "Ajouter ce plugin"
+
+#: templates/administration/plugin/plugin-description.html:27
+msgid "Details"
+msgstr "Détails"
+
+#: templates/administration/plugin/plugin-description.html:32
+msgid "Version"
+msgstr "Versions"
+
+#: templates/administration/plugin/plugin-description.html:48
+msgid "Requirements"
+msgstr "Dépendances"
+
+#: templates/administration/plugin/plugin-description.html:48
+#, python-format
+msgid "This plugin needs a \"%(requirements)s\" page app to refer."
+msgstr ""
+"Ce plugin à besoin d'une page de type \"%(requirements)s\" pour fonctionner."
+
+#: templates/administration/plugin/plugin-edit.html:4
+msgid "Edit the plugin content"
+msgstr "Modifier le contenu du plugin"
+
+#: templates/administration/plugin/plugin-list-by-categories.html:3
+msgid "List of plugins"
+msgstr "Liste des Plugins"
+
+#: templates/administration/plugin/plugin-list.html:4
+msgid "Add a plugin"
+msgstr "Ajouter un plugin"
+
+#: templates/administration/plugin/plugin-list.html:11
+msgid "Category list plugin"
+msgstr "Catégories de plugin"
+
+#: templates/administration/users/current-user.html:4
+msgid "Edit user account"
+msgstr "Modifier le compte utilisateur"
+
+#: templates/administration/users/current-user.html:17
+msgid ""
+"To edit your user name of mail address, keep the password input empty and "
+"confirm the form"
+msgstr ""
+"Pour modifier votre identifiant uniquement, laissez le champs mot de passe "
+"vide et valider le formulaire"
+
+#: templates/administration/users/current-user.html:18
+msgid ""
+"Editing constantly your password is the best way to keep the access of your "
+"website secure."
+msgstr ""
+"Modifier régulièrement votre mot de passe est le meilleur moyen de garder "
+"l'accès à votre site sécurisé."
+
+#: templates/administration/website/analytics.html:4
+msgid "Statistics of your website"
+msgstr "Statistiques de votre site"
+
+#: templates/administration/website/analytics.html:8
+msgid ""
+"Modulo use 'Google Analytics' to analyse your traffic in real time. This "
+"tool is recognized to be extremely effective."
+msgstr ""
+"Ionyweb utilise 'Google analytics' pour analyser en temps réel le trafic de "
+"votre site. Cet outil est reconnu comme le meilleur de son domaine."
+
+#: templates/administration/website/analytics.html:11
+msgid ""
+"Complete the left form with your google analytics id, and then connect on "
+"the website <a href='http://analytics.google.com'>http://analytics.google."
+"com</a> to see your stats in real time."
+msgstr ""
+"Saisissez votre identifiant google analytics dans le formulaire à droite, "
+"puis connectez vous sur le site <a href='http://analytics.google.com'>http://"
+"analytics.google.com</a> pour voir vos statistiques."
+
+#: templates/administration/website/domain.html:4
+#: templates/administration/website/domains.html:11
+msgid "Add a domain"
+msgstr "Ajouter un nom de domaine"
+
+#: templates/administration/website/domain.html:16
+msgid "You can add a domain's name. Then set the DNS CNAME field as :"
+msgstr ""
+
+#: templates/administration/website/domains.html:17
+msgid "Domain name"
+msgstr "Nom de domaine"
+
+#: templates/administration/website/domains.html:26
+msgid "Set as primary"
+msgstr "Domaine principal"
+
+#: templates/administration/website/maintenance.html:4
+#: templates/themes/maintenance.html:8
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#: templates/administration/website/maintenance.html:12
+msgid "You are not in maintenance mode"
+msgstr "Vous n'êtes pas en mode maintenance"
+
+#: templates/administration/website/maintenance.html:14
+msgid "Switch mode"
+msgstr "Changer de mode"
+
+#: templates/administration/website/maintenance.html:19
+msgid ""
+"The maintenance mode let you change your website content, layout or theme "
+"without letting people see what your are doing."
+msgstr ""
+"Le mode maintenance vous permet de modifier le contenu de votre site, la "
+"disposition ou le theme sans laisser vos visiteurs voir ce que vous faites."
+
+#: templates/administration/website/referencement.html:4
+msgid "Search Engine Optimization"
+msgstr "Optimisation du référencement"
+
+#: templates/administration/website/referencement.html:15
+msgid ""
+"Key words you put here will present your website. It has to be a list of "
+"word, separate by coma, which describe majors domains of your website.<br/"
+">Description will be display in search website (Google) to introduce briefly "
+"your site."
+msgstr ""
+"Les mots clés saisis présentent votre site aux utilisateurs utilisant des "
+"moteurs de recherche. Il s'agit d'une liste de mots-clés, séparés par des "
+"virgules, qui doivent présenter les principaux domaines de votre site "
+"internet."
+
+#: templates/administration/website/referencement.html:16
+msgid ""
+"You can also describe each page of you website with specified key words and "
+"description. They will be display before your website inforamtions, that way "
+"referencing will be optimized for each page of you site."
+msgstr ""
+"Vous pouvez également décrire chaque page du site avec des mots-clés et une "
+"description dédiée. Ils seront affichés avant les informations de "
+"référencement du site, ce qui permet d'optimiser le référencement de chaque "
+"page."
+
+#: templates/administration/website/versions.html:4
+msgid "Website version"
+msgstr "Version du site"
+
+#: templates/administration/website/versions.html:7
+msgid ""
+"This website is working under 'Modulo' CMS developed by Ionyse companie. "
+"It's powered by Python and use Django Framework"
+msgstr ""
+"Ce site est propulsé par le CMS 'ionyweb' dévelopé par l'entreprise Ionyse. "
+"Il fonctionne en Python et utilise le Framework Django."
+
+#: templates/layout/base.html:28
+msgid "Change layout"
+msgstr "Modifier la disposition"
+
+#: templates/layout/clipboard.html:8
+msgid "Clipbaord"
+msgstr "Presse-Papier"
+
+#: templates/layout/placeholder-default.html:8
+msgid "Page's plugins currently not displayed"
+msgstr "Liste des plugins qui ne sont actuellement pas affichés"
+
+#: templates/layout/placeholder.html:9
+msgid "Placeholder"
+msgstr "Emplacement"
+
+#: templates/layout/placeholder.html:11
+msgid "Add plugin"
+msgstr "Ajouter un plugin"
+
+#: templates/themes/maintenance.html:29
+msgid "Website in maintenance"
+msgstr "Site internet en maintenance"
+
+#: templates/themes/maintenance.html:30
+msgid "We are upgrading our website. We will be back soon."
+msgstr "Nous mettons à jour notre site et serons bientôt de retour."
+
+#: website/decorators.py:22
+msgid "<h1>You cannot modify this website since you do not own it.</h1>"
+msgstr ""
+"<h1>Vous ne pouvez pas modifierce site tant qu'il ne vous appartient pas.</"
+"h1>"
+
+#: website/forms.py:35
+#, python-format
+msgid "You cannot add a sub domain of this domain : `%(domain)s`"
+msgstr "Vous ne pouvez ajouter un sous-domaine de `%(domain)s`"
+
+#: website/forms.py:45
+#, python-format
+msgid "The domain `%(domain)s` is already used by another site."
+msgstr "Le domaine `%(domain)s` est déjà utilisé par un autre site."
+
+#: website/models.py:26
+msgid "url"
+msgstr "url"
+
+#: website/models.py:33
+msgid "Logo"
+msgstr "Logo"
+
+#: website/models.py:48
+msgid "Represents the main domain of the website."
+msgstr "Représente le domaine principal du site internet."
+
+#: website/models.py:51
+msgid "Analytics key"
+msgstr "Clé de Google Analytics"
+
+#: website/models.py:55
+msgid "Main menu levels"
+msgstr "Titre du menu principal"
+
+#: website/models.py:65
+msgid "Default template"
+msgstr "Gabarit par défaut"
+
+#: website/models.py:80
+msgid "website"
+msgstr "site internet"
+
+#: website/models.py:81
+msgid "websites"
+msgstr "sites internet"
+
+#: website/models.py:190
+msgid "superuser status"
+msgstr "Statut super-utilisateur"
+
+#: website/models.py:192
+msgid ""
+"Designates that this user has all permissions without explicitly assigning "
+"them."
+msgstr "Donne toutes les permissions à l'utilisateur pour le site internet."
+
+#~ msgid "List of theme available"
+#~ msgstr "Liste des thèmes disponible"
+
+#, fuzzy
+#~ msgid "Edit entries"
+#~ msgstr "Editer %(name)s"
+
+#, fuzzy
+#~ msgid "EntiresList modification"
+#~ msgstr "dernière modification"
+
+#, fuzzy
+#~ msgid "Contact"
+#~ msgstr "Contenu"
+
+#, fuzzy
+#~ msgid "Name :"
+#~ msgstr "Nom"
+
+#, fuzzy
+#~ msgid "Display a simple image on your website"
+#~ msgstr "Gérer les pages de votre site"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Nom du fichier"
+
+#, fuzzy
+#~ msgid "description"
+#~ msgstr "Description"
+
+#, fuzzy
+#~ msgid "Links Lists"
+#~ msgstr "Listes"
+
+#, fuzzy
+#~ msgid "Edit links"
+#~ msgstr "Editer %(name)s"
+
+#, fuzzy
+#~ msgid "Links modification"
+#~ msgstr "dernière modification"
+
+#, fuzzy
+#~ msgid "Ordering links"
+#~ msgstr "Mettre en ligne"
+
+#, fuzzy
+#~ msgid "address"
+#~ msgstr "Saisissez votre adresse mail"
+
+#, fuzzy
+#~ msgid "Select the transition effect."
+#~ msgstr "Sélectionnez la place de cette page."
+
+#, fuzzy
+#~ msgid "Pager"
+#~ msgstr "Page"
+
+#, fuzzy
+#~ msgid "Order"
+#~ msgstr "ordre"
+
+#, fuzzy
+#~ msgid "type"
+#~ msgstr "Type de fichier"
+
+#, fuzzy
+#~ msgid "Website title"
+#~ msgstr "site internet"
+
+#, fuzzy
+#~ msgid "Define a baseline for your website."
+#~ msgstr "Gérer les pages de votre site"
+
+#, fuzzy
+#~ msgid "Website Title"
+#~ msgstr "site internet"
+
+#~ msgid "Application of page"
+#~ msgstr "Application de page"
+
+#~ msgid "Add a child"
+#~ msgstr "Ajouter une sous-page"
+
+#~ msgid "Up in pages tree"
+#~ msgstr "Monter la page"
+
+#~ msgid "Down in pages tree"
+#~ msgstr "Descendre la page"
+
+#~ msgid "Set parent page level"
+#~ msgstr "Définir au niveau de la page parente"
+
+#~ msgid "Set children of previous page"
+#~ msgstr "Définir comme une sous-page de la page précédente"
+
+#~ msgid "It is not possible to move or delete the home page"
+#~ msgstr "Il est impossible de déplacer ou supprimez la page principale"
+
+#~ msgid "Add"
+#~ msgstr "Ajouter"
+
+#~ msgid "Logout"
+#~ msgstr "Se déconnecter"
+
+#~ msgid "Change theme"
+#~ msgstr "Modifier le thème"
+
+#~ msgid "Icons"
+#~ msgstr "Icônes"
+
+#~ msgid "Browse"
+#~ msgstr "Parcourir"

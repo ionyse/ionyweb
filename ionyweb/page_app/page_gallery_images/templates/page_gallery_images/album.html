@@ -1,0 +1,37 @@
+{% load i18n fm_versions actions_admin_tags %}
+
+
+<div id="iw-page-gallery" class="iw-page-gallery-album">
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      ionyweb.lightbox.init({'selector': '.page_gallery_images_lightbox'});
+    });
+  </script>
+
+  {% with infos as object %}
+  {% include 'themes/plugin_app_title.html' %}
+  {% endwith %}
+
+  <div class="description"
+	   style="position: relative;{% if not album.description and is_admin %}min-height:30px;{% endif %}">
+	{% actions_admin album %}
+	{{ album.description|safe }}
+  </div>
+
+  {% with album.images_list as images_list %}
+  {% if images_list %}
+  <ul class="thumbnails">
+	{% for image in images_list %}
+	<li class="span2" style="position: relative;">
+	  {% actions_admin image %}
+	  <a class="page_gallery_images_lightbox thumbnail" rel="group" href="{{ image.image }}" {% if image.title %}title="{{ image.title }}"{% endif %}>
+		<img src="{% version image.image 'medium' %}" alt="{{ image.title }}" title="{{ image.title }}"/>
+	  </a>
+	</li>
+	{% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+
+</div>

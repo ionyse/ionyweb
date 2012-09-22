@@ -1,0 +1,12 @@
+<div class="iw-plugin-website-title" {% if object.margin_top or object.margin_bottom %}style="{% if object.margin_top %}margin-top:{{ object.margin_top }};{% endif %}{% if object.margin_bottom %}margin-bottom:{{ object.margin_bottom }};{% endif %}"{% endif %}>
+
+  {% if object.title_rule %}<div class="page-header">{% endif %}
+  <h1>
+	{% if object.link_enabled %}<a href="{{ object.link_url }}">{% endif %}
+	{% if object.title %}{{ object.title }}{% else %}{{ default_title }}{% endif %}
+    {% if object.link_enabled %}</a>{% endif %}
+  </h1>
+  {% if object.baseline %}<p class="lead">{{ object.baseline }}</p>{% endif %}	
+  {% if object.title_rule %}</div>{% endif %}
+
+</div>

@@ -1,0 +1,29 @@
+{% load i18n fm_versions actions_admin_tags %}
+
+
+<div id="iw-page-gallery" class="iw-page-gallery-index">
+
+  {% with object.albums_list as albums_list %}
+
+  {% if albums_list %}
+  <ul class="thumbnails">
+	{% for album in albums_list %}
+	<li class="span3">
+	  <a href="{{ album.get_absolute_url }}">
+		<div class="thumbnail">
+		  {% if album.nb_images %}
+		  <img src="{% version album.get_random_image.image 'medium' %}"
+			   alt="{{ album.title }}" title="{{ album.title }}"/>
+		  {% endif %}
+		  <h3>{{ album.title }}</h3>
+		  <p>{% blocktrans count album.nb_images as nb %}{{ nb }} image{% plural %}{{ nb }} images{% endblocktrans %}</p>
+		</div>
+	  </a>
+	</li>
+	{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% endwith %}
+
+</div>

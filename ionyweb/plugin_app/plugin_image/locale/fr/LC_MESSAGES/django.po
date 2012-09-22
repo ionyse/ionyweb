@@ -1,0 +1,74 @@
+# Traduction française du plugin d'image.
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Ionyse <contact@ionyse.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 14:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: __init__.py:5
+msgid "Image element"
+msgstr "Image simple"
+
+#: __init__.py:8
+msgid "Display a simple image on your website"
+msgstr "Afficher une image sur votre site"
+
+#: __init__.py:9
+msgid "Select an image from file manager and manipulate it like a plugink."
+msgstr "Sélectionnez une image dans le gestionnaire de fichiers et manipulez la comme un plugin."
+
+#: models.py:14
+msgid "Centre"
+msgstr "Centre"
+
+#: models.py:15
+msgid "Left"
+msgstr "Gauche"
+
+#: models.py:16
+msgid "Right"
+msgstr "Droite"
+
+#: models.py:19
+msgid "File"
+msgstr "fichier"
+
+#: models.py:23
+msgid "description"
+msgstr "description"
+
+#: models.py:27
+msgid "width"
+msgstr "largeur"
+
+#: models.py:31
+msgid "height"
+msgstr "hauteur"
+
+#: models.py:35
+msgid "show lightbox"
+msgstr "activer la lightbox"
+
+#: models.py:38
+msgid "alignment"
+msgstr "alignement"
+
+#: models.py:67
+msgid "Image"
+msgstr "Image"
+
+#~ msgid "image"
+#~ msgstr "image"

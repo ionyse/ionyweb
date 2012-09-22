@@ -1,0 +1,16 @@
+{% load i18n api_actions_admin_tags %}
+{% if list_display %}
+{% render_result_action_list result %}
+{% else %}
+<td>{{ result }}</td>
+{% endif %}
+{% if sortable %}
+<td style="padding: 5px;">
+  <a class="action-sortable-click btn btn-mini" onclick="return false;" title="{% trans "Move" %}"><i class="icon-move"></i></a></td>
+{% endif %}
+<td style="padding: 5px;">
+  <a class="btn btn-mini btn-primary"
+     onclick="action_admin.edit({{ result.pk }}); return false;" title="{% trans 'Edit' %}"><i class="icon-edit icon-white"></i></a></td>
+<td style="padding: 5px;">
+  <a class="btn btn-mini btn-danger"
+     onclick="action_admin.delete({{ result.pk }}); return false;" title="{% trans 'Delete' %}"><i class="icon-trash icon-white"></i></a></td>

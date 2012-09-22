@@ -1,0 +1,12 @@
+<div class="iw-plugin-breadcrumb">
+
+  {% include 'themes/plugin_app_title.html' %}
+
+  <ul class="breadcrumb">
+	{% for item in items %}
+	<li{% if forloop.last %} class="active"{% endif %}>
+	  {{ item|safe }}{% if not forloop.last %} <span class="divider">{{ separator }}</span>{% endif %}
+	</li>
+	{% endfor %}
+  </ul>
+</div>

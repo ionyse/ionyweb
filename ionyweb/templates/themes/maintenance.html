@@ -1,0 +1,39 @@
+{% load i18n ionyweb_tags %}
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    {% admin_toolbar_medias %}
+    {% block head %}
+      <title>{% trans "Maintenance" %} - {{ request.website.title }}</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      {% render_favicon %}
+      {% block theme-design-css %}{% endblock %}
+    {% endblock %}
+  </head>
+  <body>
+    {% admin_toolbar %}
+
+	{% block header %}
+	<header>
+	</header>
+	{% endblock %}
+
+	{% block content %}
+	<section id="main-content">
+	  <h1>{% trans "Website in maintenance"%}</h1>
+	  <p>{% trans "We are upgrading our website. We will be back soon." %}</p>
+	</section>
+	{% endblock %}
+
+	{% block footer %}
+	<footer>
+	</footer>
+	{% endblock %}
+  </body>
+</html>

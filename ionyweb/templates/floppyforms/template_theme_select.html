@@ -1,0 +1,11 @@
+<ul>{% for group_name, choices in optgroups %}{% for choice in choices %}
+  {% with choice.1 as infos_template %}
+  <li style="list-style-type: none;">
+    <label for="{{ attrs.id }}_{{ forloop.counter }}">
+      <input type="radio" id="{{ attrs.id }}_{{ forloop.counter }}" value="{{ choice.0 }}" name="{{ name }}"
+	     {% if required %} required{% endif %}{% if value == choice.0 %} checked{% endif %}>
+      <img src={{ infos_template.preview }} /><br />{{ infos_template.title }}
+    </label>
+  </li>
+  {% endwith %}
+{% endfor %}{% endfor %}</ul>

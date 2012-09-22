@@ -1,0 +1,13 @@
+.plugin-slideshow-pager{
+    margin: 10px 0px;
+    text-align: center;
+}
+.plugin-slideshow-pager a{
+    margin: 0px 10px;
+}
+.plugin-slideshow-pager a.active-slide{
+    color: red;
+}
+.plugin-slideshow-pager a.active-slide img{
+    border: 2px red solid;
+}

@@ -14,5 +14,6 @@ Contents
    :maxdepth: 2
 
    install
-   themes.rst
-   api.rst
+   themes
+   api
+   api/modules

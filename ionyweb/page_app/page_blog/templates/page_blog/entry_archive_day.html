@@ -1,0 +1,14 @@
+<h2>{{ day|date:"Y/m/d" }}</h2>
+<ul>
+    {% for entry in object_list %}
+    <li>
+        <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a> |
+        <small>
+        {{ entry.publication_date|date:"d/m/Y @ H:i" }} -
+		{% with entry as object %}
+		{% include 'page_blog/display_category.html' %}
+		{% endwith %}
+        </small>
+    </li>
+    {% endfor %}
+</ul>

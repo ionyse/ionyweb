@@ -1,0 +1,107 @@
+{% extends 'administration/base_admin.html' %}
+{% load api_actions_admin_tags i18n %}
+
+{% block title %}{{ verbose_name_plural }}{% endblock %}
+
+{% block content %}
+<div id="object_list">
+  <ul class="object-tools">
+    <li>
+      <a class="btn" onclick="action_admin.add(); return false;" ><i class="icon-plus"></i>&nbsp;{% blocktrans with verbose_name as name %}Add {{ name }}{% endblocktrans %}</a>
+    </li>
+  </ul>
+  <table cellspacing="0" id="result_list">
+	<thead>
+	  <tr>
+		{% block result_header %}
+		{% if object_list %}
+		{% for title in list_display_title %}
+		<th style="text-align: left;">{{ title|capfirst }}</th>
+		{% empty %}
+		<th>{{ verbose_name|capfirst }}</th>
+		{% endfor %}
+		{% endif %}
+		{% endblock %}
+		{% if object_list %}
+		<th colspan="{% if sortable %}3{% else %}2{% endif %}" class="actions-buttons">{% trans 'Actions' %}</th>
+		{% endif %}
+	  </tr>
+	</thead>
+	<tbody{% if sortable %} class="action-object-list"{% endif %}>
+	  {% block result_content %}
+	  {% for result in object_list %}
+	  <tr {% if sortable %}id="action-object-{{ result.pk }}" {% endif %}class="{% cycle 'row1' 'row2' %}{% if sortable %} action-object-items{% endif %}">
+	    {% include 'actions_admin/change_list_result.html' %}
+	  </tr>
+	  {% empty %}
+	  <tr>
+		<td class="empty_result" style="text-align: center;">{% trans 'No object yet' %}</td>
+	  </tr>
+	  {% endfor %}
+	  {% endblock %}
+	</tbody>
+  </table>
+</div>
+
+<script type="text/javascript">
+  action_admin = {
+      'add': function () {
+          admin.GET({url: "{% url_add request.path %}"});
+      },
+      'edit': function (id) {
+          admin.GET({url: "{% url_add request.path %}"+id+"/"});
+      },
+      'delete': function (id) {
+          admin.messages.confirm('{% blocktrans with verbose_name as name %}Are you sure you want to delete this {{ name }} and all linked elements ?{% endblocktrans %}', function() {
+			admin.DELETE({
+				url : "{% url_add request.path %}"+id+"/",
+				data : {
+					'post' : 'yes',
+                                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+				},
+				statusCode : {
+					200 : function(json) {
+                         if(json.msg) admin.messages.alert(json.msg);
+                         if(json.placeholder_slug && json.html){
+                             admin.pages.refresh_placeholder(json.placeholder_slug, json.html);
+                             admin.edit.refresh();
+                         }
+                         admin.GET({url: '{% url_clean request.path %}'});
+                    }
+                }
+           });
+         });
+      }
+  };
+
+  {% if sortable %}
+  $(".action-object-list").sortable({
+      items: '.action-object-items',
+      handle: '.action-sortable-click',
+      stop: function(event, ui) {
+          admin.POST({
+              url : "{% url_order request.path %}",
+              data : {
+                  action_objects_order: ui.item.parent(".action-object-list").sortable('toArray')
+              },
+              statusCode : {
+                  200 : function(json) {
+                      if(json.msg) admin.messages.alert(json.msg);
+                      if(json.placeholder_slug && json.html){
+                          admin.pages.refresh_placeholder(json.placeholder_slug, json.html);
+                          admin.edit.refresh();
+                      }
+                      admin.GET({url: '{% url_clean request.path %}'});
+                  },
+                  400 : function(json) {
+                      if(json.msg){
+                          admin.messages.alert(json.msg);
+                      }
+                 },
+             }
+         });
+      },
+  });
+  {% endif %}
+</script>
+{% endblock %}
