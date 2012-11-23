@@ -10,9 +10,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-     ('Rémy HUBSCHER', 'remy.hubscher@ionyse.com'),
-     ('Sébastien Barbier', 'sebastien.barbier@ionyse.com'),
-     ('Amaury Pernette', 'amaury.pernette@ionyse.com'),
+     # ('Manager', 'webmaster@localhost'),
 )
 
 MANAGERS = ADMINS
