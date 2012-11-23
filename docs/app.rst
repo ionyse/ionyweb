@@ -217,20 +217,18 @@ We need to create a ``page_group/wa_actions_urls.py`` file::
 
 We will also create basic forms that we will be able to improve ``page_group/forms.py``::
 
-    # -*- coding: utf-8 -*-
-    
+    # -*- coding: utf-8 -*-    
     import floppyforms as forms
     from ionyweb.forms import ModuloModelForm
-    from models import PageApp_Group
-    
-    from models import Country, MusicStyle, Group
+    from models import PageApp_Group, Country, MusicStyle, Group
+
     
     class PageApp_GroupForm(ModuloModelForm):
     
         class Meta:
             model = PageApp_Group
     
-    
+        
     class CountryForm(ModuloModelForm):
         class Meta:
             model = Country
@@ -329,3 +327,35 @@ In the models file, we will configure the PageApp actions::
 
 That's it, now we will be able to add our groups, countries and music styles to the app.
 Don't hesitate to read the code of the other app to improve the basic UI.
+
+Improve the Group's form
+------------------------
+
+We want to improve the UI.
+
+- In the photo field we want to be able to select an image at the right size from the FileManager.
+- The description field should be a HTML edit.
+
+Let change the ``page_group/forms.py``::
+
+    # -*- coding: utf-8 -*-
+    import floppyforms as forms
+    
+    from ionyweb.forms import ModuloModelForm
+    from ionyweb.file_manager.widgets import FileManagerWidget
+    from ionyweb.widgets import TinyMCELargeTable
+    
+    from models import PageApp_Group, Country, MusicStyle, Group
+    
+    # [...]
+    
+    class GroupForm(ModuloModelForm):
+        class Meta:
+            model = Group
+            exclude = ('app',)
+            widgets = {
+                'photo': FileManagerWidget,
+                'description': TinyMCELargeTable(attrs={'style': 'width: 100%; height: 300px;', }),
+                }
+
+That's it !
