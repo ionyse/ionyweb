@@ -15,5 +15,6 @@ Contents
 
    install
    themes
+   app
    api
    api/modules
