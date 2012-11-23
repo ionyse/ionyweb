@@ -18,6 +18,8 @@ You can use this apps as an example or directly in your project.
 Create the app skeleton
 =======================
 
+::
+
     $ cd YOUR_PROJECT
     $ ionyweb-manage startapp YOUR_APP_NAME
     Starting creation of : YOUR_APP_NAME
