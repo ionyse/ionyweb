@@ -200,13 +200,132 @@ We will change it for::
 Creating the administration
 +++++++++++++++++++++++++++
 
-We need to create a page_group/wa_actions_urls.py file::
+Create the urls
+---------------
+
+We need to create a ``page_group/wa_actions_urls.py`` file::
 
     # -*- coding: utf-8 -*-
     from ionyweb.administration.actions.utils import get_actions_urls
     
     from models import Country, MusicStyle, Group
+    from forms import CountryForm, MusicStyleForm, GroupForm
     
-    urlpatterns = get_actions_urls(Country)
-    urlpatterns += get_actions_urls(MusicStyle)
-    urlpatterns += get_actions_urls(Group)
+    urlpatterns = get_actions_urls(Country, form_class=CountryForm)
+    urlpatterns += get_actions_urls(MusicStyle, form_class=MusicStyleForm)
+    urlpatterns += get_actions_urls(Group, form_class=GroupForm)
+
+We will also create basic forms that we will be able to improve ``page_group/forms.py``::
+
+    # -*- coding: utf-8 -*-
+    
+    import floppyforms as forms
+    from ionyweb.forms import ModuloModelForm
+    from models import PageApp_Group
+    
+    from models import Country, MusicStyle, Group
+    
+    class PageApp_GroupForm(ModuloModelForm):
+    
+        class Meta:
+            model = PageApp_Group
+    
+    
+    class CountryForm(ModuloModelForm):
+        class Meta:
+            model = Country
+    
+    
+    class MusicStyleForm(ModuloModelForm):
+        class Meta:
+            model = MusicStyle
+    
+    
+    class GroupForm(ModuloModelForm):
+        class Meta:
+            model = Group
+    
+
+Create the js UI
+----------------
+
+Then we will create the js to display the form.
+
+We need to create the former file ``page_group/static/admin/js/page_group_actions.js``::
+
+    admin.page_group = {
+    
+        edit_countries: function(relation_id){
+    	admin.GET({
+    	    url : '/wa/action/' + relation_id + '/country_list/',
+    	});
+        },
+        edit_country: function(relation_id, country_pk){
+    	admin.GET({
+    	    url : 'wa/action/' + relation_id + '/country/' + country_pk + '/',
+    	});
+        },
+        edit_music_styles: function(relation_id){
+    	admin.GET({
+    	    url : '/wa/action/' + relation_id + '/musicstyle_list/',
+    	});
+        },
+        edit_music_style: function(relation_id, music_style_pk){
+    	admin.GET({
+    	    url : 'wa/action/' + relation_id + '/musicstyle/' + music_style_pk + '/',
+    	});
+        },
+        edit_groups: function(relation_id){
+    	admin.GET({
+    	    url : '/wa/action/' + relation_id + '/group_list/',
+    	});
+        },
+        edit_group: function(relation_id, group_pk){
+    	admin.GET({
+    	    url : 'wa/action/' + relation_id + '/group/' + group_pk + '/',
+    	});
+        },
+    }
+
+In the ``page_group/views.py``, we need to activate the AdminJSFile::
+
+    from ionyweb.website.rendering.medias import CSSMedia, JSMedia, JSAdminMedia
+    MEDIAS = (
+        # App CSS
+        # CSSMedia('page_group.css'),
+        # App JS
+        # JSMedia('page_group.js'),
+        # Actions JSAdmin
+        JSAdminMedia('page_group_actions.js'),
+        )
+
+
+Configure the UI actions
+------------------------
+
+In the models file, we will configure the PageApp actions::
+
+    class PageApp_Group(AbstractPageApp):
+        
+        # Define your fields here
+    
+        def __unicode__(self):
+            return u'Group #%d' % (self.pk)
+    
+        class Meta:
+            verbose_name = _(u"Group")
+
+        class ActionsAdmin:
+            title = _(u"Group App")
+            actions_list = (
+                {'title':_(u'Edit countries'), 
+                 'callback': "admin.page_group.edit_countries"},
+                {'title':_(u'Edit music styles'), 
+                 'callback': "admin.page_group.edit_music_styles"},
+                {'title':_(u'Edit groups'), 
+                 'callback': "admin.page_group.edit_groups"},
+				 
+                )
+
+That's it, now we will be able to add our groups, countries and music styles to the app.
+Don't hesitate to read the code of the other app to improve the basic UI.

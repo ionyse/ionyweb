@@ -12,8 +12,8 @@ def get_actions_urls(model, url_name=None, **kwargs):
 
     """
     from ionyweb.administration.actions.views import (ActionAdminListView,
-                                                     ActionAdminDetailView,
-                                                     ActionAdminOrderView)
+                                                      ActionAdminDetailView,
+                                                      ActionAdminOrderView)
 
     app_label = model._meta.app_label
     # Url Name
