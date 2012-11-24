@@ -25,7 +25,7 @@ for i in list_plugin:
 
     plugin_info.update(info)
 
-    if info.get('CATEGORY', None) != None and info['CATEGORY'] in PLUGINS_LIST:
+    if info.get('CATEGORY') != None and info['CATEGORY'] in PLUGINS_LIST:
             PLUGINS_LIST[info['CATEGORY']].append({'name':info['NAME'], 'description': info['SHORT_DESCRIPTION'], 'id': i['id']})
     else:
         PLUGINS_LIST['other'].append({'name':info['NAME'], 'description': info['SHORT_DESCRIPTION'], 'id': i['id']})

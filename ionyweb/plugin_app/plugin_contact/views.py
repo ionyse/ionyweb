@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
+from ionyweb.website.rendering.medias import CSSMedia
 from ionyweb.website.rendering.utils import render_view
 from forms import Plugin_ContactForm
+
+RENDER_MEDIAS = (
+    CSSMedia('plugin_contact.css'),
+    )
+
 
 def index_view(request, plugin):
 	
@@ -24,4 +30,5 @@ def index_view(request, plugin):
         plugin.get_templates('plugin_contact/index.html'),
         {'object': plugin,
          'form': contact_form,
-         'message': message})
+         'message': message},
+        RENDER_MEDIAS)
