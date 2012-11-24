@@ -1,7 +1,8 @@
 {% include "floppyforms/input.html" %}
 <script type="text/javascript">
+var slug_state = document.getElementById("id_{{ name }}").value == '';
 document.getElementById("{{ field_id }}").onkeyup = function() {
-    var e = document.getElementById("id_slug");
-    if (!e._changed) { e.value = URLify(document.getElementById("{{ field_id }}").value, 50); }
+    var e = document.getElementById("id_{{ name }}");
+    if (slug_state) { e.value = URLify(document.getElementById("{{ field_id }}").value, 100); }
 }
 </script>
