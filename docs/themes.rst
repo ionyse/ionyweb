@@ -207,6 +207,62 @@ It is a good idea to extends this file, so that if a modification is
 needed, you theme will still be compatible with future ionyweb
 versions.
 
+Using different templates for a theme
+-------------------------------------
+
+Most of the time, a theme will be an index.html file then everything
+else is manage with layouts.
+
+But is certains circumstances, you need more.
+
+Hopefully Ionyweb is flexible.
+
+You can define in your MANIFEST.json a list of template that you will
+be able to select in the page form::
+
+    {"title": "Eurochene",
+     "description": "Thème pour la Scierie Eurochêne",
+     "author": "Agence Esprit Nomade",
+     "website": "http://www.agence-esprit-nomade.com/",
+     "date": "26/06/2012",
+     "preview": "eurochene.png",
+     "editable": false,
+     "templates": [
+         {"title": "Standard", "file": "index.html", "preview": "index.png"},
+         {"title": "Home page", "file": "home.html", "preview": "home.png"},
+         {"title": "Which Product", "file": "quel-produit.html", "preview": "which-product.png"},
+         {"title": "Slideshow History", "file": "story.html", "preview": "story.png"},
+         {"title": "Slideshow Metiers", "file": "metiers.html", "preview": "metiers.png"},
+         {"title": "Slideshow Certification", "file": "certifications.html", "preview": "certification.png"},
+         {"title": "Slideshow International", "file": "international.html", "preview": "international.png"},
+         {"title": "Slideshow Chêne", "file": "chene.html", "preview": "chene.png"},
+         {"title": "Slideshow Qualités et Normes", "file": "qualites_normes.html", "preview": "qualites.png"},
+         {"title": "Slideshow Nos Références", "file": "references.html", "preview": "references.png"},
+         {"title": "Slideshow Produits innovants", "file": "Produits-innovants.html", "preview": "produits-innovants.png"},
+         {"title": "Slideshow Hêtre", "file": "hetre.html", "preview": "hetre.png"},
+         {"title": "Slideshow Approvisionnement", "file": "approvisionnement.html", "preview": "approvisionnements.png"},
+         {"title": "Slideshow Feuillus Divers", "file": "feuillus_divers.html", "preview": "feuillus-divers.png"}]
+    }
+
+The template variable is a list of available templates defined with a
+title a file and a preview image. The preview should be about 200px high.
+
+Each template file will be used to load the specific page template. Here is the ``certification.html`` template::
+
+    {% extends 'themes/eurochene/default/index.html' %}
+    {% load static from staticfiles %}
+    {% load i18n %}
+    
+    {% block slideshow %}
+    	<img src="{% static 'themes/eurochene/default/images/certifications/eurochene-scierie-certifications.jpg' %}"
+    	     alt="{% trans "Eurochêne sawmill, Beech Forest French" %}"
+    	     title="{% trans "Eurochêne sawmill, Beech Forest French" %}" />
+    	<img src="{% static 'themes/eurochene/default/images/certifications/eurochene-scierie-bandeau-foret-hetre.jpg' %}"
+    	     alt="{% trans "Eurochêne sawmill, Beech Forest French" %}"
+    	     title="{% trans "Eurochêne sawmill, Beech Forest French" %}" />
+    {% endblock %}
+
+
 
 Customize the navigation
 ========================
