@@ -44,27 +44,27 @@
 
       <!-- Navigation -->
       {% block navigation %}
-	<nav>{% render_navigation %}</nav>
+        <nav>{% render_navigation %}</nav>
       {% endblock %}
       <!-- End of Navigation -->
 
       <!-- Content -->
       {% block content %}
-	<div id="main-content">
-	  {% block page %}{% render_page %}{% endblock %}
-	</div>
+        <div id="main-content">
+          {% block page %}{% render_page %}{% endblock %}
+        </div>
       {% endblock %}
       <!-- End of Content -->
 
       <!-- Footer -->
       {% block footer %}
-	<footer>{% render_layout "footer" %}</footer>
+        <footer>{% render_layout "footer" %}</footer>
       {% endblock %}
       <!-- End of Footer -->
       {% render_clipboard %}
       
-	  {% block render_default %}
-      	{% render_default %}
+      {% block render_default %}
+        {% render_default %}
       {% endblock %}
 
     {% endblock %}

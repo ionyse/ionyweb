@@ -20,6 +20,9 @@ Don't forget to define the `LAYOUTS_DIR` and `THEMES_DIR` in you settings. ::
         os.path.join(get_ionyweb_path(), 'contrib', 'themes'),
     )
 
+------
+Themes
+------
 
 Files tree of a theme
 =====================
@@ -144,6 +147,65 @@ The values ​​used represent the width of each placeholder, as a percentage o
 
 For example, layout `50-50_33-33-33_50-50` is a layout of three lines, first with two cells of 50% each, second with 3 cells of 33% and last one with two cells of 50% each.
 
+
+Customize the navigation
+========================
+
+One of the tricky thing you want to change each time you create a menu
+is the navigation.
+
+With ionyweb, the navigation is rendered with ``{% render_navigation %}``
+
+The default navigation template ``templates/themes/navigation.html`` looks like this::
+
+    {% load mptt_tags %}
+    
+    <ul>
+      {% recursetree menu %}
+      <li class="{% if page.lft >= node.lft and page.rght <= node.rght and page.tree_id == node.tree_id %}selected {% endif %}{% if node.draft %}draft{% endif %}">
+        <a href="{{ node.get_absolute_url }}">{% firstof node.menu_title node.title %}</a>
+        {% if children %}
+        <ul class="submenu">
+          {{ children }}
+        </ul>
+        {% endif %}
+      </li>
+      {% endrecursetree %}
+    </ul>		
+
+And it is loaded by the ``templates/theme/html5.html`` base templates like this::
+
+      <!-- Navigation -->
+      {% block navigation %}
+      <nav>{% render_navigation %}</nav>
+      {% endblock %}
+      <!-- End of Navigation -->
+
+If you need to change it, you can create a
+``themes/YOUR_THEME/default/templates/navigation.html`` file which
+will improve this. As an example, you can create this file::
+
+    <ul class="nav">
+    {% for m in menu %}
+      {% if m.level == 0 %}
+    	{% if m.app_page_type.model != 'pageapp_contact' %}
+            <li{% if page.lft >= m.lft and page.rght <= m.rght and page.tree_id == m.tree_id %} class="activate"{% endif %}><a href="{{ m.get_absolute_url }}">{% firstof m.menu_title m.title %}</a></li>
+    	{% else %}
+    	</ul>
+    	<ul class="contact">
+    		<li><a href="{{ m.get_absolute_url }}">{% firstof m.menu_title m.title %}</a></li>
+    	{% endif %}
+      {% endif %}
+    {% endfor %}
+    </ul>
+
+
+
+
+
+-------
+Layouts
+-------
 
 Create customs layouts
 ======================
