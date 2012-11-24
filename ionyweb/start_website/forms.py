@@ -11,7 +11,7 @@ class StartWebsite(forms.Form):
 
     theme = forms.CharField(label=_(u'Theme slug'), 
                             max_length=100, 
-                            initial='jungleland')
+                            initial='notmyidea')
 
     layout = forms.CharField(label=_(u'Default layout'), 
                              max_length=100, 

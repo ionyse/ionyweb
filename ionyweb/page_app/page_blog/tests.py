@@ -37,7 +37,7 @@ class BlogTest(TestCase):
 
         # Create the website
         website = WebSite.objects.create(
-            title="Jungleland", theme="jungleland",
+            title="Jungleland", theme="notmyidea",
             default_layout="100", slug="jungleland", 
             domain=site)
         website.ndds.add(site)

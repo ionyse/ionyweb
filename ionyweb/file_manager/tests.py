@@ -23,13 +23,13 @@ class SimpleTest(TransactionTestCase):
         # Create the domain name
         site = Site.objects.get_or_create(pk=1)[0]
         site.domain = "testserver"
-        site.name = "Jungleland"
+        site.name = "Notmyidea"
         site.save()
     
         # Create the website
         self.website = WebSite.objects.create(
-            title="Jungleland", theme="jungleland",
-            default_layout="100", slug="jungleland", 
+            title="Notmyidea", theme="notmyidea",
+            default_layout="100", slug="notmyidea", 
             domain=site)
         self.website.ndds.add(site)
     

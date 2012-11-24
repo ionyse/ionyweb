@@ -49,13 +49,13 @@ def create_new_website(test=False):
     # Create the domain name
     site = Site.objects.get_or_create(pk=1)[0]
     site.domain = test and "testserver" or "localhost:8000"
-    site.name = "Jungleland"
+    site.name = "NotMyIdea"
     site.save()
 
     # Create the website
     website = WebSite.objects.create(
-        title="Jungleland", theme="jungleland",
-        default_layout="100", slug="jungleland", 
+        title="NotMyIdea", theme="notmyidea",
+        default_layout="100", slug="notmyidea", 
         domain=site)
     website.ndds.add(site)
 
@@ -71,7 +71,7 @@ def create_new_website(test=False):
 
     # Create a Home Page
     page_text = PageApp_Text.objects.create(
-        text='<p>Bienvenue sur Jungleland</p>')
+        text='<p>Bienvenue sur NotMyIdea</p>')
 
     page_home = Page.objects.create(
         website=website, parent=None, title="Home", 
@@ -145,7 +145,7 @@ def create_new_website(test=False):
 
     # Create the website
     website = WebSite.objects.create(
-        title="Second Website", theme="jungleland",
+        title="Second Website", theme="notmyidea",
         default_layout="100", slug="foobar", 
         domain=site)
     website.ndds.add(site)

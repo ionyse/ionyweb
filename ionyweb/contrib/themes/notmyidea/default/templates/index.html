@@ -1,0 +1,40 @@
+{% extends "themes/html5.html" %}
+{% load ionyweb_tags %}
+
+{% block theme-design-css %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}themes/notmyidea/default/css/main.css" type="text/css" />
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}themes/{{ theme_path }}/default/css/ie.css"/>
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}themes/{{ theme_path }}/default/css/ie6.css"/><![endif]-->
+{% endblock %}
+
+{% block body-tag %}
+  <body id="index" class="home">
+{% endblock %}
+
+{% block header %}
+  <header id="banner" class="body">
+	{% render_layout "header" %}
+    <nav>
+	  {% render_navigation %}
+	</nav>
+  </header><!-- /#banner -->
+{% endblock %}
+
+{% block navigation %}{% endblock %}
+
+{% block content %}
+  <div id="main-content">
+	<section id="content" class="body">
+	{% block page %}{% render_page %}{% endblock %}
+	</section>
+  </div>
+{% endblock %}
+  
+{% block footer %}
+  <footer id="contentinfo" class="body">
+	{% render_layout "footer" %}
+  </footer>
+{% endblock %}

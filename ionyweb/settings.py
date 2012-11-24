@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Django settings for the jungleland project.
+# Django settings for the ionyweb project.
 from ionyweb import get_ionyweb_path
 
 import os
