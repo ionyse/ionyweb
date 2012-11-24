@@ -45,7 +45,7 @@ A theme can have multiple styles, if you need only one, you must call it ``defau
 Then you must to have a `templates` directory with all your template
 inside.  They will be find there by the
 `ionyweb.loaders.themes_templates.Loader` when you are looking for
-`'themes/jungleland/index.html'`
+`'themes/notmyidea/index.html'`
 
 All the other file outside the `templates` dir are static files and will be collected.
 
@@ -76,6 +76,190 @@ For example::
     
     6 directories, 15 files
 
+
+Create a custom theme
+=====================
+
+Most of the time, you just need to inherit from ``templates/themes/html5.html`` file::
+
+    {% load ionyweb_tags i18n %}
+    {# Minimum HTML5 template #}
+    <!DOCTYPE html>
+    {% get_current_language as LANGUAGE_CODE %}
+    <html lang="{% firstof LANGUAGE_CODE "en" %}">
+      <head>
+        {% admin_toolbar_medias %}
+    
+        {% block head %}
+        	{% block header_title %}
+          		<title>{% title %} - {{ request.website.title }}</title>
+          	{% endblock %}
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+          <!--[if lt IE 9]>
+    	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+          <![endif]-->
+          {% render_favicon %}
+          {% block theme-design-css %}{% endblock %}
+          {% block theme-design-js %}{% endblock %}
+        {% endblock %}
+    
+        {% render_meta_kw %}
+        {% render_meta_description %}
+        {% render_medias %}
+      </head>
+    
+      {% block body-tag %}
+      <body>
+      {% endblock %}
+    
+        {% admin_toolbar %}
+    
+        {% block top_body %}{% endblock %}
+    
+        {% block body %}
+    
+          <!-- Header -->
+          {% block header %}
+            <header>{% render_layout "header" %}</header>
+          {% endblock %}
+          <!-- End of Header -->
+    
+          <!-- Navigation -->
+          {% block navigation %}
+            <nav>{% render_navigation %}</nav>
+          {% endblock %}
+          <!-- End of Navigation -->
+    
+          <!-- Content -->
+          {% block content %}
+            <div id="main-content">
+              {% block page %}{% render_page %}{% endblock %}
+            </div>
+          {% endblock %}
+          <!-- End of Content -->
+    
+          <!-- Footer -->
+          {% block footer %}
+            <footer>{% render_layout "footer" %}</footer>
+          {% endblock %}
+          <!-- End of Footer -->
+          {% render_clipboard %}
+          
+          {% block render_default %}
+            {% render_default %}
+          {% endblock %}
+    
+        {% endblock %}
+    
+        {% googleanalytics %}
+        {% block extra-medias %}{% endblock %}
+    
+        {% block bottom_body %}{% endblock %}
+    
+      </body>
+    
+    </html>
+
+
+This file is the minimum working Ionyweb theme.
+
+The ``ionyweb_tags`` templatetags provide quite a few tags:
+
+**Load the admin interface**
+
+ - ``{% admin_toolbar_medias %}`` that will load the static file for the admin interface
+ - ``{% admin_toolbar %}`` that will load the html needed for the admin interface
+
+
+**Load the header**
+
+ - ``{% render_favicon %}`` : Load the favicon of the theme.
+ - ``{% render_meta_kw %}`` : Render the page meta keywords
+ - ``{% render_meta_description %}`` : Render the page meta description
+
+
+**Load the content**
+
+ - ``{% render_medias %}`` : Render the medias needed by plugins and
+   page's apps
+ - ``{% render_layout "header" %}`` : Render layout that contains
+   plugins that will be displayed on all pages. You can create as many
+   layout as you want by changing its name.
+ - ``{% render_page %}``: Render the content of the page. Plugins
+   specific to this page and the Page App content
+ - ``{% render_navigation %}`` : Load the navigation and generate the
+   menu.
+ - ``{% render_clipboard %}`` : Display the clipboard that allows you
+   to change a plugin from one page to another.
+ - ``{% render_default %}`` : This is the garbage collector for
+   plugins. Since some layout have more placeholders than other, when
+   changing between layouts, some plugins may disapear. They will be
+   displayed here if the placeholder they used to be linked to is not
+   there anymore.
+ - ``{% googleanalytics %}`` : Display the google analytics code.
+
+Then there is blocks that you can extends to add some functionnality
+to your theme.
+
+It is a good idea to extends this file, so that if a modification is
+needed, you theme will still be compatible with future ionyweb
+versions.
+
+
+Customize the navigation
+========================
+
+One of the tricky thing you want to change each time you create a menu
+is the navigation.
+
+With ionyweb, the navigation is rendered with ``{% render_navigation %}``
+
+The default navigation template ``templates/themes/navigation.html`` looks like this::
+
+    {% load mptt_tags %}
+    
+    <ul>
+      {% recursetree menu %}
+      <li class="{% if page.lft >= node.lft and page.rght <= node.rght and page.tree_id == node.tree_id %}selected {% endif %}{% if node.draft %}draft{% endif %}">
+        <a href="{{ node.get_absolute_url }}">{% firstof node.menu_title node.title %}</a>
+        {% if children %}
+        <ul class="submenu">
+          {{ children }}
+        </ul>
+        {% endif %}
+      </li>
+      {% endrecursetree %}
+    </ul>		
+
+And it is loaded by the ``templates/theme/html5.html`` with ``{% render_navigation %}``.
+
+If you need to change it, you can create a
+``themes/YOUR_THEME/default/templates/navigation.html`` file which
+will improve this. As an example, you can create this file::
+
+    <ul class="nav">
+    {% for m in menu %}
+      {% if m.level == 0 %}
+    	{% if m.app_page_type.model != 'pageapp_contact' %}
+            <li{% if page.lft >= m.lft and page.rght <= m.rght and page.tree_id == m.tree_id %} class="activate"{% endif %}><a href="{{ m.get_absolute_url }}">{% firstof m.menu_title m.title %}</a></li>
+    	{% else %}
+    	</ul>
+    	<ul class="contact">
+    		<li><a href="{{ m.get_absolute_url }}">{% firstof m.menu_title m.title %}</a></li>
+    	{% endif %}
+      {% endif %}
+    {% endfor %}
+    </ul>
+
+
+
+
+
+-------
+Layouts
+-------
 
 Files tree of a layout
 ======================
@@ -148,64 +332,6 @@ The values ​​used represent the width of each placeholder, as a percentage o
 For example, layout `50-50_33-33-33_50-50` is a layout of three lines, first with two cells of 50% each, second with 3 cells of 33% and last one with two cells of 50% each.
 
 
-Customize the navigation
-========================
-
-One of the tricky thing you want to change each time you create a menu
-is the navigation.
-
-With ionyweb, the navigation is rendered with ``{% render_navigation %}``
-
-The default navigation template ``templates/themes/navigation.html`` looks like this::
-
-    {% load mptt_tags %}
-    
-    <ul>
-      {% recursetree menu %}
-      <li class="{% if page.lft >= node.lft and page.rght <= node.rght and page.tree_id == node.tree_id %}selected {% endif %}{% if node.draft %}draft{% endif %}">
-        <a href="{{ node.get_absolute_url }}">{% firstof node.menu_title node.title %}</a>
-        {% if children %}
-        <ul class="submenu">
-          {{ children }}
-        </ul>
-        {% endif %}
-      </li>
-      {% endrecursetree %}
-    </ul>		
-
-And it is loaded by the ``templates/theme/html5.html`` base templates like this::
-
-      <!-- Navigation -->
-      {% block navigation %}
-      <nav>{% render_navigation %}</nav>
-      {% endblock %}
-      <!-- End of Navigation -->
-
-If you need to change it, you can create a
-``themes/YOUR_THEME/default/templates/navigation.html`` file which
-will improve this. As an example, you can create this file::
-
-    <ul class="nav">
-    {% for m in menu %}
-      {% if m.level == 0 %}
-    	{% if m.app_page_type.model != 'pageapp_contact' %}
-            <li{% if page.lft >= m.lft and page.rght <= m.rght and page.tree_id == m.tree_id %} class="activate"{% endif %}><a href="{{ m.get_absolute_url }}">{% firstof m.menu_title m.title %}</a></li>
-    	{% else %}
-    	</ul>
-    	<ul class="contact">
-    		<li><a href="{{ m.get_absolute_url }}">{% firstof m.menu_title m.title %}</a></li>
-    	{% endif %}
-      {% endif %}
-    {% endfor %}
-    </ul>
-
-
-
-
-
--------
-Layouts
--------
 
 Create customs layouts
 ======================
