@@ -39,13 +39,9 @@ Create the app skeleton
     Add your app to your INSTALLED_APPS : 'page_YOUR_APP_NAME'
     Synchronise the database.
      => Your app is fully configured !
-    $ python manage.py syncdb
-    Syncing...
-    Creating tables ...
-    Creating table page_YOUR_APP_NAME_pageapp_YOUR_APP_NAME
-    Installing custom SQL ...
-    Installing indexes ...
-    Installed 0 object(s) from 0 fixture(s)
+
+    $ python manage.py schemamigration plugin_YOUR_APP_NAME --initial
+	$ python manage.py migrate plugin_YOUR_APP_NAME
 
 You can now create page of your new type. But it is as empty as possible.
 
@@ -66,7 +62,7 @@ able to create different list of group for each pages.
 
 
 Create the app models
-+++++++++++++++++++++
+=====================
 
 If we open the generated ``page_group/models.py`` file we have::
 
@@ -139,7 +135,7 @@ We will add some other models::
 
 
 Create the app view
-+++++++++++++++++++
+===================
 
 Next we want to display the group list on our page.
 
@@ -198,7 +194,7 @@ We will change it for::
 
 
 Creating the administration
-+++++++++++++++++++++++++++
+===========================
 
 Create the urls
 ---------------
@@ -328,6 +324,7 @@ In the models file, we will configure the PageApp actions::
 That's it, now we will be able to add our groups, countries and music styles to the app.
 Don't hesitate to read the code of the other app to improve the basic UI.
 
+
 Improve the Group's form
 ------------------------
 
@@ -357,5 +354,64 @@ Let change the ``page_group/forms.py``::
                 'photo': FileManagerWidget,
                 'description': TinyMCELargeTable(attrs={'style': 'width: 100%; height: 300px;', }),
                 }
+
+
+Create another view to the page app
+===================================
+
+Now that we have our list of group, we would like to display another
+page to see the group's details.
+
+This will be done by using definding other urls::
+
+    # -*- coding: utf-8 -*-
+    
+    from django.conf.urls import patterns, url
+    from views import index_view, detail_view
+    
+    urlpatterns = patterns('',
+                           url(r'^$', index_view),
+                       	   url(r'^(?P<pk>[\w-]+)/$', detail_view),
+                           )
+
+
+Then we will create another view::
+    
+    from django.shortcuts import get_object_or_404
+
+    def detail_view(request, page_app, pk):
+        obj = get_object_or_404(page_app.groups.get(pk=pk))
+    
+        return render_view('page_group/detail.html',
+                           { 'object': obj, },
+                           MEDIAS,
+                           context_instance=RequestContext(request))
+
+And another template::
+
+    <h1>{{ object.name }}</h1>
+	{{ object.description|safe }}
+
+
+We will also provide a get_absolute_url to our ``Group`` object::
+
+    class Group(models.Model):
+        # [ ... ]
+    
+        def get_absolute_url(self):
+            return u'%sp/%s/' % (self.app.get_absolute_url(),
+                                 self.pk)
+
+So we can change the ``index.html`` template::
+
+    <h1>My list of groups</h1>
+    <ul>
+        {% for group in object.groups.all %}
+        <li><a href="{{ group.get_absolute_url }}">{{ group }}</a></li>
+        {% empty %}
+        <li>No groups yet</li>
+        {% endfor %}
+    </ul>
+
 
 That's it !

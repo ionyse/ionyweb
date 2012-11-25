@@ -2,14 +2,14 @@
 from django.template import RequestContext
 from ionyweb.website.rendering.utils import render_view
 
-# from ionyweb.rendering.medias import CSSMedia, JSMedia, JSAdminMedia
+# from ionyweb.website.rendering.medias import CSSMedia, JSMedia, JSAdminMedia
 MEDIAS = (
     # App CSS
-    # CSSMedia('page_{{ plugin_name }}.css'),
+    # CSSMedia('plugin_{{ plugin_name }}.css'),
     # App JS
-    # JSMedia('page_{{ plugin_name }}.js'),
+    # JSMedia('plugin_{{ plugin_name }}.js'),
     # Actions JSAdmin
-    # JSAdminMedia('page_{{ plugin_name }}_actions.js'),
+    # JSAdminMedia('plugin_{{ plugin_name }}_actions.js'),
     )
 
 def index_view(request, plugin):    
