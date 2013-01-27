@@ -8747,7 +8747,7 @@
 .wa_actions_object_widget .modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
 }
-#ionyweb_admin .tooltip,
+.tooltip,
 .wa_placeholder_structure .tooltip,
 .wa_placeholder_widget .tooltip,
 .wa_plugin_widget .tooltip,
@@ -8762,7 +8762,7 @@
   opacity: 0;
   filter: alpha(opacity=0);
 }
-#ionyweb_admin .tooltip.in,
+.tooltip.in,
 .wa_placeholder_structure .tooltip.in,
 .wa_placeholder_widget .tooltip.in,
 .wa_plugin_widget .tooltip.in,
@@ -8771,7 +8771,7 @@
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
-#ionyweb_admin .tooltip.top,
+.tooltip.top,
 .wa_placeholder_structure .tooltip.top,
 .wa_placeholder_widget .tooltip.top,
 .wa_plugin_widget .tooltip.top,
@@ -8779,7 +8779,7 @@
 .wa_actions_object_widget .tooltip.top {
   margin-top: -2px;
 }
-#ionyweb_admin .tooltip.right,
+.tooltip.right,
 .wa_placeholder_structure .tooltip.right,
 .wa_placeholder_widget .tooltip.right,
 .wa_plugin_widget .tooltip.right,
@@ -8787,7 +8787,7 @@
 .wa_actions_object_widget .tooltip.right {
   margin-left: 2px;
 }
-#ionyweb_admin .tooltip.bottom,
+.tooltip.bottom,
 .wa_placeholder_structure .tooltip.bottom,
 .wa_placeholder_widget .tooltip.bottom,
 .wa_plugin_widget .tooltip.bottom,
@@ -8795,7 +8795,7 @@
 .wa_actions_object_widget .tooltip.bottom {
   margin-top: 2px;
 }
-#ionyweb_admin .tooltip.left,
+.tooltip.left,
 .wa_placeholder_structure .tooltip.left,
 .wa_placeholder_widget .tooltip.left,
 .wa_plugin_widget .tooltip.left,
@@ -8803,7 +8803,7 @@
 .wa_actions_object_widget .tooltip.left {
   margin-left: -2px;
 }
-#ionyweb_admin .tooltip.top .tooltip-arrow,
+.tooltip.top .tooltip-arrow,
 .wa_placeholder_structure .tooltip.top .tooltip-arrow,
 .wa_placeholder_widget .tooltip.top .tooltip-arrow,
 .wa_plugin_widget .tooltip.top .tooltip-arrow,
@@ -8816,7 +8816,7 @@
   border-right: 5px solid transparent;
   border-top: 5px solid #000000;
 }
-#ionyweb_admin .tooltip.left .tooltip-arrow,
+.tooltip.left .tooltip-arrow,
 .wa_placeholder_structure .tooltip.left .tooltip-arrow,
 .wa_placeholder_widget .tooltip.left .tooltip-arrow,
 .wa_plugin_widget .tooltip.left .tooltip-arrow,
@@ -8829,7 +8829,7 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid #000000;
 }
-#ionyweb_admin .tooltip.bottom .tooltip-arrow,
+.tooltip.bottom .tooltip-arrow,
 .wa_placeholder_structure .tooltip.bottom .tooltip-arrow,
 .wa_placeholder_widget .tooltip.bottom .tooltip-arrow,
 .wa_plugin_widget .tooltip.bottom .tooltip-arrow,
@@ -8842,7 +8842,7 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #000000;
 }
-#ionyweb_admin .tooltip.right .tooltip-arrow,
+.tooltip.right .tooltip-arrow,
 .wa_placeholder_structure .tooltip.right .tooltip-arrow,
 .wa_placeholder_widget .tooltip.right .tooltip-arrow,
 .wa_plugin_widget .tooltip.right .tooltip-arrow,
@@ -8855,7 +8855,7 @@
   border-bottom: 5px solid transparent;
   border-right: 5px solid #000000;
 }
-#ionyweb_admin .tooltip-inner,
+.tooltip-inner,
 .wa_placeholder_structure .tooltip-inner,
 .wa_placeholder_widget .tooltip-inner,
 .wa_plugin_widget .tooltip-inner,
@@ -8871,7 +8871,7 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-#ionyweb_admin .tooltip-arrow,
+.tooltip-arrow,
 .wa_placeholder_structure .tooltip-arrow,
 .wa_placeholder_widget .tooltip-arrow,
 .wa_plugin_widget .tooltip-arrow,
