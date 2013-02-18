@@ -43,35 +43,35 @@ class Migration(SchemaMigration):
         # Adding model 'Image'
         db.create_table('file_manager_image', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
+            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=255)),
         ))
         db.send_create_signal('file_manager', ['Image'])
 
         # Adding model 'Document'
         db.create_table('file_manager_document', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
+            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=255)),
         ))
         db.send_create_signal('file_manager', ['Document'])
 
         # Adding model 'Audio'
         db.create_table('file_manager_audio', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
+            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=255)),
         ))
         db.send_create_signal('file_manager', ['Audio'])
 
         # Adding model 'Archive'
         db.create_table('file_manager_archive', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
+            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=255)),
         ))
         db.send_create_signal('file_manager', ['Archive'])
 
         # Adding model 'Other'
         db.create_table('file_manager_other', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
+            ('file', self.gf('django.db.models.fields.files.FileField')(max_length=255)),
         ))
         db.send_create_signal('file_manager', ['Other'])
 
@@ -110,12 +110,12 @@ class Migration(SchemaMigration):
         },
         'file_manager.archive': {
             'Meta': {'object_name': 'Archive'},
-            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
+            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
         },
         'file_manager.audio': {
             'Meta': {'object_name': 'Audio'},
-            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
+            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
         },
         'file_manager.directory': {
@@ -130,7 +130,7 @@ class Migration(SchemaMigration):
         },
         'file_manager.document': {
             'Meta': {'object_name': 'Document'},
-            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
+            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
         },
         'file_manager.file': {
@@ -151,12 +151,12 @@ class Migration(SchemaMigration):
         },
         'file_manager.image': {
             'Meta': {'object_name': 'Image'},
-            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
+            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
         },
         'file_manager.other': {
             'Meta': {'object_name': 'Other'},
-            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
+            'file': ('django.db.models.fields.files.FileField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
         }
     }

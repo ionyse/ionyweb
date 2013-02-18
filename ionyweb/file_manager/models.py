@@ -102,11 +102,11 @@ class FileManager(models.Model):
 class File(models.Model):
     
     dir = models.ForeignKey(Directory,
-                              related_name="files",
-                              blank=False,
-                              null=False)
-    
-    name = models.CharField(_(u'File name'), max_length=256, editable=False)  
+                            related_name="files",
+                            blank=False,
+                            null=False)
+
+    name = models.CharField(_(u'File name'), max_length=256, editable=False)
     type = models.CharField(_(u'Type'), max_length=50, editable=False)
     
     date_creation = models.DateField(_(u'Creation date'), auto_now_add=True, editable=False)
@@ -182,7 +182,7 @@ class File(models.Model):
     
 class AbstractFile(models.Model):
     
-    file = models.FileField(upload_to="file_manager/")
+    file = models.FileField(upload_to="file_manager/", max_length=255)
     
     def get_icon(self):
         return '<i class="icon-file icon-white"></i>'
