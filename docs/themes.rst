@@ -309,6 +309,7 @@ will improve this. As an example, you can create this file::
     {% endfor %}
     </ul>
 
+So that Ionyweb can always displays panels on top of theme content you must not use any z-index above 9000 as these are reserved for Ionyweb admin panels. 
 
 
 
