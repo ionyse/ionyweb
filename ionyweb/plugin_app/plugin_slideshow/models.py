@@ -128,6 +128,12 @@ class Slide(models.Model):
                              upload_to='slides/',
                              max_length=200)
 
+    link = models.CharField(_(u'Link'),
+                             max_length=256)
+                             
+    title = models.CharField(_(u'Title'),
+                             max_length=256)
+                             
     order = models.IntegerField(_(u'Order'),
                                 default=1)
 

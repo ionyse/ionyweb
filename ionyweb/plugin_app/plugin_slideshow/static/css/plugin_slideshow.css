@@ -11,3 +11,18 @@
 .plugin-slideshow-pager a.active-slide img{
     border: 2px red solid;
 }
+
+.plugin-slideshow-link {
+    background: #222;
+    opacity: 0.5;
+    bottom: 0;
+    left: 0;
+    padding: 10px 15px 5px;
+    position: absolute;
+    right: 0;    
+}
+
+.plugin-slideshow-link a {
+    color: #fff;
+    font-weight: bold;
+}

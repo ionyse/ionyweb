@@ -32,7 +32,7 @@ ionyweb.slideshow = {
 	    current: 0,
 	    intervalID: null,
 	    thumbs: [],
-	    init_items: function(){this.items = this.obj.children('img');},
+        init_items: function(){this.items = this.obj.children('img');},
 	    init_fx_transition: function(){
 		var fx_transition = ionyweb.slideshow.transitions[this.get_opt('fx')];
 		if(fx_transition == undefined){
@@ -73,6 +73,7 @@ ionyweb.slideshow = {
 		    var slideOut = instance.get_next();
 		    instance.opts.fx_transition.play(instance, slideIn, slideOut);
 		    instance.update_pager_items();
+            instance.update_link_container();
 		}
 		var timeout = this.get_opt('timeout');
 		if(timeout > 0){
@@ -86,6 +87,7 @@ ionyweb.slideshow = {
 		var slideOut = instance.get_current_item();
 		this.opts.fx_transition.play(this, slideIn, slideOut);
 		this.update_pager_items();
+        this.update_link_container();
 		this.start();
 	    },
 	    get_show_callback: function(i){
@@ -140,6 +142,7 @@ ionyweb.slideshow = {
 		}
 		this.container.after(pagerObj);
 		this.update_pager_items();
+        this.update_link_container();
 	    },
 	    update_pager_items: function(){
 		var pagerId = this.get_opt('pager');
@@ -148,7 +151,14 @@ ionyweb.slideshow = {
 		    pagerItems.removeClass('active-slide');
 		    $(pagerItems.get(this.current)).addClass('active-slide');
 		}
-	    }
+	    },
+        update_link_container: function(){
+            link = this.get_current_item()[0].attributes.option.nodeValue;
+            label = this.get_current_item()[0].attributes.alt.nodeValue;
+            var container = $('#' + this.get_opt('link-container'));
+            container.children('a')[0].setAttribute('href', link);
+            container.children('a')[0].innerHTML = label;
+        },
 	}
 	// Updates items list
 	instance.init_items();
