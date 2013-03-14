@@ -124,7 +124,8 @@ class Slide(models.Model):
     plugin = models.ForeignKey(Plugin_Slideshow,
                                related_name='slides')
 
-    image = models.CharField(_(u'Image'),
+    image = models.ImageField(_(u'Image'),
+                             upload_to='slides/',
                              max_length=200)
 
     order = models.IntegerField(_(u'Order'),
@@ -134,8 +135,12 @@ class Slide(models.Model):
         return u'Slide #%d' % (self.pk)
 
     def get_thumb(self):
+        # Dirty trick to get fm_version to work
+        website = self.plugin.pages.all()[0].pages.all()[0].website
+
         render = render_to_string('plugin_slideshow/action_admin_thumbnail.html',
-                                {'path': self.image.path,
+                                {'path': self.image,
+                                 'website': website,
                                  'ADMIN_THUMBNAIL': settings.ADMIN_THUMBNAIL})
         return render
     get_thumb.action_short_description=_(u'Thumbnail')
