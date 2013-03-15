@@ -134,6 +134,10 @@ msgstr "articles"
 msgid "Latest entries"
 msgstr "Derniers articles"
 
+#: templates/page_blog/entry_archive.html:16
+msgid "Read more"
+msgstr "Lisez la suite"
+
 #: templates/page_blog/entry_archive.html:17
 msgid "No entry yet"
 msgstr "Aucun article disponible actuellement"

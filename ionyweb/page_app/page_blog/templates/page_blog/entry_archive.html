@@ -11,8 +11,9 @@
 			{% endwith %}
         </p>
         <div class="entry-body">
-            {{ entry.body|safe }}
+            {{ entry.body|truncatewords_html:50|safe }}
         </div>
+        <h3><a href="{{ entry.get_absolute_url }}">{% trans "Read more" %}</a></h3>
     </div>
     {% endfor %}
 {% else %}
