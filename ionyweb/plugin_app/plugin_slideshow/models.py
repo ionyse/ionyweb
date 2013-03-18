@@ -129,9 +129,13 @@ class Slide(models.Model):
                              max_length=200)
 
     link = models.CharField(_(u'Link'),
+                             blank=True,
+                             default="",
                              max_length=256)
                              
     title = models.CharField(_(u'Title'),
+                             blank=True,
+                             default="",
                              max_length=256)
                              
     order = models.IntegerField(_(u'Order'),
