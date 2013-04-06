@@ -36,7 +36,6 @@ class Plugin_Video(AbstractPlugin):
 
     url = models.URLField(_(u"URL"),
                           max_length=255,
-                          verify_exists=True,
                           help_text=_(u"Copy/Paste the video URL.<br/>"
                                       u"You can paste a YouTube, Dailymotion or Vimeo video URL."))
 

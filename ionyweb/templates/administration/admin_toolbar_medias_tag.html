@@ -1,47 +1,47 @@
-{% load i18n %}
-  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-last.min.js"></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-last.custom.min.js"></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-timepicker-addon.js"></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.ba-hashchange.min.js"></script>
+{% load i18n staticfiles %}
+  <script type="text/javascript" src="{% static 'js/jquery-last.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-ui-last.custom.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-ui-timepicker-addon.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery.ba-hashchange.min.js' %}"></script>
   
 
-  <link class="wa_medias" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}admin/bootstrap/css/bootstrap.css"/>
-  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/bootstrap/js/bootstrap.js"></script>
+  <link class="wa_medias" rel="stylesheet" type="text/css" href="{% static 'admin/bootstrap/css/bootstrap.css' %}"/>
+  <script class="wa_medias" type="text/javascript" src="{% static 'admin/bootstrap/js/bootstrap.js' %}"></script>
 
 {% if is_admin %}
 
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookies.js"></script>
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.ui.nestedSortable.js"></script>
-	<script type="text/javascript" src="{% url django.views.i18n.javascript_catalog %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.cookies.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.ui.nestedSortable.js' %}"></script>
+	<script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
 	{% if debug %}
 	  <link class="wa_medias" rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}admin/css/ionyweb_admin_{{ admin_theme }}.less"/>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}js/less-last.min.js"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'js/less-last.min.js' %}"></script>
 		 	  
-	  <script type="text/javascript" src="{{ STATIC_URL }}admin/js/ionyweb_admin.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/confirm.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/apps.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/design.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/edit.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/layouts.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/menu.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/messages.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/pages.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/panels.js"></script>	 
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/plugins.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/settings.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/urls.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/themes.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/file_manager.js"></script>
+	  <script type="text/javascript" src="{% static 'admin/js/ionyweb_admin.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/confirm.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/apps.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/design.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/edit.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/layouts.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/menu.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/messages.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/pages.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/panels.js' %}"></script>	 
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/plugins.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/settings.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/urls.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/themes.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/file_manager.js' %}"></script>
 	  
 	{% else %}
 	  <link class="wa_medias" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}admin/css/ionyweb_admin_{{ admin_theme }}.min.css"/>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/confirm.js"></script>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/ionyweb_admin.min.js"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/confirm.js' %}"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/ionyweb_admin.min.js' %}"></script>
 	{% endif %}
  
-	<link class="wa_medias" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}js/fancybox/jquery.fancybox.css"/>
-	<script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}js/fancybox/jquery.fancybox.js"></script>
-	<script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}js/ionyweb.admin.lightbox.js"></script>
+	<link class="wa_medias" rel="stylesheet" type="text/css" href="{% static 'js/fancybox/jquery.fancybox.css' %}"/>
+	<script class="wa_medias" type="text/javascript" src="{% static 'js/fancybox/jquery.fancybox.js' %}"></script>
+	<script class="wa_medias" type="text/javascript" src="{% static 'js/ionyweb.admin.lightbox.js' %}"></script>
 
 	  {% if request.website.in_maintenance %}
 	  <script class="wa_medias" type="text/javascript">
@@ -53,13 +53,13 @@
 
 {% else %}
 	  {% if debug %}
-	  <script type="text/javascript" src="{{ STATIC_URL }}admin/js/ionyweb_admin.js"></script>
-	  <link class="wa_medias" rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}admin/css/ionyweb_login.less"/>
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}js/less-last.min.js"></script>
+	  <script type="text/javascript" src="{% static 'admin/js/ionyweb_admin.js' %}"></script>
+	  <link class="wa_medias" rel="stylesheet/less" type="text/css" href="{% static 'admin/css/ionyweb_login.less' %}"/>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'js/less-last.min.js' %}"></script>
 	  {% else %}
-	  <script type="text/javascript" src="{{ STATIC_URL }}admin/js/ionyweb_login.min.js"></script>
-	  <link class="wa_medias" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}admin/css/ionyweb_login.min.css"/>
+	  <script type="text/javascript" src="{% static 'admin/js/ionyweb_login.min.js' %}"></script>
+	  <link class="wa_medias" rel="stylesheet" type="text/css" href="{% static 'admin/css/ionyweb_login.min.css' %}"/>
 	  {% endif %}
-	  <script class="wa_medias" type="text/javascript" src="{{ STATIC_URL }}admin/js/messages.js"></script>
+	  <script class="wa_medias" type="text/javascript" src="{% static 'admin/js/messages.js' %}"></script>
 
 {% endif %}

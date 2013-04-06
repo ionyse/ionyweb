@@ -168,8 +168,10 @@ SLUG_SEP = '-'
 
 HTML_ID_PLACEHOLDER = '%s%s%s' % (SLUG_SEP, SLUG_PLACEHOLDER, SLUG_SEP)
 HTML_ID_PLACEHOLDER_CONTENT = '%s%s' % (SLUG_CONTENT, HTML_ID_PLACEHOLDER)
-HTML_ID_PLACEHOLDER_DEFAULT = '%s%s%s' % (SLUG_DEFAULT, SLUG_SEP, SLUG_PLACEHOLDER)
-HTML_ID_PLACEHOLDER_CLIPBOARD = '%s%s%s' % (SLUG_CLIPBOARD, SLUG_SEP, SLUG_PLACEHOLDER)
+HTML_ID_PLACEHOLDER_DEFAULT = '%s%s%s' % (SLUG_DEFAULT, SLUG_SEP,
+                                          SLUG_PLACEHOLDER)
+HTML_ID_PLACEHOLDER_CLIPBOARD = '%s%s%s' % (SLUG_CLIPBOARD, SLUG_SEP,
+                                            SLUG_PLACEHOLDER)
 HTML_ID_APP = '%s%s' % (SLUG_APP, SLUG_SEP)
 HTML_ID_PLUGIN = '%s%s' % (SLUG_PLUGIN, SLUG_SEP)
 HTML_ID_LAYOUT = '%s%s' % (SLUG_LAYOUT, SLUG_SEP)
@@ -194,7 +196,9 @@ URL_ADMIN_SEP = u'wa'
 
 ACTION_ADMIN_LIST_SUFFIX = '_list'
 ACTION_ADMIN_ORDER_SLUG = '_order'
-ADMIN_THEME = 'snow' # 'snow' || 'dark' || ... Will import ionyweb_admin_***.less
+
+# Will import ionyweb_admin_***.less
+ADMIN_THEME = 'snow'  # 'snow' || 'dark' || ...
 
 SITEMAP_INDEX = False
 
@@ -216,9 +220,9 @@ RESTRICTED_DOMAINS = []
 # ------------
 EXTENSIONS = {
     'Folder': [''],
-    'Image': ['jpg','jpeg','gif','png'],
+    'Image': ['jpg', 'jpeg', 'gif', 'png'],
     'Audio': ['mpeg'],
-    'Document': ['pdf','doc','xls','odt', 'ods', 'rtf','txt','csv'],
+    'Document': ['pdf', 'doc', 'xls', 'odt', 'ods', 'rtf', 'txt', 'csv'],
     'Archive': ['zip', 'rar', 'tar', 'tar.gz', '7z'],
     'Others': [],
     #'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
@@ -231,30 +235,27 @@ DISPLAY_MODE = (
 )
 
 VERSIONS = {
-    'admin_thumbnail': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60, 'opts': 'crop'},
-    'thumbnail': {'verbose_name': 'Thumbnail (1 col)', 'width': 60, 'height': 60, 'opts': 'crop'},
-    'small': {'verbose_name': 'Small (2 col)', 'width': 140, 'height': '', 'opts': ''},
-    'medium': {'verbose_name': 'Medium (4col )', 'width': 300, 'height': '', 'opts': ''},
-    'big': {'verbose_name': 'Big (6 col)', 'width': 460, 'height': '', 'opts': ''},
-    'large': {'verbose_name': 'Large (8 col)', 'width': 680, 'height': '', 'opts': ''},
-    'croppedthumbnail': {'verbose_name': 'Cropped Thumbnail (300x200px)', 'width': 300, 'height': 200, 'opts': 'crop upscale'},
-    'croppedthumb': {'verbose_name': 'Cropped Thumbnail (140x100px)', 'width': 140, 'height': 100, 'opts': 'crop upscale'},
-    'croppedbig': {'verbose_name': 'Cropped big (450x323)', 'width': '', 'height': 323, 'opts': 'crop upscale'},
+    'admin_thumbnail': {'verbose_name': 'Admin Thumbnail',
+                        'width': 60, 'height': 60, 'opts': 'crop'},
+    'thumbnail': {'verbose_name': 'Thumbnail (1 col)',
+                  'width': 60, 'height': 60, 'opts': 'crop'},
+    'small': {'verbose_name': 'Small (2 col)',
+              'width': 140, 'height': '', 'opts': ''},
+    'medium': {'verbose_name': 'Medium (4col )',
+               'width': 300, 'height': '', 'opts': ''},
+    'big': {'verbose_name': 'Big (6 col)',
+            'width': 460, 'height': '', 'opts': ''},
+    'large': {'verbose_name': 'Large (8 col)',
+              'width': 680, 'height': '', 'opts': ''},
+    'croppedthumbnail': {'verbose_name': 'Cropped Thumbnail (300x200px)',
+                         'width': 300, 'height': 200, 'opts': 'crop upscale'},
+    'croppedthumb': {'verbose_name': 'Cropped Thumbnail (140x100px)',
+                     'width': 140, 'height': 100, 'opts': 'crop upscale'},
+    'croppedbig': {'verbose_name': 'Cropped big (450x323)',
+                   'width': '', 'height': 323, 'opts': 'crop upscale'},
 }
 
 ADMIN_THUMBNAIL = 'admin_thumbnail'
 VERSION_QUALITY = 90
-IMAGE_MAXBLOCK = 1024*1024
-FILE_MANAGER_QUOTA = "1073741824" #1024^3b = 1Gb
-
-
-
-
-
-
-
-
-
-
-
-
+IMAGE_MAXBLOCK = 1024 ** 2  # 1MB
+FILE_MANAGER_QUOTA = str(1024 ** 3)  # 1024^3b = 1Gb
