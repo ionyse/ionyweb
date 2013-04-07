@@ -85,6 +85,9 @@ def get_actions_for_object_model(obj, relation_id=None):
         if get_actions():
             # Actions
             actions_html = []
+            # Relation ID
+            if not relation_id:
+                relation_id = obj.get_relation_id()
             for action in get_actions():
                 actions_html.append(u'<a onclick="%s(\'%s\'); return false;">%s</a>' % (
                         action[1],
@@ -92,9 +95,6 @@ def get_actions_for_object_model(obj, relation_id=None):
                         action[0]))
             # Title
             title = obj.__class__.get_name()
-            # Relation ID
-            if not relation_id:
-                relation_id = obj.get_relation_id()
             return {'title': title, 'list': actions_html}
     # -- NEW SYNTAX --
     # Only if object model defines ActionsAdmin inner class.
