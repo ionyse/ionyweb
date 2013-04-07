@@ -166,6 +166,11 @@ If we open the generated ``page_group/views.py`` file we have::
 You can provide some medias specific to your app views and to your app
 administration.
 
+.. note::
+
+    Don't forget the context_instance parameter of the ``render_view``
+    if you want the media to be displayed.
+
 The index view is the default. It is defined in the urls.py::
 
     # -*- coding: utf-8 -*-
