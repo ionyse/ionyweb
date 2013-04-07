@@ -3,6 +3,7 @@
 import floppyforms as forms
 import datetime
 from django.conf import settings
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 from tinymce.widgets import TinyMCE
 
@@ -53,7 +54,7 @@ class SlugWidget(forms.widgets.SlugInput):
         return context
 
     class Media:
-        js = (settings.ADMIN_MEDIA_PREFIX+'js/urlify.js',)
+        js = ('admin/js/urlify.js',)
         
 
 

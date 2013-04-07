@@ -15,7 +15,8 @@ urlpatterns = patterns('',
 		       url(r'^_tinymce/', include('tinymce.urls')),
 		       url(r'^sitemap\.xml$', 'ionyweb.website.views.sitemap'),
 		       url(r'^sitemap-(?P<section>.+)\.xml$', 'ionyweb.website.views.sitemap'),
-
+                       url(r'^restframework/', include('djangorestframework.urls',
+                                                       namespace='djangorestframework')),
 		       # FIXME: SSL_REQUIRED
 		       url(r'^_login/', 
                            'ionyweb.authentication.views.crossdomain_login', 
