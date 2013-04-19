@@ -155,9 +155,13 @@ ionyweb.slideshow = {
         update_link_container: function(){
             link = this.get_current_item()[0].attributes.option.nodeValue;
             label = this.get_current_item()[0].attributes.alt.nodeValue;
+            desc = this.get_current_item()[0].attributes.desc.nodeValue;
             var container = $('#' + this.get_opt('link-container'));
             container.children('a')[0].setAttribute('href', link);
             container.children('a')[0].innerHTML = label;
+            container = $('#' + this.get_opt('desc-container'));
+            container.children('a')[0].setAttribute('href', link);
+            container.children('a')[0].innerHTML = desc;
         },
 	}
 	// Updates items list

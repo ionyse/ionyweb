@@ -26,3 +26,19 @@
     color: #fff;
     font-weight: bold;
 }
+
+.plugin-slideshow-desc {
+    background: none repeat scroll 0 0 #222222;
+    bottom: 0;
+    left: 0;
+    opacity: .5;
+    padding: 10px 15px 5px;
+    position: absolute;
+    right: 0;
+    color: #fff;
+}
+
+.plugin-slideshow-desc a {
+    color: #fff;
+    font-weight: bold;
+}

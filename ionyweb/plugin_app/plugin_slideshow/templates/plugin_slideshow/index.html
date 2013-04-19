@@ -16,6 +16,7 @@
         {% if object.pager %}pager: 'plugin-slideshow-{{ object.pk }}-nav',{% endif %}
         {% if object.pager_thumbs %}thumb: true,{% endif %}
         'link-container' : 'plugin-slideshow-link-container-{{ object.pk }}',
+        'desc-container' : 'plugin-slideshow-desc-container-{{ object.pk }}',
 	  });
 	});
   </script>
@@ -25,10 +26,11 @@
        style="{% if object.width %}width: {{ object.width }}px; margin: auto;{% endif %} height: {{ object.height }}px; overflow: hidden; position:relative;">
 	<div id="plugin-slideshow-{{ object.pk }}">
       {% for slide in slides_list %}
-      <img src="{{ slide.image.url }}" style="{% if object.width %}min-width: {{ object.width }}px;{% else %}width: 100%;{% endif %} min-height: {{ object.height }}px; margin: 0px; padding: 0px;" option="{{ slide.link }}" alt="{{ slide.title }}"/>
+      <img src="{{ slide.image.url }}" style="{% if object.width %}min-width: {{ object.width }}px;{% else %}width: 100%;{% endif %} min-height: {{ object.height }}px; margin: 0px; padding: 0px;" option="{{ slide.link }}" alt="{{ slide.title }}" desc="{{ slide.description|safe }}"/>
       {% endfor %}
 	</div>
     <div id="plugin-slideshow-link-container-{{ object.pk }}" class="plugin-slideshow-link"><a href=""></a></div>
+    <div id="plugin-slideshow-desc-container-{{ object.pk }}" class="plugin-slideshow-desc"><a href=""></a></div>
   </div>
 
 </div>

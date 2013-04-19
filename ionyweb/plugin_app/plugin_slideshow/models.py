@@ -137,6 +137,11 @@ class Slide(models.Model):
                              blank=True,
                              default="",
                              max_length=256)
+
+    description = models.CharField(_(u'Description'),
+                             blank=True,
+                             default="",
+                             max_length=512)
                              
     order = models.IntegerField(_(u'Order'),
                                 default=1)
