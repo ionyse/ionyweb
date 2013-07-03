@@ -8,9 +8,6 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Deleting field 'Slide.desc'
-        db.delete_column('plugin_slideshow_slide', 'desc')
-
         # Adding field 'Slide.description'
         db.add_column('plugin_slideshow_slide', 'description',
                       self.gf('django.db.models.fields.CharField')(default='', max_length=512, blank=True),
@@ -18,11 +15,6 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
-        # Adding field 'Slide.desc'
-        db.add_column('plugin_slideshow_slide', 'desc',
-                      self.gf('django.db.models.fields.CharField')(default='', max_length=512, blank=True),
-                      keep_default=False)
-
         # Deleting field 'Slide.description'
         db.delete_column('plugin_slideshow_slide', 'description')
 
