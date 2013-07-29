@@ -26,6 +26,6 @@ class SlideForm(ModuloModelForm):
     class Meta:
         model = Slide
         exclude = ('plugin', 'order')
-        #widgets = {
-            #'image': FileManagerWidget
-        #}  
+        widgets = {
+            'image': FileManagerWidget
+        }  
