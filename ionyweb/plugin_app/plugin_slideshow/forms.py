@@ -4,6 +4,7 @@ from django.template.loader import render_to_string
 import floppyforms as forms
 from ionyweb.forms import ModuloModelForm
 from models import Plugin_Slideshow, Slide
+from ionyweb.file_manager.widgets import FileManagerWidget
 
 
 class Plugin_SlideshowForm(ModuloModelForm):
@@ -18,9 +19,13 @@ class Plugin_SlideshowForm(ModuloModelForm):
     class Meta:
         model = Plugin_Slideshow
         exclude =('random',)
+      
 
 
 class SlideForm(ModuloModelForm):
     class Meta:
         model = Slide
         exclude = ('plugin', 'order')
+        widgets = {
+            'image': FileManagerWidget
+        }  

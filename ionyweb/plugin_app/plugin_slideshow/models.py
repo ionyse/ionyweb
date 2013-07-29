@@ -124,8 +124,10 @@ class Slide(models.Model):
     plugin = models.ForeignKey(Plugin_Slideshow,
                                related_name='slides')
 
-    image = models.ImageField(_(u'Image'),
-                             upload_to='slides/',
+    #image = models.ImageField(_(u'Image'),
+                             #upload_to='slides/',
+                             #max_length=200)
+    image = models.CharField(_(u'Image'),
                              max_length=200)
 
     link = models.CharField(_(u'Link'),
