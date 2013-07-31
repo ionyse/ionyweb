@@ -216,13 +216,13 @@ def catch_wrong_deletion_of_user(sender, instance, **kwargs):
     '''
     cursor = connection.cursor()
     cursor.execute("""
-        SELECT ws.title, COUNT(*) as owners FROM `website_website` ws
+        SELECT ws.title, COUNT(*) as owners FROM website_website ws
         INNER JOIN website_websiteowner wso 
               ON ws.id = wso.website_id 
-              AND wso.is_superuser = 1
+              AND wso.is_superuser = TRUE
               AND ws.id IN (SELECT website_id 
                             FROM website_websiteowner
-                            WHERE user_id = %s)
+                            WHERE user_id = %s) GROUP BY ws.title
         """, [instance.id])
 
     websites_owned = cursor.fetchall()
