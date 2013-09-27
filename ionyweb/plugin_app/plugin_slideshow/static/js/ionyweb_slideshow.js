@@ -69,11 +69,13 @@ ionyweb.slideshow = {
 	    },
 	    start: function(){
 		var timer_callback = function(instance){
-		    var slideIn = instance.get_current_item();
-		    var slideOut = instance.get_next();
-		    instance.opts.fx_transition.play(instance, slideIn, slideOut);
-		    instance.update_pager_items();
-            instance.update_link_container();
+            if(instance) {
+                var slideIn = instance.get_current_item();
+                var slideOut = instance.get_next();
+                instance.opts.fx_transition.play(instance, slideIn, slideOut);
+                instance.update_pager_items();
+                instance.update_link_container();
+            }
 		}
 		var timeout = this.get_opt('timeout');
 		if(timeout > 0){
