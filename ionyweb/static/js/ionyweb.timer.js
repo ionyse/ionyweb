@@ -24,6 +24,7 @@ ionyweb.timer = {
 	this.resume();
     },
     LoopTimer: function(callback, delay, params) {
+    var params = params;
 	var timerId, start, remaining = null;
 	var intervalRunning, timerRunning = false;
 	var intervalCallback = function(params){
