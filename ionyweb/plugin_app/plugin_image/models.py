@@ -24,6 +24,10 @@ class Plugin_Image(AbstractPlugin):
                                    max_length=255,
                                    blank=True)
 
+    link = models.CharField(_(u'link'),
+                                   max_length=255,
+                                   blank=True)
+                                   
     width = models.PositiveIntegerField(_(u"width"),
                                         blank=True,
                                         null=True)

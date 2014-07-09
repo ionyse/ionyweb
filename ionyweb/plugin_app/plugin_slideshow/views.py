@@ -5,7 +5,7 @@ from ionyweb.website.rendering.utils import render_view
 
 RENDER_MEDIAS = (
     JSMedia('ionyweb.timer.js'),
-    JSMedia('ionyweb.slideshow.js'),
+    JSMedia('ionyweb_slideshow.js'),
     CSSMedia('plugin_slideshow.css'),
     JSAdminMedia('plugin_slideshow_actions.js')
     )

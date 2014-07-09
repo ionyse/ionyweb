@@ -38,7 +38,7 @@ def index(request):
 
             # 3. Create the website owner
             website_owner = WebSiteOwner.objects.create(website=website,
-                                                        user=User.objects.get(pk=1),
+                                                        user=User.objects.get(username='admin'),
                                                         is_superuser=True)
 
             # 4. Create the home page

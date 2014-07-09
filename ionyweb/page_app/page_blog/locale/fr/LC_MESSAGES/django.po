@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-11 11:54+0100\n"
+"POT-Creation-Date: 2013-03-15 17:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,86 +54,109 @@ msgstr ""
 "Flux RSS des dernies articles de la catégorie %(category)s publiés sur "
 "%(site_name)s."
 
-#: models.py:17 models.py:108
-msgid "title"
-msgstr "titre"
-
-#: models.py:20
-msgid "Blog App"
-msgstr "Blog App"
-
-#: models.py:23
-msgid "Edit categories"
-msgstr "Editer les catégories"
-
-#: models.py:24
-msgid "Edit entries"
-msgstr "Editer les articles"
-
-#: models.py:63
-msgid "name"
-msgstr "nom"
-
-#: models.py:64 models.py:109
-msgid "slug"
-msgstr "slug"
-
-#: models.py:65 models.py:112
-msgid "creation date"
-msgstr "date de création"
-
-#: models.py:66
-msgid "edit date"
-msgstr "date d'édition"
-
-#: models.py:72 models.py:111
-msgid "category"
-msgstr "catégorie"
-
-#: models.py:73
-msgid "categories"
-msgstr "catégories"
-
-#: models.py:102
-msgid "Offline"
-msgstr "Hors ligne"
-
-#: models.py:103
-msgid "Online"
-msgstr "En ligne"
-
-#: models.py:110
+#: forms.py:31 models.py:160
 msgid "author"
 msgstr "auteur"
 
-#: models.py:113
-msgid "modification date"
-msgstr "date de modification"
+#: models.py:19 models.py:158
+msgid "title"
+msgstr "titre"
 
-#: models.py:114
-msgid "publication date"
-msgstr "date de publication"
+#: models.py:22
+msgid "Blog App"
+msgstr "Blog App"
 
-#: models.py:115
-msgid "status"
-msgstr "statut"
+#: models.py:26
+msgid "Edit categories"
+msgstr "Editer les catégories"
 
-#: models.py:116
-msgid "body"
-msgstr "contenu"
+#: models.py:27
+msgid "Edit entries"
+msgstr "Editer les articles"
 
-#: models.py:122
+#: models.py:77 models.py:174
 msgid "entry"
 msgstr "article"
 
-#: models.py:123
+#: models.py:79 models.py:175
 msgid "entries"
 msgstr "articles"
 
-#: templates/page_blog/entry_archive.html:2
-msgid "Latest entries"
-msgstr "Derniers articles"
+#: models.py:81
+msgid "and"
+msgstr ""
 
-#: templates/page_blog/entry_archive.html:17
+#: models.py:83 models.py:106 models.py:161
+msgid "category"
+msgstr "catégorie"
+
+#: models.py:85 models.py:107
+msgid "categories"
+msgstr "catégories"
+
+#: models.py:95 models.py:123
+msgid "name"
+msgstr "nom"
+
+#: models.py:96 models.py:159
+msgid "slug"
+msgstr "slug"
+
+#: models.py:98 models.py:162
+msgid "creation date"
+msgstr "date de création"
+
+#: models.py:99
+msgid "edit date"
+msgstr "date d'édition"
+
+#: models.py:152
+msgid "Offline"
+msgstr "Hors ligne"
+
+#: models.py:153
+msgid "Online"
+msgstr "En ligne"
+
+#: models.py:163
+msgid "modification date"
+msgstr "date de modification"
+
+#: models.py:164
+msgid "publication date"
+msgstr "date de publication"
+
+#: models.py:167
+msgid "status"
+msgstr "statut"
+
+#: models.py:168
+msgid "body"
+msgstr "contenu"
+
+#: models.py:182
+msgid "Title"
+msgstr "Titre"
+
+#: models.py:186
+msgid "Category"
+msgstr "Catégorie"
+
+#: models.py:190
+msgid "Publication Date"
+msgstr "Date de publication"
+
+#: models.py:194
+msgid "Status"
+msgstr "Statut"
+
+#: templates/page_blog/entry_archive.html:16
+msgid "Read more"
+msgstr "Lisez la suite"
+
+#: templates/page_blog/entry_archive.html:20
 msgid "No entry yet"
 msgstr "Aucun article disponible actuellement"
+
+#~ msgid "Latest entries"
+#~ msgstr "Derniers articles"

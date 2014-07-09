@@ -20,7 +20,12 @@ def index_view(request, plugin):
             item_str = page.title
         breadcrumb_items.append(item_str)
     # Add current page
-    breadcrumb_items.append(request.page.title)
+    # Make the current page as a link if option enable
+    if links:
+        item_str = u'<a href="%s">%s</a>' % (request.page.get_absolute_url(), request.page.title)
+        breadcrumb_items.append(item_str)
+    else:
+        breadcrumb_items.append(request.page.title)
 
     if hasattr(request, settings.BREADCRUMB_OBJECT_TITLE):
         breadcrumb_items.append(getattr(request, settings.BREADCRUMB_OBJECT_TITLE))

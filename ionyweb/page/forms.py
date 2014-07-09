@@ -14,7 +14,6 @@ from ionyweb.settings import SLUG_MIN_SIZE
 from ionyweb.widgets import SlugWidget, TemplateThemeSelectWidget
 from ionyweb.loaders.manifest import themes_info
 
-
 def content_type_choices(limit_choices_to={}):
     content_types = []
     for content_type in ContentType.objects.filter(**limit_choices_to):
@@ -71,7 +70,6 @@ class PageWAForm(ModuloModelForm):
             # in choices to avoid error validation
             self.fields['default_template'].choices = [(self.instance.default_template, '')]
             self.fields['default_template'].widget = forms.HiddenInput()
-            
 
         
     def clean(self):        

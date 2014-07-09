@@ -1,5 +1,5 @@
 {% load i18n %}
-<h2>{% trans "Latest entries" %}</h2>
+
 {% if latest %}
     {% for entry in latest %}
     <div class="entry">
@@ -11,8 +11,9 @@
 			{% endwith %}
         </p>
         <div class="entry-body">
-            {{ entry.body|safe }}
+            {{ entry.body|truncatewords_html:50|safe }}
         </div>
+        <h4><a href="{{ entry.get_absolute_url }}">{% trans "Read more" %}</a></h4>
     </div>
     {% endfor %}
 {% else %}

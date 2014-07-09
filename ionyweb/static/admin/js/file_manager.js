@@ -49,7 +49,14 @@ admin.file_manager = {
 		},
 		send: function(path){
 			if(admin.file_manager.tinymce_activate){
-				tinyMCE.activeEditor.execCommand('mceInsertContent', false, "<img src='"+path+"' alt='' />");
+                var extension = path.split('.').pop().toLowerCase();
+                if(extension != "pdf")
+                    html_code = "<img src='"+path+"' alt='' />"
+                else {
+                    var file_name = path.split('/').pop();
+                    html_code = "<a href='"+path+"'>"+file_name+"</a>"
+                }
+                tinyMCE.activeEditor.execCommand('mceInsertContent', false, html_code);
 			}else{
 				$("#"+admin.file_manager.input_id).val(path);
 			}
