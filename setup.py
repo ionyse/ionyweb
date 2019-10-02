@@ -17,7 +17,7 @@ VERSION = read_relative_file('VERSION').strip()
 PACKAGES = ['ionyweb']
 REQUIRES = ['django>=1.4', 'Jinja2', 'MySQL-python', 'PIL', 'PyYAML', 'South',
             'django-floppyforms', 'django-mptt', 'django-tinymce==1.5.1b2', 
-            'djangorestframework==0.4.0', 'dnspython', 'python-magic', 'requests',
+            'djangorestframework==3.9.1', 'dnspython', 'python-magic', 'requests',
             'django-less', 'django-sekizai', 'django-grappelli==2.4.4']
 
 
